@@ -1,0 +1,11 @@
+This folder contains the progress that I made in creating design for food donation app as a developer before giving my solution to production team to create the final product.
+I am a Developer and a Tester in this environment that I shared here.
+My app contains request and donate screen.
+Request screen means you or anyone else send request to the app that you or someone else is hungry and need food.
+Donate screen means that you or someone else give food to the app so that the app stores the food and give it to those hungry people that need it.
+If that person already created account in the app, include it in contributor field and fill in the field for donor.
+Otherwise, leave that field blank and just fill in the field for donor.
+This app includes list of foods that were donated by others.
+There's a home screen that contains texts and profile screen that contains information about your profile.
+If you want to know who you are or what information you gave to the app, check it out in profile screen.
+If you found glitches or errors in this app, just to let you know that I am aware of it and working on solving these problems.
