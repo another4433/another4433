@@ -144,17 +144,30 @@ class Graph:
 # I wrote the code as setting higher value for each item in a multidimensional array
 def knapsack_problem(multi_array):
     flag = False
-    for a in range(0, 5):
-        for b in range(1, len(multi_array)):
-            for c in range(1, len(multi_array)):
-                if multi_array[b][c] < multi_array[0][c]:
-                    if multi_array[b][c] < multi_array[b][0]:
-                        multi_array[b][c] = multi_array[b][0]
-                    else:
-                        multi_array[b][c] = multi_array[0][c]
-                    flag = True
+    for a in range(0, len(multi_array)-1):
+        for b in range(a+1, len(multi_array)):
+            for c in range(a+1, len(multi_array)):
+                if b != a and c != a:
+                    if multi_array[b][c] < multi_array[a][c]:
+                        if multi_array[b][c] < multi_array[b][a]:
+                            multi_array[b][c] = multi_array[b][a]
+                        else:
+                            multi_array[b][c] = multi_array[a][c]
+                        flag = True
         if not flag:
             break
+    for i in range(0, len(multi_array)-1):
+        if multi_array[0][i] < multi_array[len(multi_array)-1][i]:
+            if multi_array[0][i] < multi_array[0][len(multi_array)-1]:
+                multi_array[0][i] = multi_array[0][len(multi_array)-1]
+            else:
+                multi_array[0][i] = multi_array[len(multi_array)-1][i]
+    for j in range(0, len(multi_array)-1):
+        if multi_array[j][0] < multi_array[j][len(multi_array)-1]:
+            if multi_array[j][0] < multi_array[len(multi_array)-1][0]:
+                multi_array[j][0] = multi_array[len(multi_array)-1][0]
+            else:
+                multi_array[j][0] = multi_array[j][len(multi_array)-1]
 
 
 # Code is similar to floyd warshall algorithm but not exactly it
@@ -162,17 +175,30 @@ def knapsack_problem(multi_array):
 # Floyd Warshall = finding the shortest path in the graph
 def floyd(multi_array):
     flag = False
-    for a in range(0, 5):
-        for b in range(1, len(multi_array)):
-            for c in range(1, len(multi_array)):
-                if multi_array[b][c] > multi_array[0][c]:
-                    if multi_array[b][c] > multi_array[b][0]:
-                        multi_array[b][c] = multi_array[b][0]
-                    else:
-                        multi_array[b][c] = multi_array[0][c]
-                    flag = True
+    for a in range(0, len(multi_array)-1):
+        for b in range(a+1, len(multi_array)):
+            for c in range(a+1, len(multi_array)):
+                if b != a and c != a:
+                    if multi_array[b][c] > multi_array[a][c]:
+                        if multi_array[b][c] > multi_array[b][a]:
+                            multi_array[b][c] = multi_array[b][a]
+                        else:
+                            multi_array[b][c] = multi_array[a][c]
+                        flag = True
         if not flag:
             break
+    for i in range(0, len(multi_array)-1):
+        if multi_array[0][i] > multi_array[len(multi_array)-1][i]:
+            if multi_array[0][i] > multi_array[0][len(multi_array)-1]:
+                multi_array[0][i] = multi_array[0][len(multi_array)-1]
+            else:
+                multi_array[0][i] = multi_array[len(multi_array)-1][i]
+    for j in range(0, len(multi_array)-1):
+        if multi_array[j][0] > multi_array[j][len(multi_array)-1]:
+            if multi_array[j][0] > multi_array[len(multi_array)-1][0]:
+                multi_array[j][0] = multi_array[len(multi_array)-1][0]
+            else:
+                multi_array[j][0] = multi_array[j][len(multi_array)-1]
 
 
 # To be used for scheduling algorithm in operating system
