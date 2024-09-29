@@ -8,7 +8,7 @@
 #### - 👯 I’m looking to collaborate on Software Development.
 #### - 🤔 I’m looking for help with job opportunities since I am unemployed.
 #### - 💬 Ask me about my goals, objectives, and skills.
-#### - 📫 How to reach me: contact me through my LinkedIn account https://linkedin.com/in/ali-hassan-6a810b232/
+#### - 📫 How to reach me: contact me through my LinkedIn account (https://www.linkedin.com/in/ali-abdali-6a810b232/)
 #### - 😄 Pronouns: he/his/him
 
 <!--
