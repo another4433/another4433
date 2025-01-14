@@ -1,2 +1,5 @@
 I decided to participate in Bahrainouna Challenge.
 The challenge I choose is to create quiz app based on theme of Bahrain.
+This app will let users create form that contains questions in them.
+Other users can answer the quiz by selecting answer from multiple choice.
+The form created will be on the waiting list as a request so that the administrator check the form before accepting that request.
