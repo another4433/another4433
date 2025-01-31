@@ -133,10 +133,10 @@
     class Corrections {
         public int $answer = 0, $question = 0, $OwnerForm = 0, $identifier = 0;
         public DateTime $History;
-        public function __construct($identifier, $question, $answer, $OwnerForm){
+        public function __construct($question, $answer, $OwnerForm){
             $this->answer = $answer;
             $this->question = $question;
-            $this->identifier = $identifier;
+            $this->identifier = 1;
             $this->OwnerForm = $OwnerForm;
             $this->History = new DateTime();
         }

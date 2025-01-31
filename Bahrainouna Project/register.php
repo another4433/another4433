@@ -124,7 +124,7 @@ class Register extends Person {
             console.time();
         </script>
         <?php
-                        header("Location: main.php");
+                        header("Location: login.php");
                     }
                     else {
         ?>
