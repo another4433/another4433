@@ -159,6 +159,18 @@
             $this->identifier = $identifier;
         }
     }
+    if (!isset($_SESSION) || !isset($_SESSION["cpr"])){
+        session_start();
+        $sessionPDO = new PDO("mysql:host=localhost;port=3306;dbname=theChallenge", "root", "MOH123ha");
+        $sessionInserter = $sessionPDO->query("SELECT * FROM Login");
+        $counter = $sessionInserter->rowCount();
+        foreach ($sessionInserter as $mySession){
+            $counting = 0;
+            if ($counting == ($counter-1)){
+                $_SESSION["cpr"] = $mySession["CPR"];
+            }
+        }
+    }
 ?>
 <html>
     <head>
@@ -167,7 +179,7 @@
         <title>Bahrainouna Q&A</title>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     </head>
-    <img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="align-self: center; align-items: center;"><br>
+    <img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="margin-left: 35%;"><br>
     <body id="formBody555">
         <h3 align="center">Choose an option below to start action in this website:</h3><br>
         <nav class="container">
@@ -177,6 +189,15 @@
             <button id="logout">Logout</button> <!--Logout-->
         </nav><br>
         <script src="main1.js">console.log("The rest of the code started from the javascript file.");</script>
+        <h4 align="center">About Us</h4>
+        <p class="container"><br>
+            This website is used to allow user to post questions about bahrain tradition. <br>
+            The users can test themeselves to determine their knowledge about Bahrain tradition. <br>
+            The questions that will be posted by the users should fit the theme of Bahrain tradition. <br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
+            Dignissimos et expedita velit, eum, explicabo quasi at facere quam similique perferendis veniam? <br>
+            Officiis, accusamus est nostrum fugiat aliquam vero. Culpa, eveniet? <br>
+        </p><br>
     </body>
     <?php
         if (isset($_GET["forming"])){
@@ -204,7 +225,9 @@
                                 break;
                         }
                     }
+                    break;
                 }
+                default: header("Location: main1.php");
             } 
         }
         elseif (isset($_GET["userAction"])){
@@ -217,6 +240,8 @@
                     break;
                 case "View User":
                     header("Location: viewUser.php");
+                    break;
+                default: header("Location: main1.php");
             }
         }
         elseif (isset($_GET["quitting"]) && $_GET["quitting"] == "Yes"){

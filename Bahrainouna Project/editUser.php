@@ -4,7 +4,7 @@
     <title>Creating Form</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 </head>
-<img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="align-self: center; align-items: center;"><br>
+<img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="margin-left: 35%;"><br>
 <body id="formBody54">
     <h3 align="center">Choose an option below to start action in this website:</h3><br>
     <nav class="container">
@@ -32,6 +32,18 @@
 <header>Take note that you cannot change your identification number and your birthdate</header><br>
 <?php
     try {
+        if (!isset($_SESSION) || !isset($_SESSION["cpr"])){
+            session_start();
+            $sessionPDO = new PDO("mysql:host=localhost;port=3306;dbname=theChallenge", "root", "MOH123ha");
+            $sessionInserter = $sessionPDO->query("SELECT * FROM Login");
+            $counter = $sessionInserter->rowCount();
+            foreach ($sessionInserter as $mySession){
+                $counting = 0;
+                if ($counting == ($counter-1)){
+                    $_SESSION["cpr"] = $mySession["CPR"];
+                }
+            }
+        }
         if (isset($_POST["editsubmission"]) && isset($_POST["editname"])){
             $editPDO = "";
             if (isset($_POST["editname"])):

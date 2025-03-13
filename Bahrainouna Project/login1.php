@@ -29,7 +29,7 @@
         <title>Login to Bahrainouna Q&A!</title>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     </head>
-    <img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="align-self: center; align-items: center;"><br>
+    <img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="margin-left: 35%;"><br>
     <body>
         <h1 class="pico" align="center">Welcome to Bahrainouna Q&A login page</h1><br>
         <div id="theForm" class="container">
@@ -70,7 +70,7 @@
             console.time();
         </script>
         <?php
-                            header("Location: main.php");
+                            header("Location: main1.php");
                         }
                         else {
         ?>

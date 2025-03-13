@@ -4,7 +4,7 @@
     <title>Creating Form</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 </head>
-<img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="align-self: center; align-items: center;"><br>
+<img src="bahrain.jpg" alt="Bahrainouna Q&A" width="500px" height="150px" style="margin-left: 35%;"><br>
 <body id="formBody552">
     <h3 align="center">Choose an option below to start action in this website:</h3><br>
     <nav class="container">
@@ -140,24 +140,37 @@
             $this->identifier = $identifier;
         }
     }
+    if (!isset($_SESSION) || !isset($_SESSION["cpr"])){
+        session_start();
+        $sessionPDO = new PDO("mysql:host=localhost;port=3306;dbname=theChallenge", "root", "MOH123ha");
+        $sessionInserter = $sessionPDO->query("SELECT * FROM Login");
+        $counter = $sessionInserter->rowCount();
+        foreach ($sessionInserter as $mySession){
+            $counting = 0;
+            if ($counting == ($counter-1)){
+                $_SESSION["cpr"] = $mySession["CPR"];
+            }
+        }
+    }
+    $countForm = 1; $countIDQA = 0; $countIDA = 0; $countIDC = 0; $formCreated = false;
+    if ($formCreated === false):
 ?>
+        <div class="container">
+            <form action="createForm.php" method="get">
+                <label for="formName">Enter the name of the form: </label>
+                <input type="text" name="formName" id="pFormName" value="Form<?=$countForm+1;?>"><br>
+                <input type="submit" name="submit" id="pSubmit1" value="Submit">
+            </form>
+        </div><br>
 <?php
-    $countForm = 0; $countIDQA = 0; $countIDA = 0; $countIDC = 0;
-?>
-<div class="container">
-    <form action="createForm.php" method="get">
-        <label for="formName">Enter the name of the form: </label>
-        <input type="text" name="formName" id="pFormName" value="Form #${countForm+1}"><br>
-        <input type="submit" name="submit" id="pSubmit1" value="Submit">
-    </form>
-</div><br>
-<?php
+    endif;
     try {
         $formPDO = new PDO("mysql:host=localhost;port=3306;dbname=theChallenge", "root", "MOH123ha");
         if (isset($_GET["formName"]) && isset($_GET["submit"])){
-            $theForm = new Form($_GET["formName"], $SESSION["cpr"]);
+            $formCreated = true;
+            $theForm = new Form($_GET["formName"], $_SESSION["cpr"]);
             $operation = $formPDO->prepare("Insert Into Form Values (?, ?, ?, ?)");
-            $theForm->setID($countForm+1);
+            $theForm->setID($countForm);
             $operation->execute([$theForm->getID(), $theForm->getName(), $theForm->getHistory(), $theForm->getOwner()]);
             if ($operation->rowCount() > 0):
                 $countForm = $countForm + 1;
@@ -180,7 +193,7 @@
 <?php
                     try {
                         $thePDO = new PDO("mysql:host=localhost;port=3306;dbname=theChallenge", "root", "MOH123ha");
-                        if (isset($_GET["formAction"])){
+                        if (isset($_GET["submit"]) && isset($_GET["formAction"])){
                             if ($_GET["formAction"] == "Question"):
 ?>
                                 <div class="container">
