@@ -7,7 +7,6 @@
     include("register2.php");
     include("login2.php");
     include("createUser1.php");
-    include("main2.php");
 ?>
 <html lang="en">
     <head>
@@ -15,6 +14,7 @@
         <meta content="width=device-width, initial-scale=1.0">
         <title>Login to Bahrainouna Q&A!</title>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js">
             import Swal from 'sweetalert2'
         </script>

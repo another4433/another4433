@@ -178,10 +178,28 @@
             }
             return $counterA >= $this->totalAnswerCount()-1 && $counterQ >= $this->getQuestionSize()-1;
         }
-        public function setCorrection($qNum, $answer){
+        public function addCorrection($qNum, $answer){
             $this->correct = new Correct($qNum, $answer);
             $this->phpArrayList["correct"][$this->getSizeCorrections()] = $this->correct;
             $this->correctCount = $this->getSizeCorrections() + 1;
+        }
+        public function deleteCorrection($qNum, $theAnswer){
+            $this->correct = new Correct($qNum, $theAnswer);
+            if ($this->phpArrayList->search("correct", $this->correct)){
+                $backup = $this->correct;
+                $operation = $this->phpArrayList->removeItem("correct", $this->correct);
+                if ($operation != null && $operation != false){
+                    $this->correctCount = $this->getSizeCorrections() - 1;
+                    return $backup;
+                }
+                return $operation;
+            }
+            return false;
+        }
+        public function modifyCorrection($oldqNum, $oldAnswer, $newqNum, $newAnswer){
+            $this->correct = new Correct($oldqNum, $oldAnswer);
+            $correctReference = new Correct($newqNum, $newAnswer);
+            return $this->phpArrayList->replace("correct", $this->correct, $correctReference);
         }
         public function getCorrect($index){
             return ($this->phpArrayList->isRange($index)) ? $this->phpArrayList->get("correct", $index) : false;

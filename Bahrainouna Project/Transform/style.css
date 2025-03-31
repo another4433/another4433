@@ -1,0 +1,10 @@
+.container {
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin: auto;
+    width: auto;
+    padding: 1.15em;
+    border: max(1px, 0.0625rem) solid rgba(61, 68, 77, 0.7019607843);
+    border-color: black;
+    border: 3px 3px 3px 3px;
+}
