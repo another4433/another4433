@@ -26,4 +26,12 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-Ali's GitHub Stats and GitHub Top Language
+## GitHub Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=another4433&show_icons=true&theme=light" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=another4433&layout=compact&theme=light" />
+</div>
+
+<!-- Credit to Anurag Hazra for the stats service -->
+[![GitHub Readme Stats](https://img.shields.io/badge/-Powered%20by%20GitHub%20Readme%20Stats-blue?logo=github)](https://github.com/anuraghazra/github-readme-stats)
