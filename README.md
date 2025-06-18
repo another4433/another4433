@@ -34,4 +34,5 @@ Here are some ideas to get you started:
 </div>
 
 <!-- Credit to Anurag Hazra for the stats service -->
-[![GitHub Readme Stats](https://img.shields.io/badge/-Powered%20by%20GitHub%20Readme%20Stats-blue?logo=github)](https://github.com/anuraghazra/github-readme-stats)
+[![Ali's GitHub stats](https://github-readme-stats.vercel.app/api?username=another4433)](https://github.com/another4433/github-readme-stats)
+
