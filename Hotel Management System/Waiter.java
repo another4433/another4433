@@ -43,6 +43,14 @@ public class Waiter extends Person {
         return builder.toString();
     }
 
+    public String offerTrip(Customer customer, String location, Manager supervisor){
+        System.out.println("The waiter "+getName()+" is offering the customer "+customer.getName()+" a trip to "+location+" that is supervised by "+supervisor.getName()+".");
+        System.out.println("Customer phone number: "+customer.getPhone());
+        System.out.println("Waiter phone number: "+getPhone());
+        System.out.println("Manager phone number: "+supervisor.getPhone());
+        return "The waiter "+getName()+" is offering the customer "+customer.getName()+" a trip to "+location+" that is supervised by "+supervisor.getName()+".\nCustomer phone number: "+customer.getPhone()+"\nWaiter phone number: "+getPhone()+"\nManager phone number: "+supervisor.getPhone();
+    }
+
     @Override
     public String toString() {
         return "Waiter{" +

@@ -11,6 +11,8 @@ public class Room {
     String description;
     Customer owner;
     Internet networkInformation;
+    Manager manager;
+    KWArrayList<Cleaner> cleanerKWArrayList;
 
     public Room(){
         roomNumber = 0;
@@ -18,26 +20,33 @@ public class Room {
         description = "";
         networkInformation = new Internet();
         owner = new Customer();
+        manager = new Manager();
+        cleanerKWArrayList = new KWArrayList<>();
     }
 
-    public Room(int roomNumber, int floorNumber, String description, Customer owner) {
+    public Room(int roomNumber, int floorNumber, String description, Customer owner, Manager manager) {
         this.roomNumber = Math.max(roomNumber, 0);
         this.floorNumber = Math.max(floorNumber, 0);
         this.description = description;
         this.owner = owner;
+        this.manager = manager;
     }
 
-    public Room(int roomNumber, int floorNumber, String description, String networkName, String passwordType, String password, String ipType, String ipAddress, Person provider, Person owner){
+    public Room(int roomNumber, int floorNumber, String description, String networkName, String passwordType, String password, String ipType, String ipAddress, Person provider, Person owner, int size){
         this.roomNumber = Math.max(roomNumber, 0);
         this.floorNumber = Math.max(floorNumber, 0);
         this.description = description;
         this.networkInformation = new Internet(networkName, passwordType, password, ipAddress, ipType, provider, owner);
+        this.manager = new Manager();
+        this.cleanerKWArrayList = new KWArrayList<>(size);
     }
 
-    public Room(int roomNumber, int floorNumber, String description){
+    public Room(int roomNumber, int floorNumber, String description, Manager manager, int size){
         this.roomNumber = Math.max(roomNumber, 0);
         this.floorNumber = Math.max(floorNumber, 0);
         this.description = description;
+        this.manager = manager;
+        this.cleanerKWArrayList = new KWArrayList<>(size);
     }
 
     public Internet getNetworkInformation() {
@@ -53,6 +62,46 @@ public class Room {
         getNetworkInformation().setOwner(owner);
         getNetworkInformation().setPassword(password);
         getNetworkInformation().setPasswordType(passwordType);
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
+    public void setManager(String name, String phone, String email, long id, float money, int day, int month, int year, int house, int road, int block, String area, String state, String region, String continent, String country, String netName, String passwordType, String password, String ipAddress, String ipType, Person provider) {
+        this.manager = new Manager(name, phone, email, id, money, day, month, year, house, road, block, area, state, region, continent, country, netName, passwordType, password, ipAddress, ipType, provider);
+    }
+
+    public KWArrayList<Cleaner> getCleanerKWArrayList() {
+        return cleanerKWArrayList;
+    }
+
+    public void addCleaner(Cleaner item){
+        getCleanerKWArrayList().addLast(item);
+        getCleanerKWArrayList().sort();
+    }
+
+    public boolean deleteCleaner(Cleaner item){
+        return getCleanerKWArrayList().remove(item) == getCleaner(getCleanerKWArrayList().indexOf(item));
+    }
+
+    public Cleaner getCleaner(int index){
+        return getCleanerKWArrayList().get(index);
+    }
+
+    public int searchCleaner(Cleaner item){
+        return getCleanerKWArrayList().search(item);
+    }
+
+    public boolean replaceCleaner(Cleaner oldCleaner, Cleaner newCleaner){
+        getCleanerKWArrayList().replace(oldCleaner, newCleaner);
+        return getCleanerKWArrayList().sort();
+    }
+
+    public void eraseCleaners(){
+        getCleanerKWArrayList().shuffle();
+        while (!getCleanerKWArrayList().isEmpty())
+            getCleanerKWArrayList().removeFirst();
     }
 
     public int getRoomNumber() {
@@ -95,6 +144,11 @@ public class Room {
         System.out.println("Owner: ");
         getOwner().display();
         getNetworkInformation().display();
+        System.out.println("Manager: ");
+        getManager().display();
+        System.out.println("Number of cleaners asigned to this room: "+getCleanerKWArrayList().size());
+        System.out.println("Cleaners: ");
+        getCleanerKWArrayList().display();
     }
 
     @Override
@@ -104,7 +158,9 @@ public class Room {
                 ", floorNumber=" + floorNumber +
                 ", description='" + description + '\'' +
                 ", owner=" + owner + '\'' +
-                ", internet=" + networkInformation +
+                ", internet=" + networkInformation + '\'' +
+                ", manager=" + manager + '\'' +
+                ", cleaners=" + cleanerKWArrayList +
                 '}';
     }
 

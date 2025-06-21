@@ -15,7 +15,14 @@ public class Customer extends Person {
 
     public Customer(String name, String phone, String email, long id, float money, int day, int month, int year, int house, int road, int block, String area, String state, String region, String continent, String country, int roomNum, int floorNum, String description) {
         super(name, phone, email, id, money, day, month, year, house, road, block, area, state, region, continent, country);
-        room = new Room(roomNum, floorNum, description, new Customer());
+        room = new Room(roomNum, floorNum, description, new Customer(), new Manager());
+        setAddress(house, road, block, area, state, region, continent, country);
+        setBirthDate(day, month, year);
+        setEmail(email);
+        setID(id);
+        setMoney(money);
+        setName(name);
+        setPhone(phone);
     }
 
     public Room getRoom() {
@@ -37,6 +44,35 @@ public class Customer extends Person {
         System.out.println("Failed to check out!");
         System.out.println("Room given is different than the room that you've been checked in.");
         return 0;
+    }
+
+    public String orderFood(String[] foodList){
+        StringBuilder builder = new StringBuilder("The waiter need to process the following orders: {");
+        System.out.println("The waiter need to process the following orders: ");
+        for (String item:foodList) {
+            System.out.println(item);
+            builder.append(item).append(", ");
+        }
+        builder.append("}").append("\n").append("This is for the customer ").append(getName()).append(".");
+        System.out.println("This is for the customer "+getName());
+        return builder.toString();
+    }
+
+    public String orderDrink(String[] drinkList){
+        StringBuilder builder = new StringBuilder("The waiter need to process the following orders: {");
+        System.out.println("The waiter need to process the following orders: ");
+        for (String item:drinkList) {
+            System.out.println(item);
+            builder.append(item).append(", ");
+        }
+        builder.append("}").append("\n").append("This is for the customer ").append(getName()).append(".");
+        System.out.println("This is for the customer "+getName());
+        return builder.toString();
+    }
+
+    public String suggestTrip(String location){
+        System.out.println("The customer "+getName()+" suggest going to "+location+" for field trip.");
+        return "The customer "+getName()+" suggest going to "+location+" for field trip.";
     }
 
     @Override

@@ -7,6 +7,7 @@ You don't need to do these when the files are located in the same src folder wit
 
 public class Manager extends Person {
     Internet personal;
+    KWLinkedList<String> reservations = new KWLinkedList<>();
 
     public Manager(){
         super();
@@ -32,9 +33,33 @@ public class Manager extends Person {
         getPersonal().setIpAddress(ipAddress);
     }
 
+    KWLinkedList<String> getReservations(){
+        return reservations;
+    }
+
     public String assignRoom(Customer tenet, Room room){
         System.out.println("Room "+room.getRoomNumber()+" at floor "+room.getFloorNumber()+" is assigned to "+tenet.getName());
         return "Room "+room.getRoomNumber()+" at floor "+room.getFloorNumber()+" is assigned to "+tenet.getName();
+    }
+
+    public String assignRestaurant(String tableCode, Customer[] people){
+        StringBuilder builder = new StringBuilder("The table with the code ");
+        builder.append(tableCode).append(" is assigned to the following customers: \n");
+        System.out.println("The table with the code "+tableCode+" is assigned to the following customers: ");
+        for (Customer person : people) {
+            builder.append(person.getName()).append(" (").append(person.getID()).append(")\n");
+            System.out.println(person.getName()+" ("+person.getID()+")");
+        }
+        getReservations().addLast(builder.toString());
+        return builder.toString();
+    }
+
+    public void displayReservations(){
+        getReservations().display();
+    }
+
+    public void removeReservation(int index){
+        getReservations().remove(getReservations().get(index));
     }
 
     @Override
@@ -47,7 +72,8 @@ public class Manager extends Person {
                 ", address=" + address +
                 ", birthDate=" + birthDate +
                 ", id=" + id +
-                ", money=" + money +
+                ", money=" + money + '\'' +
+                ", reservations=" + reservations +
                 '}';
     }
 
@@ -63,5 +89,7 @@ public class Manager extends Person {
         getBirthDate().display();
         getAddress().display();
         getPersonal().display();
+        System.out.println("Reservations");
+        displayReservations();
     }
 }
