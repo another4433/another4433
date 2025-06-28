@@ -1,3 +1,5 @@
+//Make edits to check in and do something with check out
+
 import java.util.*;
 
 public class MyMain {
@@ -12,6 +14,9 @@ public class MyMain {
         LinkedQueue<String[]> drinkOrders = new LinkedQueue<>();
         ArrayList<String> suggestions = new ArrayList<>();
         LinkedList<String> trips = new LinkedList<>();
+        ArrayStack<String> requests = new ArrayStack<>();
+        ArrayStack<String> cleanedRooms = new ArrayStack<>();
+        KWArrayList<String> pendingCheckout = new KWArrayList<>();
 
         Date date;
         Address address;
@@ -24,6 +29,7 @@ public class MyMain {
         Manager manager = new Manager();
         Cleaner cleaner = new Cleaner();
         Room room = new Room();
+        Random random = new Random();
 
         KWLinkedList<Customer> customerKWLinkedList = new KWLinkedList<>();
         SingleLinkedList<Waiter> waiterSingleLinkedList = new SingleLinkedList<>();
@@ -34,9 +40,10 @@ public class MyMain {
         LinkedHashing<Address> addressLinkedHashing = new LinkedHashing<>();
         ArrayHashing<Date> dateArrayHashing = new ArrayHashing<>();
 
-        int selector;
+        int selector, pendingCheckoutIndex = -1;
         String[] currentFood, currentDrink;
         boolean proceed = false;
+        boolean request = false;
 
         System.out.println("Welcome to AQWE Hotel!\n");
         System.out.println("Select from menu below: ");
@@ -658,6 +665,46 @@ public class MyMain {
                     System.out.println("Information found from the list: ");
                     System.out.println(roomSingleLinkedList.get(roomIndex));
                 }
+                case 18 -> {
+                    boolean found = false;
+                    System.out.print("Enter your ID: ");
+                    long onlyCustomer = scanner.nextLong();
+                    for (int p = 0; p < customerKWLinkedList.size(); p++)
+                        if (customerKWLinkedList.get(p).getID() == onlyCustomer){
+                            found = true;
+                            customer = customerKWLinkedList.get(p);
+                            break;
+                        }
+                    if (found){
+                        System.out.println("Do you have money dear customer?");
+                        System.out.print("Answer: ");
+                        String answering = scanner.next();
+                        if (answering.equalsIgnoreCase("yes") || answering.equalsIgnoreCase("yeah") || answering.equalsIgnoreCase("ya")){
+                            System.out.println("Select the room for booking: ");
+                            roomSingleLinkedList.display();
+                            System.out.print("Answer by entering the index (number) from the list: ");
+                            int onlyNum = scanner.nextInt();
+                            room = roomSingleLinkedList.get(onlyNum);
+                            System.out.println("How many days will you stay in this room?");
+                            System.out.print("Answer: ");
+                            int numOfStay = scanner.nextInt();
+                            System.out.println("The room cost "+numOfStay+" BD.");
+                            System.out.println("You have "+customer.getMoney()+" BD.");
+                            System.out.println("Would you like to pay? ");
+                            System.out.print("Answer: ");
+                            String answerer = scanner.next();
+                            if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
+                                float realMoney = customer.getMoney() - (float)numOfStay;
+                                customer.setMoney(realMoney);
+                                System.out.println("Thank you for paying for the room!");
+                                bookings.push(customer.checkIn(room.getRoomNumber(), room.getFloorNumber(), room.getDescription()));
+                                System.out.println("Booking have been made successfully!");
+                                System.out.println("Thank you for booking a room at AQWE hotel!");
+                                System.out.println("We will contact you through your email "+customer.getEmail()+" and your phone number "+customer.getPhone());
+                            }
+                        }
+                    }
+                }
                 case 19 -> {
                     System.out.print("Enter your ID: ");
                     long managerID = scanner.nextLong();
@@ -856,63 +903,84 @@ public class MyMain {
                     }
                 }
                 case 34 -> {
-                    System.out.print("Enter internet name: ");
-                    String nothing6 = scanner.nextLine();
-                    String internetName2 = scanner.nextLine();
-                    System.out.print("Enter internet password type: ");
-                    String internetPassType2 = scanner.next();
-                    System.out.print("Enter internet password: ");
-                    String internetPass2 = scanner.nextLine();
-                    System.out.print("Enter internet ip address: ");
-                    String internetAddress2 = scanner.next();
-                    System.out.print("Enter internet ip type: ");
-                    String internetIPType2 = scanner.next();
-                    System.out.print("Enter provider's name: ");
-                    String providerName1 = scanner.nextLine();
-                    System.out.print("Enter provider's phone number: ");
-                    String providerPhone1 = scanner.nextLine();
-                    System.out.print("Enter provider's email: ");
-                    String providerEmail1 = scanner.next();
-                    System.out.print("Enter provider's ID: ");
-                    long providerID1 = scanner.nextLong();
-                    System.out.println("How much money does the provider have? ");
-                    System.out.print("Answer: ");
-                    float providerMoney1 = scanner.nextFloat();
-                    System.out.print("Enter provider's birthDay: ");
-                    int providerDay1 = scanner.nextInt();
-                    System.out.print("Enter provider's birthMonth: ");
-                    int providerMonth1 = scanner.nextInt();
-                    System.out.print("Enter provider's birthYear: ");
-                    int providerYear1 = scanner.nextInt();
-                    System.out.print("Enter provider's house number: ");
-                    int providerHouse1 = scanner.nextInt();
-                    System.out.print("Enter provider's road number: ");
-                    int providerRoad1 = scanner.nextInt();
-                    System.out.print("Enter provider's block number: ");
-                    int providerBlock1 = scanner.nextInt();
-                    System.out.print("Enter provider's area: ");
-                    String providerArea1 = scanner.next();
-                    System.out.print("Enter provider's state: ");
-                    String providerState1 = scanner.nextLine();
-                    System.out.print("Enter provider's region: ");
-                    String providerRegion1 = scanner.nextLine();
-                    System.out.print("Enter provider's continent: ");
-                    String providerContinent1 = scanner.nextLine();
-                    System.out.print("Enter provider's country: ");
-                    String providerCountry1 = scanner.nextLine();
-                    Person person1 = new Person(providerName1, providerPhone1, providerEmail1, providerID1, providerMoney1, providerDay1, providerMonth1, providerYear1, providerHouse1, providerRoad1, providerBlock1, providerArea1, providerState1, providerRegion1, providerContinent1, providerCountry1);
-                    peopleRecords.addLast(person1);
-                    address = new Address(providerHouse1, providerRoad1, providerBlock1, providerArea1, providerState1, providerRegion1, providerContinent1, providerCountry1);
-                    addressLinkedHashing.add(address);
-                    date = new Date(providerDay1, providerMonth1, providerYear1);
-                    dateArrayHashing.add(date);
-                    System.out.println("Provider have been added to a list");
-                    internet = new Internet(internetName2, internetPassType2, internetPass2, internetAddress2, internetIPType2, person1);
-                    int internetIndex = internetKWLinkedList.search(internet);
-                    if (internetIndex > -1)
-                        System.out.println("The internet is found in the list at index "+internetIndex);
-                    else
-                        System.out.println("Cannot find internet from the list.");
+                    boolean[] founding = {false, false};
+                    System.out.print("Enter your ID: ");
+                    long customerID = scanner.nextLong();
+                    for (int i = 0; i < customerKWLinkedList.size(); i++)
+                        if (customerKWLinkedList.get(i).getID() == customerID){
+                            founding[0] = true;
+                            customer = customerKWLinkedList.get(i);
+                            break;
+                        }
+                    for (int j = 0; j < cleanerKWLinkedList.size(); j++)
+                        if (cleanerKWLinkedList.get(j).getID() == customerID){
+                            founding[1] = true;
+                            cleaner = cleanerKWLinkedList.get(j);
+                            break;
+                        }
+                    if (founding[0] || manager.getID() == customerID || founding[1]){
+                        System.out.print("Enter internet name: ");
+                        String nothing6 = scanner.nextLine();
+                        String internetName2 = scanner.nextLine();
+                        System.out.print("Enter internet password type: ");
+                        String internetPassType2 = scanner.next();
+                        System.out.print("Enter internet password: ");
+                        String internetPass2 = scanner.nextLine();
+                        System.out.print("Enter internet ip address: ");
+                        String internetAddress2 = scanner.next();
+                        System.out.print("Enter internet ip type: ");
+                        String internetIPType2 = scanner.next();
+                        System.out.print("Enter provider's name: ");
+                        String providerName1 = scanner.nextLine();
+                        System.out.print("Enter provider's phone number: ");
+                        String providerPhone1 = scanner.nextLine();
+                        System.out.print("Enter provider's email: ");
+                        String providerEmail1 = scanner.next();
+                        System.out.print("Enter provider's ID: ");
+                        long providerID1 = scanner.nextLong();
+                        System.out.println("How much money does the provider have? ");
+                        System.out.print("Answer: ");
+                        float providerMoney1 = scanner.nextFloat();
+                        System.out.print("Enter provider's birthDay: ");
+                        int providerDay1 = scanner.nextInt();
+                        System.out.print("Enter provider's birthMonth: ");
+                        int providerMonth1 = scanner.nextInt();
+                        System.out.print("Enter provider's birthYear: ");
+                        int providerYear1 = scanner.nextInt();
+                        System.out.print("Enter provider's house number: ");
+                        int providerHouse1 = scanner.nextInt();
+                        System.out.print("Enter provider's road number: ");
+                        int providerRoad1 = scanner.nextInt();
+                        System.out.print("Enter provider's block number: ");
+                        int providerBlock1 = scanner.nextInt();
+                        System.out.print("Enter provider's area: ");
+                        String providerArea1 = scanner.next();
+                        System.out.print("Enter provider's state: ");
+                        String providerState1 = scanner.nextLine();
+                        System.out.print("Enter provider's region: ");
+                        String providerRegion1 = scanner.nextLine();
+                        System.out.print("Enter provider's continent: ");
+                        String providerContinent1 = scanner.nextLine();
+                        System.out.print("Enter provider's country: ");
+                        String providerCountry1 = scanner.nextLine();
+                        Person person1 = new Person(providerName1, providerPhone1, providerEmail1, providerID1, providerMoney1, providerDay1, providerMonth1, providerYear1, providerHouse1, providerRoad1, providerBlock1, providerArea1, providerState1, providerRegion1, providerContinent1, providerCountry1);
+                        peopleRecords.addLast(person1);
+                        address = new Address(providerHouse1, providerRoad1, providerBlock1, providerArea1, providerState1, providerRegion1, providerContinent1, providerCountry1);
+                        addressLinkedHashing.add(address);
+                        date = new Date(providerDay1, providerMonth1, providerYear1);
+                        dateArrayHashing.add(date);
+                        System.out.println("Provider have been added to a list");
+                        internet = new Internet(internetName2, internetPassType2, internetPass2, internetAddress2, internetIPType2, person1);
+                        int internetIndex = internetKWLinkedList.search(internet);
+                        if (internetIndex > -1)
+                            System.out.println("The internet is found in the list at index "+internetIndex);
+                        else
+                            System.out.println("Cannot find internet from the list.");
+                    }
+                    else {
+                        System.out.println("Access denied!");
+                        System.out.println("You need to be a customer, manager, or cleaner to access this feature.");
+                    }
                 }
                 case 35 -> {
                     System.out.println("Enter an index for internet list: ");
@@ -1064,7 +1132,44 @@ public class MyMain {
                             break;
                         }
                     if (manager.getID() == anyID){
-                        System.out.println("Manager options coming soon.");
+                        boolean[] founds = {false, false};
+                        System.out.print("Enter the room number: ");
+                        int roomNum = scanner.nextInt();
+                        System.out.print("Enter the floor number: ");
+                        int floorNum = scanner.nextInt();
+                        for (int k = 0; k < roomSingleLinkedList.size(); k++)
+                            if (roomSingleLinkedList.get(k).getRoomNumber() == roomNum && roomSingleLinkedList.get(k).getFloorNumber() == floorNum){
+                                room = roomSingleLinkedList.get(k);
+                                founds[0] = true;
+                                break;
+                            }
+                        if (request){
+                            if (founds[0] || founds[1]){
+                                roomsForCleaning.add(manager.assignRoom(customer, room));
+                                requests.removeLast();
+                                System.out.println("A room has been assigned for cleaning upon the customer's request.");
+                            }
+                            else
+                                System.out.println("Room not found for cleaning, so the request has been calcelled.");
+                        }
+                        else {
+                            System.out.print("Enter the customer's ID: ");
+                            int idCustomer = scanner.nextInt();
+                            for (int n = 0; n < customerKWLinkedList.size(); n++)
+                                if (customerKWLinkedList.get(n).getID() == idCustomer){
+                                    founds[1] = true;
+                                    customer = customerKWLinkedList.get(n);
+                                    break;
+                                }
+                            if (founds[0] && founds[1]){
+                                manager.assignRoom(customer, room);
+                                System.out.println("A room has been assigned for cleaning due to room maintenance only.");
+                            }
+                            else {
+                                System.out.println("Both the room and the customer has not been found.");
+                                System.out.println("Therefore, the room has not been assigned for cleaning.");
+                            }
+                        }
                     }
                     else if (checkers[0]){
                         System.out.println("Choose from the list below or enter a location for the trip: ");
@@ -1085,14 +1190,77 @@ public class MyMain {
                         System.out.println("If you did not see the trip offer to customer, then this means that the operation failed.");
                     }
                     else if (checkers[1]){
-                        System.out.print("Enter loctaion as a suggestion for going to the trip: ");
-                        String nothing16 = scanner.nextLine();
-                        String tripSuggest = scanner.nextLine();
-                        suggestions.add(customer.suggestTrip(tripSuggest));
+                        System.out.println("Choose from option below to get started: ");
+                        System.out.println("(0) Cancel");
+                        System.out.println("(1) Suggest Trip");
+                        System.out.println("(2) Request a room for cleaning");
+                        System.out.print("Answer: ");
+                        int customerChoice = scanner.nextInt();
+                        if (customerChoice == 1){
+                            System.out.print("Enter loctaion as a suggestion for going to the trip: ");
+                            String nothing16 = scanner.nextLine();
+                            String tripSuggest = scanner.nextLine();
+                            suggestions.add(customer.suggestTrip(tripSuggest));
+                        }
+                        else if (customerChoice == 2){
+                            boolean found = false;
+                            System.out.print("Enter the room number: ");
+                            int roomNum = scanner.nextInt();
+                            System.out.print("Enter the floor number: ");
+                            int floorNum = scanner.nextInt();
+                            for (int m = 0; m < roomSingleLinkedList.size(); m++)
+                                if (roomSingleLinkedList.get(m).getRoomNumber() == roomNum && roomSingleLinkedList.get(m).getFloorNumber() == floorNum){
+                                    found = true;
+                                    room = roomSingleLinkedList.get(m);
+                                    break;
+                                }
+                            if (found){
+                                requests.add(customer.requestClean(room));
+                                request = true;
+                                System.out.println("A room have been requested for cleaning.");
+                            }
+                            else
+                                System.out.println("Room not found for cleaning, so the request has been cancelled.");
+                        }
                     }
                     else {
                         System.out.println("Access Denied!");
                         System.out.println("You need to be a waiter, customer, or manager to access this feature.");
+                    }
+                }
+                case 39 -> {
+                    boolean founder = false;
+                    System.out.print("Enter your ID:");
+                    long cleanerID = scanner.nextLong();
+                    for (int o = 0; o < cleanerKWLinkedList.size(); o++)
+                        if (cleanerKWLinkedList.get(o).getID() == cleanerID){
+                            founder = true;
+                            cleaner = cleanerKWLinkedList.get(o);
+                            break;
+                        }
+                    if (manager.getID() == cleanerID){
+                        int seed;
+                        do {
+                            seed = random.nextInt(0, cleanerKWLinkedList.size()-1);
+                        }
+                        while (cleanerKWLinkedList.get(seed) == null);
+                        cleaner = cleanerKWLinkedList.get(seed);
+                        cleanedRooms.add(cleaner.cleanRoom(room));
+                        roomsForCleaning.removeLast();
+                        System.out.println("A room for cleaning have been processed.");
+                        System.out.println("Cleaned rooms: ");
+                        cleanedRooms.display();
+                    }
+                    else if (founder){
+                        cleanedRooms.add(cleaner.cleanRoom(room));
+                        roomsForCleaning.removeLast();
+                        System.out.println("A room for cleaning have been processed.");
+                        System.out.println("Cleaned rooms: ");
+                        cleanedRooms.display();
+                    }
+                    else {
+                        System.out.println("Access Denied!");
+                        System.out.println("You need to be a cleaner or a manager to access this feature.");
                     }
                 }
                 case 40 -> {

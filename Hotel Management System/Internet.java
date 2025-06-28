@@ -14,8 +14,6 @@ public class Internet {
         passwordType = "";
         ipAddress = "";
         ipType = "";
-        provider = new Person();
-        owner = new Person();
     }
 
     public Internet(String name, String passwordType, String password, String ipAddress, String ipType, Person provider, Person owner) {

@@ -19,8 +19,6 @@ public class Room {
         floorNumber = 0;
         description = "";
         networkInformation = new Internet();
-        owner = new Customer();
-        manager = new Manager();
         cleanerKWArrayList = new KWArrayList<>();
     }
 
@@ -72,7 +70,7 @@ public class Room {
         this.manager = new Manager(name, phone, email, id, money, day, month, year, house, road, block, area, state, region, continent, country, netName, passwordType, password, ipAddress, ipType, provider);
     }
 
-    public KWArrayList<Cleaner> getCleanerKWArrayList() {
+    KWArrayList<Cleaner> getCleanerKWArrayList() {
         return cleanerKWArrayList;
     }
 

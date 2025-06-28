@@ -20,10 +20,49 @@ public class Person implements PersonInt {
         email = "someone@example.com";
         money = 0;
         id = 0;
-        address = new Address();
-        java.util.Date dateSetter = new java.util.Date();
-        birthDate = new Date(dateSetter.getDay(), dateSetter.getMonth(), dateSetter.getYear());
     }
+
+    /*
+        java.util.Date dateSetter = new java.util.Date();
+        String dateString = dateSetter.toString();
+        String monthString = dateString.substring(5, 8);
+        String yearString = dateString.substring(dateString.lastIndexOf(" ")+1);
+        String dayString = dateString.substring(0, dateString.indexOf(" "));
+        int year = Integer.parseInt(yearString);
+        int monthNum = getMonthNum(monthString);
+        int dayNum = getDayNum(dayString);
+        birthDate = new Date(dayNum, monthNum, year);
+        private static int getMonthNum(String monthString) {
+            int monthNum;
+            switch (monthString){
+                case "Jan" -> monthNum = 1;
+                case "Feb" -> monthNum = 2;
+                case "Mar" -> monthNum = 3;
+                case "Apr" -> monthNum = 4;
+                case "May" -> monthNum = 5;
+                case "Jun" -> monthNum = 6;
+                case "Jul" -> monthNum = 7;
+                case "Aug" -> monthNum = 8;
+                case "Oct" -> monthNum = 10;
+                case "Nov" -> monthNum = 11;
+                case "Dec" -> monthNum = 12;
+                default -> monthNum = 9;
+            }
+            return monthNum;
+        }
+
+        private static int getDayNum(String dayString){
+            int dayNum;
+            switch (dayString){
+                case "Sun" -> dayNum = 1;
+                case "Mon" -> dayNum = 2;
+                case "Tue" -> dayNum = 3;
+                case "Wed" -> dayNum = 4;
+                default -> dayNum = 5;
+            }
+            return dayNum;
+        }
+     */
 
     public Person(String name, String phone, String email, long id, float money, int day, int month, int year, int house, int road, int block, String area, String state, String region, String continent, String country) {
         this.name = name;
@@ -74,7 +113,7 @@ public class Person implements PersonInt {
     public int calculateAge(){
         java.util.Date current = new java.util.Date();
         String dateGetter = current.toString();
-        String yearGetter = dateGetter.substring(dateGetter.indexOf("2"));
+        String yearGetter = dateGetter.substring(dateGetter.lastIndexOf(" ")+1);
         int year = Integer.parseInt(yearGetter);
         return year-getBirthDate().getYear();
     }
@@ -98,9 +137,9 @@ public class Person implements PersonInt {
 
     @Override
     public void setBirthDate(int day, int month, int year) {
-        this.getBirthDate().setYear(year);
-        this.getBirthDate().setMonth(month);
-        this.getBirthDate().setDay(day);
+        getBirthDate().setYear(year);
+        getBirthDate().setMonth(month);
+        getBirthDate().setDay(day);
     }
 
     @Override

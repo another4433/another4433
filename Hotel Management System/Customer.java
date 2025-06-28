@@ -29,11 +29,12 @@ public class Customer extends Person {
         return room;
     }
 
-    public void checkIn(int room, int floor, String description) {
+    public String checkIn(int room, int floor, String description) {
         getRoom().setRoomNumber(room);
         getRoom().setFloorNumber(floor);
         getRoom().setDescription(description);
         System.out.println("You have been checked in for your room.");
+        return "You have been checked in to the room "+getRoom().getRoomNumber()+" at floor "+getRoom().getFloorNumber();
     }
 
     public int checkout(Room other){
@@ -41,9 +42,16 @@ public class Customer extends Person {
             System.out.println("You have been checked out from your room.");
             return getRoom().hashCode();
         }
-        System.out.println("Failed to check out!");
-        System.out.println("Room given is different than the room that you've been checked in.");
-        return 0;
+        else {
+            System.out.println("Failed to check out!");
+            System.out.println("Room given is different than the room that you've been checked in.");
+            return 0;
+        }
+    }
+
+    public String requestClean(Room other){
+        System.out.println("The customer "+getName()+" request the room "+other.getRoomNumber()+" at floor number "+other.getFloorNumber()+" to be clean.");
+        return "The customer "+getName()+" request the room "+other.getRoomNumber()+" at floor number "+other.getFloorNumber()+" to be clean.";
     }
 
     public String orderFood(String[] foodList){

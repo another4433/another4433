@@ -32,12 +32,18 @@ public class Waiter extends Person {
         getPersonal().setIpAddress(ipAddress);
     }
 
-    public String takeOrder(Customer customer, String[] foodList){
+    public String takeOrder(Customer customer, String[] foodList, String[] drinkList){
         StringBuilder builder = new StringBuilder("Food: [");
         System.out.println("The customer "+customer.getName()+" requires the following orders: ");
         for (String item: foodList) {
             System.out.println(item);
             builder.append(item).append(", ");
+        }
+        builder.append("]\n");
+        builder.append("Drink: [");
+        for (String item1: drinkList){
+            System.out.println(item1);
+            builder.append(item1).append(", ");
         }
         builder.append("]");
         return builder.toString();

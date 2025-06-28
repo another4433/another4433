@@ -18,9 +18,9 @@ public class Address implements AddressInt {
     }
 
     public Address(){
-        house = 0;
-        road = 0;
-        block = 0;
+        house = 1;
+        road = 1;
+        block = 1;
         area = "";
         state = "";
         region = "";

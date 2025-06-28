@@ -2173,6 +2173,23 @@ class ArrayHashing<E>{
     }
 }
 class testGenerics{
+    public static void main(String[] args) {
+        RealGraph<String> myGraph1 = new RealGraph<>("Computer", 5);
+        myGraph1.addNode("Science");
+        myGraph1.addNode("Programming", 1);
+        myGraph1.addNode("Analytics", 2, 4);
+        myGraph1.addVertices("Security", 3);
+        RealGraph<String> myGraph2 = new RealGraph<>("Cloud", 7);
+        myGraph2.addVertices("Algorithm", 6);
+        myGraph2.addNode("Computing", 1);
+        myGraph2.addNode("Development", 2);
+        myGraph2.addNode("Architecture", 3, 4);
+        RealGraph<String> connect = new RealGraph<>("Domains", 10);
+        connect.addEdge(myGraph1.root, myGraph2.root);
+        myGraph1.print();
+        myGraph2.display();
+        connect.display();
+    }
 }
 class LinkedStack2<E>{
     private static class Node<E>{
