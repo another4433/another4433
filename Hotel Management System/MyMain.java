@@ -1277,6 +1277,527 @@ public class MyMain {
                     }
                 }
                 case 12 -> manager.display();
+                case 13 -> {
+                    System.out.println("Enter your ID: ");
+                    long managerID2 = scanner.nextLong();
+                    if (manager.getID() == managerID2){
+                        System.out.println("Do you have internet or not?");
+                        String answering = scanner.next();
+                        if (answering.equalsIgnoreCase("yes") || answering.equalsIgnoreCase("yeah") || answering.equalsIgnoreCase("ya")){
+                            boolean founder = false;
+                            System.out.print("Enter the name of the internet: ");
+                            String netName = scanner.nextLine();
+                            for (int i = 0; i < internetKWLinkedList.size(); i++)
+                                if (internetKWLinkedList.get(i).getName().compareTo(netName) == 0){
+                                    founder = true;
+                                    internet = internetKWLinkedList.get(i);
+                                    break;
+                                }
+                            if (founder){
+                                System.out.print("Enter room number: ");
+                                int roomNum2 = scanner.nextInt();
+                                System.out.print("Enter floor number: ");
+                                int floorNum2 = scanner.nextInt();
+                                System.out.print("Enter number of cleaners for this room: ");
+                                int roomCleaner2 = scanner.nextInt();
+                                System.out.println("Enter room description in one line: ");
+                                String nothing20 = scanner.nextLine();
+                                String roomDesc2 = scanner.nextLine();
+                                room = new Room(roomNum2, floorNum2, roomDesc2, internet.getName(), internet.getPasswordType(), internet.getPassword(), internet.getIpType(), internet.getIpAddress(), internet.getProvider(), internet.getOwner(), roomCleaner2, manager);
+                                roomSingleLinkedList.addLast(room);
+                                System.out.println("A room have been added to the list successfully.");
+                                System.out.println("Would you like to edit your network?");
+                                System.out.print("Answer: ");
+                                String answerer = scanner.next();
+                                if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
+                                    System.out.print("Enter internet name: ");
+                                    String internetName5 = scanner.nextLine();
+                                    System.out.print("Enter internet password type: ");
+                                    String internetPassType5 = scanner.next();
+                                    System.out.print("Enter internet password: ");
+                                    String internetPass5 = scanner.nextLine();
+                                    System.out.print("Enter internet ip address: ");
+                                    String internetAddress5 = scanner.next();
+                                    System.out.print("Enter internet ip type: ");
+                                    String internetIPType5 = scanner.next();
+                                    Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
+                                    System.out.print("Enter internet provider name: ");
+                                    String providerName5 = scanner.nextLine();
+                                    System.out.print("Enter internet provider phone number: ");
+                                    String providerPhone5 = scanner.nextLine();
+                                    System.out.print("Enter internet provider email: ");
+                                    String providerEmail5 = scanner.next();
+                                    System.out.print("Enter internet provider ID: ");
+                                    long providerID5 = scanner.nextLong();
+                                    System.out.println("How much money does the provider have?");
+                                    System.out.print("Answer: ");
+                                    float providerMoney5 = scanner.nextFloat();
+                                    System.out.print("Enter internet provider birthDay: ");
+                                    int providerDay5 = scanner.nextInt();
+                                    System.out.print("Enter internet provider birthMonth: ");
+                                    int providerMonth5 = scanner.nextInt();
+                                    System.out.print("Enter internet provider birthYear: ");
+                                    int providerYear5 = scanner.nextInt();
+                                    System.out.print("Enter internet provider house number: ");
+                                    int providerHouse5 = scanner.nextInt();
+                                    System.out.print("Enter internet provider road number: ");
+                                    int providerRoad5 = scanner.nextInt();
+                                    System.out.print("Enter internet provider block number: ");
+                                    int providerBlock5 = scanner.nextInt();
+                                    System.out.print("Enter internet provider area: ");
+                                    String nothing22 = scanner.nextLine();
+                                    String providerArea5 = scanner.nextLine();
+                                    System.out.print("Enter internet provider state: ");
+                                    String providerState5 = scanner.nextLine();
+                                    System.out.print("Enter internet provider region: ");
+                                    String providerRegion5 = scanner.nextLine();
+                                    System.out.print("Enter internet provider continent: ");
+                                    String providerContinent5 = scanner.nextLine();
+                                    System.out.println("Enter internet provider country: ");
+                                    String providerCountry5 = scanner.nextLine();
+                                    Person provider = new Person(providerName5, providerPhone5, providerEmail5, providerID5, providerMoney5, providerDay5, providerMonth5, providerYear5, providerHouse5, providerRoad5, providerBlock5, providerArea5, providerState5, providerRegion5, providerContinent5, providerCountry5);
+                                    Room backup1 = room;
+                                    room.setNetworkInformation(internetName5, internetPassType5, internetPass5, internetIPType5, internetAddress5, provider, roomHandler);
+                                    roomSingleLinkedList.set(roomSingleLinkedList.indexOf(backup1), room);
+                                    System.out.println("The room internet has been changed.");
+                                }
+                                else
+                                    System.out.println("Thank you for adding a room to the list anyways!");
+                            }
+                            else {
+                                System.out.print("Enter room number: ");
+                                int roomNum3 = scanner.nextInt();
+                                System.out.print("Enter floor number: ");
+                                int floorNum3 = scanner.nextInt();
+                                System.out.print("Enter number of cleaners for this room: ");
+                                int roomCleaner3 = scanner.nextInt();
+                                System.out.println("Enter room description in one line: ");
+                                String nothing20 = scanner.nextLine();
+                                String roomDesc3 = scanner.nextLine();
+                                System.out.print("Enter internet name: ");
+                                String internetName5 = scanner.nextLine();
+                                System.out.print("Enter internet password type: ");
+                                String internetPassType5 = scanner.next();
+                                System.out.print("Enter internet password: ");
+                                String internetPass5 = scanner.nextLine();
+                                System.out.print("Enter internet ip address: ");
+                                String internetAddress5 = scanner.next();
+                                System.out.print("Enter internet ip type: ");
+                                String internetIPType5 = scanner.next();
+                                Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
+                                System.out.print("Enter internet provider name: ");
+                                String providerName5 = scanner.nextLine();
+                                System.out.print("Enter internet provider phone number: ");
+                                String providerPhone5 = scanner.nextLine();
+                                System.out.print("Enter internet provider email: ");
+                                String providerEmail5 = scanner.next();
+                                System.out.print("Enter internet provider ID: ");
+                                long providerID5 = scanner.nextLong();
+                                System.out.println("How much money does the provider have?");
+                                System.out.print("Answer: ");
+                                float providerMoney5 = scanner.nextFloat();
+                                System.out.print("Enter internet provider birthDay: ");
+                                int providerDay5 = scanner.nextInt();
+                                System.out.print("Enter internet provider birthMonth: ");
+                                int providerMonth5 = scanner.nextInt();
+                                System.out.print("Enter internet provider birthYear: ");
+                                int providerYear5 = scanner.nextInt();
+                                System.out.print("Enter internet provider house number: ");
+                                int providerHouse5 = scanner.nextInt();
+                                System.out.print("Enter internet provider road number: ");
+                                int providerRoad5 = scanner.nextInt();
+                                System.out.print("Enter internet provider block number: ");
+                                int providerBlock5 = scanner.nextInt();
+                                System.out.print("Enter internet provider area: ");
+                                String nothing22 = scanner.nextLine();
+                                String providerArea5 = scanner.nextLine();
+                                System.out.print("Enter internet provider state: ");
+                                String providerState5 = scanner.nextLine();
+                                System.out.print("Enter internet provider region: ");
+                                String providerRegion5 = scanner.nextLine();
+                                System.out.print("Enter internet provider continent: ");
+                                String providerContinent5 = scanner.nextLine();
+                                System.out.println("Enter internet provider country: ");
+                                String providerCountry5 = scanner.nextLine();
+                                Person provider = new Person(providerName5, providerPhone5, providerEmail5, providerID5, providerMoney5, providerDay5, providerMonth5, providerYear5, providerHouse5, providerRoad5, providerBlock5, providerArea5, providerState5, providerRegion5, providerContinent5, providerCountry5);
+                                room = new Room(roomNum3, floorNum3, roomDesc3, internetName5, internetPassType5, internetPass5, internetIPType5, internetAddress5, provider, roomHandler, roomCleaner3, manager);
+                                roomSingleLinkedList.addFirst(room);
+                                System.out.println("A room have been added to the list successfully.");
+                            }
+                        }
+                        else {
+                            System.out.print("Enter room number: ");
+                            int roomNum1 = scanner.nextInt();
+                            System.out.print("Enter floor number: ");
+                            int floorNum1 = scanner.nextInt();
+                            System.out.print("Enter number of cleaners for this room: ");
+                            int roomCleaner1 = scanner.nextInt();
+                            System.out.println("Enter room description in one line: ");
+                            String nothing20 = scanner.nextLine();
+                            String roomDesc1 = scanner.nextLine();
+                            room = new Room(roomNum1, floorNum1, roomDesc1, manager, roomCleaner1);
+                            roomSingleLinkedList.add(room, 1);
+                            System.out.println("A room have been added successfully.");
+                        }
+                    }
+                    else {
+                        System.out.println("Access Denied!");
+                        System.out.println("You need to be a manager to access this feature.");
+                    }
+                }
+                case 14 -> {
+                    System.out.println("Enter your ID: ");
+                    long managerID2 = scanner.nextLong();
+                    if (manager.getID() == managerID2){
+                        System.out.println("Do you have internet or not?");
+                        String answering = scanner.next();
+                        if (answering.equalsIgnoreCase("yes") || answering.equalsIgnoreCase("yeah") || answering.equalsIgnoreCase("ya")){
+                            boolean founder = false;
+                            System.out.print("Enter the name of the internet: ");
+                            String netName = scanner.nextLine();
+                            for (int i = 0; i < internetKWLinkedList.size(); i++)
+                                if (internetKWLinkedList.get(i).getName().compareTo(netName) == 0){
+                                    founder = true;
+                                    internet = internetKWLinkedList.get(i);
+                                    break;
+                                }
+                            if (founder){
+                                System.out.print("Enter room number: ");
+                                int roomNum2 = scanner.nextInt();
+                                System.out.print("Enter floor number: ");
+                                int floorNum2 = scanner.nextInt();
+                                System.out.print("Enter number of cleaners for this room: ");
+                                int roomCleaner2 = scanner.nextInt();
+                                System.out.println("Enter room description in one line: ");
+                                String nothing20 = scanner.nextLine();
+                                String roomDesc2 = scanner.nextLine();
+                                room = new Room(roomNum2, floorNum2, roomDesc2, internet.getName(), internet.getPasswordType(), internet.getPassword(), internet.getIpType(), internet.getIpAddress(), internet.getProvider(), internet.getOwner(), roomCleaner2, manager);
+                                if (roomSingleLinkedList.remove(room).equals(room)) {
+                                    System.out.println("A room have been deleted from the list successfully.");
+                                    System.out.println("Would you like to edit your network?");
+                                    System.out.print("Answer: ");
+                                    String answerer = scanner.next();
+                                    if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
+                                        System.out.print("Enter internet name: ");
+                                        String internetName5 = scanner.nextLine();
+                                        System.out.print("Enter internet password type: ");
+                                        String internetPassType5 = scanner.next();
+                                        System.out.print("Enter internet password: ");
+                                        String internetPass5 = scanner.nextLine();
+                                        System.out.print("Enter internet ip address: ");
+                                        String internetAddress5 = scanner.next();
+                                        System.out.print("Enter internet ip type: ");
+                                        String internetIPType5 = scanner.next();
+                                        Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
+                                        System.out.print("Enter internet provider name: ");
+                                        String providerName5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider phone number: ");
+                                        String providerPhone5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider email: ");
+                                        String providerEmail5 = scanner.next();
+                                        System.out.print("Enter internet provider ID: ");
+                                        long providerID5 = scanner.nextLong();
+                                        System.out.println("How much money does the provider have?");
+                                        System.out.print("Answer: ");
+                                        float providerMoney5 = scanner.nextFloat();
+                                        System.out.print("Enter internet provider birthDay: ");
+                                        int providerDay5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider birthMonth: ");
+                                        int providerMonth5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider birthYear: ");
+                                        int providerYear5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider house number: ");
+                                        int providerHouse5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider road number: ");
+                                        int providerRoad5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider block number: ");
+                                        int providerBlock5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider area: ");
+                                        String nothing22 = scanner.nextLine();
+                                        String providerArea5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider state: ");
+                                        String providerState5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider region: ");
+                                        String providerRegion5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider continent: ");
+                                        String providerContinent5 = scanner.nextLine();
+                                        System.out.println("Enter internet provider country: ");
+                                        String providerCountry5 = scanner.nextLine();
+                                        Person provider = new Person(providerName5, providerPhone5, providerEmail5, providerID5, providerMoney5, providerDay5, providerMonth5, providerYear5, providerHouse5, providerRoad5, providerBlock5, providerArea5, providerState5, providerRegion5, providerContinent5, providerCountry5);
+                                        Room backup1 = room;
+                                        room.setNetworkInformation(internetName5, internetPassType5, internetPass5, internetIPType5, internetAddress5, provider, roomHandler);
+                                        roomSingleLinkedList.set(roomSingleLinkedList.indexOf(backup1), room);
+                                        System.out.println("The room internet has been changed.");
+                                    }
+                                    else
+                                        System.out.println("Thank you for deleting a room from the list anyways!");
+                                }
+                                else
+                                    System.out.println("Failed to delete a room from the list successfully.");
+                            }
+                            else {
+                                System.out.print("Enter room number: ");
+                                int roomNum3 = scanner.nextInt();
+                                System.out.print("Enter floor number: ");
+                                int floorNum3 = scanner.nextInt();
+                                System.out.print("Enter number of cleaners for this room: ");
+                                int roomCleaner3 = scanner.nextInt();
+                                System.out.println("Enter room description in one line: ");
+                                String nothing20 = scanner.nextLine();
+                                String roomDesc3 = scanner.nextLine();
+                                System.out.print("Enter internet name: ");
+                                String internetName5 = scanner.nextLine();
+                                System.out.print("Enter internet password type: ");
+                                String internetPassType5 = scanner.next();
+                                System.out.print("Enter internet password: ");
+                                String internetPass5 = scanner.nextLine();
+                                System.out.print("Enter internet ip address: ");
+                                String internetAddress5 = scanner.next();
+                                System.out.print("Enter internet ip type: ");
+                                String internetIPType5 = scanner.next();
+                                Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
+                                System.out.print("Enter internet provider name: ");
+                                String providerName5 = scanner.nextLine();
+                                System.out.print("Enter internet provider phone number: ");
+                                String providerPhone5 = scanner.nextLine();
+                                System.out.print("Enter internet provider email: ");
+                                String providerEmail5 = scanner.next();
+                                System.out.print("Enter internet provider ID: ");
+                                long providerID5 = scanner.nextLong();
+                                System.out.println("How much money does the provider have?");
+                                System.out.print("Answer: ");
+                                float providerMoney5 = scanner.nextFloat();
+                                System.out.print("Enter internet provider birthDay: ");
+                                int providerDay5 = scanner.nextInt();
+                                System.out.print("Enter internet provider birthMonth: ");
+                                int providerMonth5 = scanner.nextInt();
+                                System.out.print("Enter internet provider birthYear: ");
+                                int providerYear5 = scanner.nextInt();
+                                System.out.print("Enter internet provider house number: ");
+                                int providerHouse5 = scanner.nextInt();
+                                System.out.print("Enter internet provider road number: ");
+                                int providerRoad5 = scanner.nextInt();
+                                System.out.print("Enter internet provider block number: ");
+                                int providerBlock5 = scanner.nextInt();
+                                System.out.print("Enter internet provider area: ");
+                                String nothing22 = scanner.nextLine();
+                                String providerArea5 = scanner.nextLine();
+                                System.out.print("Enter internet provider state: ");
+                                String providerState5 = scanner.nextLine();
+                                System.out.print("Enter internet provider region: ");
+                                String providerRegion5 = scanner.nextLine();
+                                System.out.print("Enter internet provider continent: ");
+                                String providerContinent5 = scanner.nextLine();
+                                System.out.println("Enter internet provider country: ");
+                                String providerCountry5 = scanner.nextLine();
+                                Person provider = new Person(providerName5, providerPhone5, providerEmail5, providerID5, providerMoney5, providerDay5, providerMonth5, providerYear5, providerHouse5, providerRoad5, providerBlock5, providerArea5, providerState5, providerRegion5, providerContinent5, providerCountry5);
+                                room = new Room(roomNum3, floorNum3, roomDesc3, internetName5, internetPassType5, internetPass5, internetIPType5, internetAddress5, provider, roomHandler, roomCleaner3, manager);
+                                if (roomSingleLinkedList.remove(room).equals(room))
+                                    System.out.println("A room have been deleted from the list successfully.");
+                                else
+                                    System.out.println("Failed to delete a room from the list successfully.");
+                            }
+                        }
+                        else {
+                            System.out.print("Enter room number: ");
+                            int roomNum1 = scanner.nextInt();
+                            System.out.print("Enter floor number: ");
+                            int floorNum1 = scanner.nextInt();
+                            System.out.print("Enter number of cleaners for this room: ");
+                            int roomCleaner1 = scanner.nextInt();
+                            System.out.println("Enter room description in one line: ");
+                            String nothing20 = scanner.nextLine();
+                            String roomDesc1 = scanner.nextLine();
+                            room = new Room(roomNum1, floorNum1, roomDesc1, manager, roomCleaner1);
+                            if (roomSingleLinkedList.remove(room).equals(room))
+                                System.out.println("A room have been deleted from the list successfully.");
+                            else
+                                System.out.println("Failed to delete a room from the list successfully.");
+                        }
+                    }
+                    else {
+                        System.out.println("Access Denied!");
+                        System.out.println("You need to be a manager to access this feature.");
+                    }
+                }
+                case 15 -> {
+                    System.out.println("Enter your ID: ");
+                    long managerID2 = scanner.nextLong();
+                    if (manager.getID() == managerID2){
+                        System.out.println("Do you have internet or not?");
+                        String answering = scanner.next();
+                        if (answering.equalsIgnoreCase("yes") || answering.equalsIgnoreCase("yeah") || answering.equalsIgnoreCase("ya")){
+                            boolean founder = false;
+                            System.out.print("Enter the name of the internet: ");
+                            String netName = scanner.nextLine();
+                            for (int i = 0; i < internetKWLinkedList.size(); i++)
+                                if (internetKWLinkedList.get(i).getName().compareTo(netName) == 0){
+                                    founder = true;
+                                    internet = internetKWLinkedList.get(i);
+                                    break;
+                                }
+                            if (founder){
+                                System.out.print("Enter room number: ");
+                                int roomNum2 = scanner.nextInt();
+                                System.out.print("Enter floor number: ");
+                                int floorNum2 = scanner.nextInt();
+                                System.out.print("Enter number of cleaners for this room: ");
+                                int roomCleaner2 = scanner.nextInt();
+                                System.out.println("Enter room description in one line: ");
+                                String nothing20 = scanner.nextLine();
+                                String roomDesc2 = scanner.nextLine();
+                                room = new Room(roomNum2, floorNum2, roomDesc2, internet.getName(), internet.getPasswordType(), internet.getPassword(), internet.getIpType(), internet.getIpAddress(), internet.getProvider(), internet.getOwner(), roomCleaner2, manager);
+                                int index3 = roomSingleLinkedList.search(room);
+                                if (index3 > -1) {
+                                    System.out.println("The room is found in the list at index " + index3);
+                                    System.out.println("Would you like to edit your network?");
+                                    System.out.print("Answer: ");
+                                    String answerer = scanner.next();
+                                    if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
+                                        System.out.print("Enter internet name: ");
+                                        String internetName5 = scanner.nextLine();
+                                        System.out.print("Enter internet password type: ");
+                                        String internetPassType5 = scanner.next();
+                                        System.out.print("Enter internet password: ");
+                                        String internetPass5 = scanner.nextLine();
+                                        System.out.print("Enter internet ip address: ");
+                                        String internetAddress5 = scanner.next();
+                                        System.out.print("Enter internet ip type: ");
+                                        String internetIPType5 = scanner.next();
+                                        Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
+                                        System.out.print("Enter internet provider name: ");
+                                        String providerName5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider phone number: ");
+                                        String providerPhone5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider email: ");
+                                        String providerEmail5 = scanner.next();
+                                        System.out.print("Enter internet provider ID: ");
+                                        long providerID5 = scanner.nextLong();
+                                        System.out.println("How much money does the provider have?");
+                                        System.out.print("Answer: ");
+                                        float providerMoney5 = scanner.nextFloat();
+                                        System.out.print("Enter internet provider birthDay: ");
+                                        int providerDay5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider birthMonth: ");
+                                        int providerMonth5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider birthYear: ");
+                                        int providerYear5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider house number: ");
+                                        int providerHouse5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider road number: ");
+                                        int providerRoad5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider block number: ");
+                                        int providerBlock5 = scanner.nextInt();
+                                        System.out.print("Enter internet provider area: ");
+                                        String nothing22 = scanner.nextLine();
+                                        String providerArea5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider state: ");
+                                        String providerState5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider region: ");
+                                        String providerRegion5 = scanner.nextLine();
+                                        System.out.print("Enter internet provider continent: ");
+                                        String providerContinent5 = scanner.nextLine();
+                                        System.out.println("Enter internet provider country: ");
+                                        String providerCountry5 = scanner.nextLine();
+                                        Person provider = new Person(providerName5, providerPhone5, providerEmail5, providerID5, providerMoney5, providerDay5, providerMonth5, providerYear5, providerHouse5, providerRoad5, providerBlock5, providerArea5, providerState5, providerRegion5, providerContinent5, providerCountry5);
+                                        Room backup2 = room;
+                                        room.setNetworkInformation(internetName5, internetPassType5, internetPass5, internetIPType5, internetAddress5, provider, roomHandler);
+                                        roomSingleLinkedList.set(roomSingleLinkedList.indexOf(backup2), room);
+                                        System.out.println("The room internet has been changed.");
+                                    }
+                                    else
+                                        System.out.println("Thank you for searching for a room from the list anyways!");
+                                }
+                                else
+                                    System.out.println("Cannot find the room from the list.");
+                            }
+                            else {
+                                System.out.print("Enter room number: ");
+                                int roomNum3 = scanner.nextInt();
+                                System.out.print("Enter floor number: ");
+                                int floorNum3 = scanner.nextInt();
+                                System.out.print("Enter number of cleaners for this room: ");
+                                int roomCleaner3 = scanner.nextInt();
+                                System.out.println("Enter room description in one line: ");
+                                String nothing20 = scanner.nextLine();
+                                String roomDesc3 = scanner.nextLine();
+                                System.out.print("Enter internet name: ");
+                                String internetName5 = scanner.nextLine();
+                                System.out.print("Enter internet password type: ");
+                                String internetPassType5 = scanner.next();
+                                System.out.print("Enter internet password: ");
+                                String internetPass5 = scanner.nextLine();
+                                System.out.print("Enter internet ip address: ");
+                                String internetAddress5 = scanner.next();
+                                System.out.print("Enter internet ip type: ");
+                                String internetIPType5 = scanner.next();
+                                Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
+                                System.out.print("Enter internet provider name: ");
+                                String providerName5 = scanner.nextLine();
+                                System.out.print("Enter internet provider phone number: ");
+                                String providerPhone5 = scanner.nextLine();
+                                System.out.print("Enter internet provider email: ");
+                                String providerEmail5 = scanner.next();
+                                System.out.print("Enter internet provider ID: ");
+                                long providerID5 = scanner.nextLong();
+                                System.out.println("How much money does the provider have?");
+                                System.out.print("Answer: ");
+                                float providerMoney5 = scanner.nextFloat();
+                                System.out.print("Enter internet provider birthDay: ");
+                                int providerDay5 = scanner.nextInt();
+                                System.out.print("Enter internet provider birthMonth: ");
+                                int providerMonth5 = scanner.nextInt();
+                                System.out.print("Enter internet provider birthYear: ");
+                                int providerYear5 = scanner.nextInt();
+                                System.out.print("Enter internet provider house number: ");
+                                int providerHouse5 = scanner.nextInt();
+                                System.out.print("Enter internet provider road number: ");
+                                int providerRoad5 = scanner.nextInt();
+                                System.out.print("Enter internet provider block number: ");
+                                int providerBlock5 = scanner.nextInt();
+                                System.out.print("Enter internet provider area: ");
+                                String nothing22 = scanner.nextLine();
+                                String providerArea5 = scanner.nextLine();
+                                System.out.print("Enter internet provider state: ");
+                                String providerState5 = scanner.nextLine();
+                                System.out.print("Enter internet provider region: ");
+                                String providerRegion5 = scanner.nextLine();
+                                System.out.print("Enter internet provider continent: ");
+                                String providerContinent5 = scanner.nextLine();
+                                System.out.println("Enter internet provider country: ");
+                                String providerCountry5 = scanner.nextLine();
+                                Person provider = new Person(providerName5, providerPhone5, providerEmail5, providerID5, providerMoney5, providerDay5, providerMonth5, providerYear5, providerHouse5, providerRoad5, providerBlock5, providerArea5, providerState5, providerRegion5, providerContinent5, providerCountry5);
+                                room = new Room(roomNum3, floorNum3, roomDesc3, internetName5, internetPassType5, internetPass5, internetIPType5, internetAddress5, provider, roomHandler, roomCleaner3, manager);
+                                int index2 = roomSingleLinkedList.search(room);
+                                if (index2 > -1)
+                                    System.out.println("The room is found in the list at index "+index2);
+                                else
+                                    System.out.println("Cannot find the room from the list.");
+                            }
+                        }
+                        else {
+                            System.out.print("Enter room number: ");
+                            int roomNum1 = scanner.nextInt();
+                            System.out.print("Enter floor number: ");
+                            int floorNum1 = scanner.nextInt();
+                            System.out.print("Enter number of cleaners for this room: ");
+                            int roomCleaner1 = scanner.nextInt();
+                            System.out.println("Enter room description in one line: ");
+                            String nothing20 = scanner.nextLine();
+                            String roomDesc1 = scanner.nextLine();
+                            room = new Room(roomNum1, floorNum1, roomDesc1, manager, roomCleaner1);
+                            int index1 = roomSingleLinkedList.search(room);
+                            if (index1 > -1)
+                                System.out.println("The room is found in the list at index "+index1);
+                            else
+                                System.out.println("Cannot find the room from the list.");
+                        }
+                    }
+                    else {
+                        System.out.println("Access Denied!");
+                        System.out.println("You need to be a manager to access this feature.");
+                    }
+                }
                 case 16 -> {
                     System.out.print("Enter the index of room list: ");
                     int roomIndex = scanner.nextInt();
@@ -1321,6 +1842,7 @@ public class MyMain {
                                 if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
                                     float realMoney = customer.getMoney() - (float)numOfStay;
                                     customer.setMoney(realMoney);
+                                    room.setOwner(customer.getName(), customer.getPhone(), customer.getEmail(), customer.getID(), customer.getMoney(), customer.getBirthDate().getDay(), customer.getBirthDate().getMonth(), customer.getBirthDate().getYear(), customer.getAddress().getHouse(), customer.getAddress().getRoad(), customer.getAddress().getBlock(), customer.getAddress().getArea(), customer.getAddress().getState(), customer.getAddress().getRegion(), customer.getAddress().getContinent(), customer.getAddress().getCountry(), room.getRoomNumber(), room.getFloorNumber(), room.getDescription());
                                     System.out.println("Thank you for paying for the room!");
                                     bookings.push(customer.checkIn(room.getRoomNumber(), room.getFloorNumber(), room.getDescription()));
                                     removedRooms.add(roomSingleLinkedList.remove(room));
@@ -1344,7 +1866,7 @@ public class MyMain {
                                 }
                             if (found1){
                                 int getter;
-                                customer.checkout(room);
+                                System.out.println("Checkout status: "+customer.checkout(room));
                                 String finder = bookings.peek();
                                 String[] splitter = finder.split(" ");
                                 for (int j = 0; j < splitter.length; j++) {
@@ -1371,6 +1893,7 @@ public class MyMain {
                                     pendingCheckoutIndex--;
                                 }
                                 roomSingleLinkedList.add(room);
+                                room.owner = new Customer();
                                 System.out.println("You have been checked out from your room");
                             }
                         }

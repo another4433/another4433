@@ -30,21 +30,22 @@ public class Room {
         this.manager = manager;
     }
 
-    public Room(int roomNumber, int floorNumber, String description, String networkName, String passwordType, String password, String ipType, String ipAddress, Person provider, Person owner, int size){
+    public Room(int roomNumber, int floorNumber, String description, String networkName, String passwordType, String password, String ipType, String ipAddress, Person provider, Person owner, int size, Manager manager){
         this.roomNumber = Math.max(roomNumber, 0);
         this.floorNumber = Math.max(floorNumber, 0);
         this.description = description;
         this.networkInformation = new Internet(networkName, passwordType, password, ipAddress, ipType, provider, owner);
         this.manager = new Manager();
         this.cleanerKWArrayList = new KWArrayList<>(size);
+        this.manager = manager;
     }
 
-    public Room(int roomNumber, int floorNumber, String description, Manager manager, int size){
+    public Room(int roomNumber, int floorNumber, String description, Manager manager, int cleanerSize){
         this.roomNumber = Math.max(roomNumber, 0);
         this.floorNumber = Math.max(floorNumber, 0);
         this.description = description;
         this.manager = manager;
-        this.cleanerKWArrayList = new KWArrayList<>(size);
+        this.cleanerKWArrayList = new KWArrayList<>(cleanerSize);
     }
 
     public Internet getNetworkInformation() {
@@ -57,7 +58,6 @@ public class Room {
         getNetworkInformation().setIpType(ipType);
         getNetworkInformation().setOwner(owner);
         getNetworkInformation().setProvider(provider);
-        getNetworkInformation().setOwner(owner);
         getNetworkInformation().setPassword(password);
         getNetworkInformation().setPasswordType(passwordType);
     }
