@@ -25,6 +25,10 @@ public class Customer extends Person {
         setPhone(phone);
     }
 
+    public Customer(String name, String phone, String email, long id, float money, int day, int month, int year, int house, int road, int block, String area, String state, String region, String continent, String country){
+        super(name, phone, email, id, money, day, month, year, house, road, block, area, state, region, continent, country);
+    }
+
     public Room getRoom() {
         return room;
     }

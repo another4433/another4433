@@ -1249,6 +1249,191 @@ public class MyMain {
                     }
                 }
                 case 3 -> restaurant.display();
+                case 4 -> {
+                    System.out.print("Enter customer name: ");
+                    String nothing23 = scanner.nextLine();
+                    String customerName1 = scanner.nextLine();
+                    System.out.print("Enter customer phone number: ");
+                    String customerPhone1 = scanner.nextLine();
+                    System.out.print("Enter customer email: ");
+                    String customerEmail1 = scanner.next();
+                    System.out.print("Enter customer ID: ");
+                    long customerID1 = scanner.nextLong();
+                    System.out.println("How much money does the customer have? ");
+                    System.out.print("Answer: ");
+                    float customerMoney1 = scanner.nextFloat();
+                    System.out.print("Enter customer birthDay: ");
+                    int customerDay1 = scanner.nextInt();
+                    System.out.print("Enter customer birthMonth: ");
+                    int customerMonth1 = scanner.nextInt();
+                    System.out.print("Enter customer birthYear: ");
+                    int customerYear1 = scanner.nextInt();
+                    System.out.print("Enter customer house number: ");
+                    int customerHouse1 = scanner.nextInt();
+                    System.out.print("Enter customer road number: ");
+                    int customerRoad1 = scanner.nextInt();
+                    System.out.print("Enter customer block number: ");
+                    int customerBlock1 = scanner.nextInt();
+                    System.out.print("Enter customer area: ");
+                    String nothing24 = scanner.nextLine();
+                    String customerArea1 = scanner.nextLine();
+                    System.out.print("Enter customer state: ");
+                    String customerState1 = scanner.nextLine();
+                    System.out.print("Enter customer region: ");
+                    String customerRegion1 = scanner.nextLine();
+                    System.out.print("Enter customer continent: ");
+                    String customerContinent1 = scanner.nextLine();
+                    System.out.print("Enter customer country: ");
+                    String customerCountry1 = scanner.nextLine();
+                    person = new Person(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    date = new Date(customerDay1, customerMonth1, customerYear1);
+                    address = new Address(customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    peopleRecords.add(person);
+                    addressLinkedHashing.add(address);
+                    dateArrayHashing.add(date);
+                    System.out.println("Does the customer have a room? ");
+                    System.out.print("Answer: ");
+                    String theAnswer = scanner.next();
+                    if (theAnswer.equalsIgnoreCase("yes") || theAnswer.equalsIgnoreCase("yeah") || theAnswer.equalsIgnoreCase("ya")){
+                        System.out.print("Enter room number: ");
+                        int roomNumber5 = scanner.nextInt();
+                        System.out.print("Enter floor number: ");
+                        int floorNumber5 = scanner.nextInt();
+                        System.out.println("Enter room description in one line: ");
+                        String nothing25 = scanner.nextLine();
+                        String roomDesc5 = scanner.nextLine();
+                        customer = new Customer(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1,customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1, roomNumber5, floorNumber5, roomDesc5);
+                    }
+                    else
+                        customer = new Customer(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    customerKWLinkedList.add(customer);
+                    System.out.println("A customer have been added to the list.");
+                }
+                case 5 -> {
+                    System.out.print("Enter customer name: ");
+                    String nothing23 = scanner.nextLine();
+                    String customerName1 = scanner.nextLine();
+                    System.out.print("Enter customer phone number: ");
+                    String customerPhone1 = scanner.nextLine();
+                    System.out.print("Enter customer email: ");
+                    String customerEmail1 = scanner.next();
+                    System.out.print("Enter customer ID: ");
+                    long customerID1 = scanner.nextLong();
+                    System.out.println("How much money does the customer have? ");
+                    System.out.print("Answer: ");
+                    float customerMoney1 = scanner.nextFloat();
+                    System.out.print("Enter customer birthDay: ");
+                    int customerDay1 = scanner.nextInt();
+                    System.out.print("Enter customer birthMonth: ");
+                    int customerMonth1 = scanner.nextInt();
+                    System.out.print("Enter customer birthYear: ");
+                    int customerYear1 = scanner.nextInt();
+                    System.out.print("Enter customer house number: ");
+                    int customerHouse1 = scanner.nextInt();
+                    System.out.print("Enter customer road number: ");
+                    int customerRoad1 = scanner.nextInt();
+                    System.out.print("Enter customer block number: ");
+                    int customerBlock1 = scanner.nextInt();
+                    System.out.print("Enter customer area: ");
+                    String nothing24 = scanner.nextLine();
+                    String customerArea1 = scanner.nextLine();
+                    System.out.print("Enter customer state: ");
+                    String customerState1 = scanner.nextLine();
+                    System.out.print("Enter customer region: ");
+                    String customerRegion1 = scanner.nextLine();
+                    System.out.print("Enter customer continent: ");
+                    String customerContinent1 = scanner.nextLine();
+                    System.out.print("Enter customer country: ");
+                    String customerCountry1 = scanner.nextLine();
+                    person = new Person(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    date = new Date(customerDay1, customerMonth1, customerYear1);
+                    address = new Address(customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    peopleRecords.add(person);
+                    addressLinkedHashing.add(address);
+                    dateArrayHashing.add(date);
+                    System.out.println("Does the customer have a room? ");
+                    System.out.print("Answer: ");
+                    String theAnswer = scanner.next();
+                    if (theAnswer.equalsIgnoreCase("yes") || theAnswer.equalsIgnoreCase("yeah") || theAnswer.equalsIgnoreCase("ya")){
+                        System.out.print("Enter room number: ");
+                        int roomNumber5 = scanner.nextInt();
+                        System.out.print("Enter floor number: ");
+                        int floorNumber5 = scanner.nextInt();
+                        System.out.println("Enter room description in one line: ");
+                        String nothing25 = scanner.nextLine();
+                        String roomDesc5 = scanner.nextLine();
+                        customer = new Customer(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1,customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1, roomNumber5, floorNumber5, roomDesc5);
+                    }
+                    else
+                        customer = new Customer(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    if (customerKWLinkedList.remove(customer).equals(customer))
+                        System.out.println("A customer have been successfully deleted from the list.");
+                    else
+                        System.out.println("Failed to delete a customer from the list successfully!");
+                }
+                case 6 -> {
+                    System.out.print("Enter customer name: ");
+                    String nothing23 = scanner.nextLine();
+                    String customerName1 = scanner.nextLine();
+                    System.out.print("Enter customer phone number: ");
+                    String customerPhone1 = scanner.nextLine();
+                    System.out.print("Enter customer email: ");
+                    String customerEmail1 = scanner.next();
+                    System.out.print("Enter customer ID: ");
+                    long customerID1 = scanner.nextLong();
+                    System.out.println("How much money does the customer have? ");
+                    System.out.print("Answer: ");
+                    float customerMoney1 = scanner.nextFloat();
+                    System.out.print("Enter customer birthDay: ");
+                    int customerDay1 = scanner.nextInt();
+                    System.out.print("Enter customer birthMonth: ");
+                    int customerMonth1 = scanner.nextInt();
+                    System.out.print("Enter customer birthYear: ");
+                    int customerYear1 = scanner.nextInt();
+                    System.out.print("Enter customer house number: ");
+                    int customerHouse1 = scanner.nextInt();
+                    System.out.print("Enter customer road number: ");
+                    int customerRoad1 = scanner.nextInt();
+                    System.out.print("Enter customer block number: ");
+                    int customerBlock1 = scanner.nextInt();
+                    System.out.print("Enter customer area: ");
+                    String nothing24 = scanner.nextLine();
+                    String customerArea1 = scanner.nextLine();
+                    System.out.print("Enter customer state: ");
+                    String customerState1 = scanner.nextLine();
+                    System.out.print("Enter customer region: ");
+                    String customerRegion1 = scanner.nextLine();
+                    System.out.print("Enter customer continent: ");
+                    String customerContinent1 = scanner.nextLine();
+                    System.out.print("Enter customer country: ");
+                    String customerCountry1 = scanner.nextLine();
+                    person = new Person(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    date = new Date(customerDay1, customerMonth1, customerYear1);
+                    address = new Address(customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    peopleRecords.add(person);
+                    addressLinkedHashing.add(address);
+                    dateArrayHashing.add(date);
+                    System.out.println("Does the customer have a room? ");
+                    System.out.print("Answer: ");
+                    String theAnswer = scanner.next();
+                    if (theAnswer.equalsIgnoreCase("yes") || theAnswer.equalsIgnoreCase("yeah") || theAnswer.equalsIgnoreCase("ya")){
+                        System.out.print("Enter room number: ");
+                        int roomNumber5 = scanner.nextInt();
+                        System.out.print("Enter floor number: ");
+                        int floorNumber5 = scanner.nextInt();
+                        System.out.println("Enter room description in one line: ");
+                        String nothing25 = scanner.nextLine();
+                        String roomDesc5 = scanner.nextLine();
+                        customer = new Customer(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1,customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1, roomNumber5, floorNumber5, roomDesc5);
+                    }
+                    else
+                        customer = new Customer(customerName1, customerPhone1, customerEmail1, customerID1, customerMoney1, customerDay1, customerMonth1, customerYear1, customerHouse1, customerRoad1, customerBlock1, customerArea1, customerState1, customerRegion1, customerContinent1, customerCountry1);
+                    int customerIndex = customerKWLinkedList.search(customer);
+                    if (customerIndex > -1)
+                        System.out.println("The customer is found in the list at index "+customerIndex);
+                    else
+                        System.out.println("Cannot find the customer from the list.");
+                }
                 case 7 -> {
                     System.out.print("Enter your ID: ");
                     long managerID = scanner.nextLong();
