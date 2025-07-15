@@ -5,30 +5,39 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            LWLinkedList<String> list = new LWLinkedList<String>();
+            MWArrayList<Int32> list2 = new MWArrayList<Int32>();
+            list.add("Hello");
+            list.add("World");
+            list2.add(0);
+            list2.add(1);
+            list2.add(2);
+            list.printList();
+            list2.printList();
         }
     }
 
-    public class LWLinkedList<E>
+    public class LWLinkedList<TE>
     {
-        public class TheNode<E>
+        public class TheNode<TE>
         {
-            public E theData;
-            public TheNode<E>? next, previous;
+            public TE theData;
+            public TheNode<TE>? next, previous;
 
-            public TheNode(E data)
+            public TheNode(TE data)
             {
                 theData = data;
                 next = null;
                 previous = null;
             }
 
-            public E getData()
+            public TE getData()
             {
                 return theData;
             }
         }
 
-        public TheNode<E>? head, tail;
+        public TheNode<TE>? head, tail;
         int size;
 
         public LWLinkedList()
@@ -38,9 +47,9 @@
             size = 0;
         }
 
-        public void add(E data)
+        public void add(TE data)
         {
-            TheNode<E> newNode = new TheNode<E>(data);
+            TheNode<TE> newNode = new TheNode<TE>(data);
             if (head == null)
             {
                 head = newNode;
@@ -54,9 +63,9 @@
             }
             size++;
         }
-        public void remove(E data)
+        public void remove(TE data)
         {
-            TheNode<E>? current = head;
+            TheNode<TE>? current = head;
             while (current != null)
             {
                 if (current.theData!.Equals(data))
@@ -97,9 +106,9 @@
             tail = null;
             size = 0;
         }
-        public bool contains(E data)
+        public bool contains(TE data)
         {
-            TheNode<E>? current = head;
+            TheNode<TE>? current = head;
             while (current != null)
             {
                 if (current.theData!.Equals(data))
@@ -112,7 +121,7 @@
         }
         public void printList()
         {
-            TheNode<E>? current = head;
+            TheNode<TE>? current = head;
             while (current != null)
             {
                 Console.Write(current.theData + " ");
@@ -120,9 +129,9 @@
             }
             Console.WriteLine();
         }
-        public void replace(E oldData, E newData)
+        public void replace(TE oldData, TE newData)
         {
-            TheNode<E>? current = head;
+            TheNode<TE>? current = head;
             while (current != null)
             {
                 if (current.theData!.Equals(oldData))
@@ -133,30 +142,30 @@
                 current = current.next;
             }
         }
-        public E? getFirst()
+        public TE getFirst()
         {
             return head!.getData();
         }
-        public E? getLast()
+        public TE getLast()
         {
             return tail!.getData();
         }
-        public E? get(int index)
+        public TE get(int index)
         {
             if (index < 0 || index >= size)
             {
                 throw new ArgumentOutOfRangeException(nameof(index), "Index out of bounds");
             }
-            TheNode<E>? current = head;
+            TheNode<TE>? current = head;
             for (int i = 0; i < index; i++)
             {
                 current = current!.next;
             }
             return current!.getData();
         }
-        public int search(E item)
+        public int search(TE item)
         {
-            TheNode<E>? current = head;
+            TheNode<TE>? current = head;
             int index = 0;
             while (current != null)
             {
@@ -169,13 +178,13 @@
             }
             return -1; // Item not found
         }
-        public void insert(E item, int loc)
+        public void insert(TE item, int loc)
         {
             if (loc < 0 || loc > size)
             {
                 throw new ArgumentOutOfRangeException(nameof(loc), "Index out of bounds");
             }
-            TheNode<E> newNode = new TheNode<E>(item);
+            TheNode<TE> newNode = new TheNode<TE>(item);
             if (loc == 0)
             {
                 newNode.next = head;
@@ -184,10 +193,7 @@
                     head.previous = newNode;
                 }
                 head = newNode;
-                if (tail == null)
-                {
-                    tail = newNode; // If the list was empty, set tail to the new node
-                }
+                tail ??= newNode;
             }
             else if (loc == size)
             {
@@ -197,7 +203,7 @@
             }
             else
             {
-                TheNode<E>? current = head;
+                TheNode<TE>? current = head;
                 for (int i = 0; i < loc - 1; i++)
                 {
                     current = current!.next;
@@ -213,21 +219,21 @@
             size++;
         }
     }
-    public class MWArrayList<E>
+    public class MWArrayList<TE>
     {
         private int size, capacity;
-        private E[] elements;
+        private TE[] elements;
 
         public MWArrayList(int initialCapacity = 10)
         {
             capacity = initialCapacity;
             size = 0;
-            elements = new E[capacity];
+            elements = new TE[capacity];
         }
         public void resize()
         {
             capacity *= 2;
-            E[] newElements = new E[capacity];
+            TE[] newElements = new TE[capacity];
             for (int i = 0; i < size; i++)
             {
                 newElements[i] = elements[i];
@@ -242,7 +248,7 @@
         {
             return capacity;
         }
-        public void add(E item)
+        public void add(TE item)
         {
             if (getSize() == getCapacity())
             {
@@ -251,7 +257,7 @@
             elements[size] = item;
             size++;
         }
-        public void remove(E item)
+        public void remove(TE item)
         {
             int index = search(item);
             if (index != -1)
@@ -260,11 +266,11 @@
                 {
                     elements[i] = elements[i + 1];
                 }
-                elements[size - 1] = default(E)!; // Clear the last element
+                elements[size - 1] = default(TE)!; // Clear the last element
                 size--;
             }
         }
-        public int search(E item)
+        public int search(TE item)
         {
             for (int i = 0; i < size; i++)
             {
@@ -275,7 +281,7 @@
             }
             return -1; // Item not found
         }
-        public E get(int index)
+        public TE get(int index)
         {
             if (index < 0 || index >= size)
             {
@@ -283,7 +289,7 @@
             }
             return elements[index]!;
         }
-        public void replace(E oldItem, E newItem)
+        public void replace(TE oldItem, TE newItem)
         {
             int index = search(oldItem);
             if (index != -1)
@@ -291,14 +297,14 @@
                 elements[index] = newItem;
             }
         }
-        public bool contains(E item)
+        public bool contains(TE item)
         {
             return search(item) != -1;
         }
         public void clear()
         {
             size = 0;
-            elements = new E[capacity]; // Reset the array to its initial capacity
+            elements = new TE[capacity]; // Reset the array to its initial capacity
         }
         public bool isEmpty()
         {
@@ -313,10 +319,10 @@
             Console.WriteLine();
         }
     }
-    public class Stack<E>
+    public class Stack<TE>
     {
         int size;
-        MWArrayList<E> list;
+        MWArrayList<TE> list;
         public int getSize()
         {
             return size;
@@ -324,9 +330,9 @@
         public Stack()
         {
             size = -1;
-            list = new MWArrayList<E>();
+            list = new MWArrayList<TE>();
         }
-        public void push(E item)
+        public void push(TE item)
         {
             if (isFull())
             {
@@ -335,13 +341,13 @@
             list.add(item);
             size++;
         }
-        public E pop()
+        public TE pop()
         {
             if (isEmpty())
             {
                 throw new InvalidOperationException("Stack is empty");
             }
-            E item = list.get(size);
+            TE item = list.get(size);
             list.remove(item);
             size--;
             return item;
@@ -350,7 +356,7 @@
         {
             return size == -1;
         }
-        public E peek()
+        public TE peek()
         {
             if (isEmpty())
             {
@@ -368,7 +374,7 @@
             list.printList();
             Console.WriteLine("Top of the stack: " + size);
         }
-        public bool contains(E item)
+        public bool contains(TE item)
         {
             return list.contains(item);
         }
@@ -377,24 +383,25 @@
             return size == list.getCapacity() - 1; // Assuming the stack is full when capacity equals the last index of the list
         }
     }
-    public class Queue<E>
+    public class Queue<TE>
     {
         private int size;
-        private LWLinkedList<E>? list;
-        private LWLinkedList<E>.TheNode<E>? front, rear;
+        private LWLinkedList<TE>? list;
+        private LWLinkedList<TE>.TheNode<TE>? front, rear;
         public Queue()
         {
             size = 0;
-            list = new LWLinkedList<E>();
+            list = new LWLinkedList<TE>();
             front = null;
             rear = null;
         }
-        public void offer(E item)
+        public void offer(TE item)
         {
             list!.add(item);
             if (front == null)
             {
                 front = list.head;
+                rear = list.head;
             }
             else if (front == rear)
             {
@@ -410,13 +417,13 @@
             }
             else
             {
-                LWLinkedList<E>.TheNode<E>? newNode = front;
+                LWLinkedList<TE>.TheNode<TE>? newNode = front;
                 while (newNode!.next != rear)
                 {
                     if (newNode == rear!.previous)
                     {
                         rear!.previous = newNode;
-                        newNode!.next = rear;
+                        newNode.next = rear;
                         break;
                     }
                     else
@@ -425,7 +432,7 @@
                     }
                 }
                 rear = list.tail;
-                newNode = newNode!.next;
+                newNode = newNode.next;
                 rear!.previous = newNode;
                 newNode!.next = rear;
                 while (newNode!.previous != null)
@@ -436,15 +443,15 @@
             }
             size++;
         }
-        public E take()
+        public TE take()
         {
-            E backup = front!.getData();
+            TE backup = front!.getData();
             list!.remove(front!.getData()!);
             front = front.next;
             size--;
             return backup;
         }
-        public E element()
+        public TE element()
         {
             return front!.getData()!;
         }
@@ -470,13 +477,13 @@
             Console.WriteLine("Rear of the queue: " + (rear != null ? rear.getData() : "null"));
         }
     }
-    public class WhatIsATree<E>
+    public class WhatIsATree<TE>
     {
-        public class Node<E>
+        public class Node<TE>
         {
-            public E data;
-            public Node<E>? left, middle, right;
-            public Node(E data)
+            public TE data;
+            public Node<TE>? left, middle, right;
+            public Node(TE data)
             {
                 this.data = data;
                 left = null; 
@@ -484,23 +491,23 @@
                 right = null;
             }
         }
-        public Node<E>? root;
+        public Node<TE>? root;
         public Random random;
-        public WhatIsATree(E rootData)
+        public WhatIsATree(TE rootData)
         {
-            root = new Node<E>(rootData);
+            root = new Node<TE>(rootData);
             random = new Random();
         }
-        public void add(E data)
+        public void add(TE data)
         {
             int selector;
-            Node<E>? newNode = new Node<E>(data);
+            Node<TE> newNode = new Node<TE>(data);
             if (root == null)
             {
                 root = newNode;
                 return;
             }
-            else if (root.left == null && root.middle == null && root.right == null)
+            if (root.left == null && root.middle == null && root.right == null)
             {
                 selector = random.Next(3);
                 if (selector == 0)
@@ -515,17 +522,16 @@
                 {
                     root.right = newNode;
                 }
-                return;
             }
             else
             {
-                Node<E>? child = root;
-                while (child!.left != null && child!.right != null && child!.middle != null)
+                Node<TE>? child = root;
+                while (child.left != null && child.right != null && child.middle != null)
                 {
                     selector = random.Next(3);
                     if (selector == 0)
                     {
-                        if (child!.left != null)
+                        if (child.left != null)
                         {
                             child = child.left;
                         }
@@ -536,11 +542,11 @@
                                 selector = random.Next(3);
                             }
                             while (selector != 0);
-                            if (selector == 1 && child.middle != null)
+                            if (child.middle != null)
                             {
                                 child = child.middle;
                             }
-                            else if (selector == 2 && child.right != null)
+                            else if (child.right != null)
                             {
                                 child = child.right;
                             }
@@ -554,7 +560,7 @@
                     }
                     else if (selector == 1)
                     {
-                        if (child!.middle != null)
+                        if (child.middle != null)
                         {
                             child = child.middle;
                         }
@@ -565,11 +571,11 @@
                                 selector = random.Next(3);
                             }
                             while (selector != 1);
-                            if (selector == 0 && child.left != null)
+                            if (child.left != null)
                             {
                                 child = child.left;
                             }
-                            else if (selector == 2 && root.right != null)
+                            else if (root.right != null)
                             {
                                 child = child.right;
                             }
@@ -583,7 +589,7 @@
                     }
                     else
                     {
-                        if (child!.right != null)
+                        if (child.right != null)
                         {
                             child = child.right;
                         }
@@ -594,11 +600,11 @@
                                 selector = random.Next(3);
                             }
                             while (selector != 2);
-                            if (selector == 0 && child.left != null)
+                            if (child.left != null)
                             {
                                 child = child.left;
                             }
-                            else if (selector == 1 && child.middle != null)
+                            else if (child.middle != null)
                             {
                                 child = child.middle;
                             }
@@ -629,22 +635,17 @@
                 }
             }
         }
-        public void remove(E data)
+        public void remove(TE data)
         {
             if (root == null) return;
             int selector = random.Next(3);
             if (selector == 0)
             {
-                if (root.left == null)
-                {
-                    return;
-                }
-                else
+                if (root.left != null)
                 {
                     if (root.left.data!.Equals(data))
                     {
                         root.left = null; // Remove the left child
-                        return;
                     }
                     else
                     {
@@ -654,16 +655,11 @@
             }
             else if (selector == 1)
             {
-                if (root.middle == null)
-                {
-                    return;
-                }
-                else
+                if (root.middle != null)
                 {
                     if (root.middle.data!.Equals(data))
                     {
                         root.middle = null; // Remove the middle child
-                        return;
                     }
                     else
                     {
@@ -673,16 +669,11 @@
             }
             else if (selector == 2)
             {
-                if (root.right == null)
-                {
-                    return;
-                }
-                else
+                if (root.right != null)
                 {
                     if (root.right.data!.Equals(data))
                     {
                         root.right = null; // Remove the right child
-                        return;
                     }
                     else
                     {
@@ -695,18 +686,18 @@
                 removeHelper(root, data);
             }
         }
-        public bool contains(E data)
+        public bool contains(TE data)
         {
             if (root == null) return false;
             return containsHelper(root, data);
         }
-        private bool containsHelper(Node<E>? node, E data)
+        private bool containsHelper(Node<TE>? node, TE data)
         {
             if (node == null) return false;
             if (node.data!.Equals(data)) return true;
             return containsHelper(node.left, data) || containsHelper(node.middle, data) || containsHelper(node.right, data);
         }
-        private void removeHelper(Node<E>? node, E data)
+        private void removeHelper(Node<TE>? node, TE data)
         {
             if (node == null) return;
             if (node.data!.Equals(data))
@@ -727,7 +718,7 @@
             }
             printTreeHelper(root, 0);
         }
-        private void printTreeHelper(Node<E>? node, int level)
+        private void printTreeHelper(Node<TE>? node, int level)
         {
             if (node == null) return;
             Console.WriteLine(new string(' ', level * 2) + node.data);
