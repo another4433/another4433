@@ -142,7 +142,8 @@ public class MyMain {
                                         System.out.print("Enter provider's block number: ");
                                         int providerBlock1 = scanner.nextInt();
                                         System.out.print("Enter provider's area: ");
-                                        String providerArea1 = scanner.next();
+                                        String nothing40 = scanner.nextLine();
+                                        String providerArea1 = scanner.nextLine();
                                         System.out.print("Enter provider's state: ");
                                         String providerState1 = scanner.nextLine();
                                         System.out.print("Enter provider's region: ");
@@ -157,7 +158,7 @@ public class MyMain {
                                         addressLinkedHashing.add(address);
                                         date = new Date(providerDay1, providerMonth1, providerYear1);
                                         dateArrayHashing.add(date);
-                                        System.out.println("Provider have been added");
+                                        System.out.println("Provider have been added.");
                                     }
                                     case 2 -> {
                                         System.out.println("Enter the index of the list of providers: ");
@@ -196,7 +197,8 @@ public class MyMain {
                                         System.out.print("Enter provider's block number: ");
                                         int providerBlock1 = scanner.nextInt();
                                         System.out.print("Enter provider's area: ");
-                                        String providerArea1 = scanner.next();
+                                        String nothing41 = scanner.nextLine();
+                                        String providerArea1 = scanner.nextLine();
                                         System.out.print("Enter provider's state: ");
                                         String providerState1 = scanner.nextLine();
                                         System.out.print("Enter provider's region: ");
@@ -236,7 +238,8 @@ public class MyMain {
                                         System.out.print("Enter owner's block number: ");
                                         int ownerBlock1 = scanner.nextInt();
                                         System.out.print("Enter owner's area: ");
-                                        String ownerArea1 = scanner.next();
+                                        String nothing42 = scanner.nextLine();
+                                        String ownerArea1 = scanner.nextLine();
                                         System.out.print("Enter owner's state: ");
                                         String ownerState1 = scanner.nextLine();
                                         System.out.print("Enter owner's region: ");
@@ -274,7 +277,7 @@ public class MyMain {
                                 String nothing6 = scanner.nextLine();
                                 String internetName1 = scanner.nextLine();
                                 System.out.print("Enter internet password type: ");
-                                String internetPassType1 = scanner.next();
+                                String internetPassType1 = scanner.nextLine();
                                 System.out.print("Enter internet password: ");
                                 String internetPass1 = scanner.nextLine();
                                 System.out.print("Enter internet ip address: ");
@@ -319,7 +322,7 @@ public class MyMain {
                     }
                 }
                 case 2 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     boolean flag = false;
                     for (int i = 0; i < waiterSingleLinkedList.size(); i++)
@@ -378,13 +381,13 @@ public class MyMain {
                                 String nothing6 = scanner.nextLine();
                                 String internetName2 = scanner.nextLine();
                                 System.out.print("Enter internet password type: ");
-                                String internetPassType2 = scanner.next();
+                                String internetPassType2 = scanner.nextLine();
                                 System.out.print("Enter internet password: ");
                                 String internetPass2 = scanner.nextLine();
                                 System.out.print("Enter internet ip address: ");
-                                String internetAddress2 = scanner.next();
+                                String internetAddress2 = scanner.nextLine();
                                 System.out.print("Enter internet ip type: ");
-                                String internetIPType2 = scanner.next();
+                                String internetIPType2 = scanner.nextLine();
                                 System.out.print("Enter provider's name: ");
                                 String providerName1 = scanner.nextLine();
                                 System.out.print("Enter provider's phone number: ");
@@ -409,7 +412,8 @@ public class MyMain {
                                 System.out.print("Enter provider's block number: ");
                                 int providerBlock1 = scanner.nextInt();
                                 System.out.print("Enter provider's area: ");
-                                String providerArea1 = scanner.next();
+                                String nothing44 = scanner.nextLine();
+                                String providerArea1 = scanner.nextLine();
                                 System.out.print("Enter provider's state: ");
                                 String providerState1 = scanner.nextLine();
                                 System.out.print("Enter provider's region: ");
@@ -449,7 +453,8 @@ public class MyMain {
                                 System.out.print("Enter owner's block number: ");
                                 int ownerBlock1 = scanner.nextInt();
                                 System.out.print("Enter owner's area: ");
-                                String ownerArea1 = scanner.next();
+                                String nothing45 = scanner.nextLine();
+                                String ownerArea1 = scanner.nextLine();
                                 System.out.print("Enter owner's state: ");
                                 String ownerState1 = scanner.nextLine();
                                 System.out.print("Enter owner's region: ");
@@ -557,7 +562,7 @@ public class MyMain {
                                 System.out.print("Enter waiter internet password: ");
                                 String waiterNetPass1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet IP address: ");
-                                String waiterNetIP1 = scanner.next();
+                                String waiterNetIP1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet IP type: ");
                                 String waiterNetIPType1 = scanner.nextLine();
                                 System.out.print("Enter internet provider name: ");
@@ -650,11 +655,11 @@ public class MyMain {
                                 System.out.print("Enter waiter internet name: ");
                                 String waiterNetName1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet password type: ");
-                                String waiterNetPassType1 = scanner.next();
+                                String waiterNetPassType1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet password: ");
                                 String waiterNetPass1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet IP address: ");
-                                String waiterNetIP1 = scanner.next();
+                                String waiterNetIP1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet IP type: ");
                                 String waiterNetIPType1 = scanner.nextLine();
                                 System.out.print("Enter internet provider name: ");
@@ -751,11 +756,11 @@ public class MyMain {
                                 System.out.print("Enter waiter internet name: ");
                                 String waiterNetName1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet password type: ");
-                                String waiterNetPassType1 = scanner.next();
+                                String waiterNetPassType1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet password: ");
                                 String waiterNetPass1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet IP address: ");
-                                String waiterNetIP1 = scanner.next();
+                                String waiterNetIP1 = scanner.nextLine();
                                 System.out.print("Enter waiter internet IP type: ");
                                 String waiterNetIPType1 = scanner.nextLine();
                                 System.out.print("Enter internet provider name: ");
@@ -813,6 +818,199 @@ public class MyMain {
                                 System.out.println("Information found in that list: ");
                                 System.out.println(restaurant.getWaiter(findingWaiter));
                             }
+                            case 13 -> {
+                                System.out.print("Enter old waiter name: ");
+                                String nothing54 = scanner.nextLine();
+                                String oldWaiterName = scanner.nextLine();
+                                System.out.print("Enter old waiter phone number: ");
+                                String oldWaiterPhone = scanner.nextLine();
+                                System.out.print("Enter old waiter email: ");
+                                String oldWaiterEmail = scanner.next();
+                                System.out.print("Enter old waiter ID: ");
+                                long oldWaiterID = scanner.nextLong();
+                                System.out.println("How much money does the waiter have?");
+                                System.out.print("Answer: ");
+                                float oldWaiterMoney = scanner.nextFloat();
+                                System.out.print("Enter old waiter birthDay: ");
+                                int oldWaiterDay = scanner.nextInt();
+                                System.out.print("Enter old waiter birthMonth: ");
+                                int oldWaiterMonth = scanner.nextInt();
+                                System.out.print("Enter old waiter birthYear: ");
+                                int oldWaiterYear = scanner.nextInt();
+                                System.out.print("Enter old waiter house: ");
+                                int oldWaiterHouse = scanner.nextInt();
+                                System.out.print("Enter old waiter road: ");
+                                int oldWaiterRoad = scanner.nextInt();
+                                System.out.print("Enter old waiter block: ");
+                                int oldWaiterBlock = scanner.nextInt();
+                                System.out.print("Enter old waiter area: ");
+                                String nothing55 = scanner.nextLine();
+                                String oldWaiterArea = scanner.nextLine();
+                                System.out.print("Enter old waiter state: ");
+                                String oldWaiterState = scanner.nextLine();
+                                System.out.print("Enter old waiter region: ");
+                                String oldWaiterRegion = scanner.nextLine();
+                                System.out.print("Enter old waiter continent: ");
+                                String oldWaiterContinent = scanner.nextLine();
+                                System.out.print("Enter old waiter country: ");
+                                String oldWaiterCountry = scanner.nextLine();
+                                Person oldWaiterPerson = new Person(oldWaiterName, oldWaiterPhone, oldWaiterEmail, oldWaiterID, oldWaiterMoney, oldWaiterDay, oldWaiterMonth, oldWaiterYear, oldWaiterHouse, oldWaiterRoad, oldWaiterBlock, oldWaiterArea, oldWaiterState, oldWaiterRegion, oldWaiterContinent, oldWaiterCountry);
+                                Date oldWaiterDate = new Date(oldWaiterDay, oldWaiterMonth, oldWaiterYear);
+                                Address oldWaiterAddress = new Address(oldWaiterHouse, oldWaiterRoad, oldWaiterBlock, oldWaiterArea, oldWaiterState, oldWaiterRegion, oldWaiterContinent, oldWaiterCountry);
+                                peopleRecords.addFirst(oldWaiterPerson);
+                                dateArrayHashing.add(oldWaiterDate);
+                                addressLinkedHashing.add(oldWaiterAddress);
+                                System.out.print("Enter old internet name: ");
+                                String oldNetName = scanner.nextLine();
+                                System.out.print("Enter old internet password type: ");
+                                String oldNetPassType = scanner.nextLine();
+                                System.out.print("Enter old internet password: ");
+                                String oldNetPass = scanner.nextLine();
+                                System.out.print("Enter old internet IP address: ");
+                                String oldNetIP = scanner.nextLine();
+                                System.out.print("Enter old internet IP type: ");
+                                String oldNetIPType = scanner.nextLine();
+                                System.out.print("Enter old internet provider name: ");
+                                String oldProviderName = scanner.nextLine();
+                                System.out.print("Enter old internet provider phone number: ");
+                                String oldProviderPhone = scanner.nextLine();
+                                System.out.print("Enter old internet provider email: ");
+                                String oldProviderEmail = scanner.nextLine();
+                                System.out.print("Enter old internet provider id: ");
+                                long oldProviderID = scanner.nextLong();
+                                System.out.println("How much money does this provider have?");
+                                System.out.print("Answer: ");
+                                float oldProviderMoney = scanner.nextFloat();
+                                System.out.print("Enter old internet provider birthDay: ");
+                                int oldProviderDay = scanner.nextInt();
+                                System.out.print("Enter old internet provider birthMonth: ");
+                                int oldProviderMonth = scanner.nextInt();
+                                System.out.print("Enter old internet provider birthYear: ");
+                                int oldProviderYear = scanner.nextInt();
+                                System.out.print("Enter old internet provider house number: ");
+                                int oldProviderHouse = scanner.nextInt();
+                                System.out.print("Enter old internet provider road number: ");
+                                int oldProviderRoad = scanner.nextInt();
+                                System.out.print("Enter old internet provider block number: ");
+                                int oldProviderBlock = scanner.nextInt();
+                                System.out.print("Enter old internet provider area: ");
+                                String nothing56 = scanner.nextLine();
+                                String oldProviderArea = scanner.nextLine();
+                                System.out.print("Enter old internet provider state: ");
+                                String oldProviderState = scanner.nextLine();
+                                System.out.print("Enter old internet provider region: ");
+                                String oldProviderRegion = scanner.nextLine();
+                                System.out.print("Enter old internet provider continent: ");
+                                String oldProviderContinent = scanner.nextLine();
+                                System.out.print("Enter old internet provider country: ");
+                                String oldProviderCountry = scanner.nextLine();
+                                Person oldProviderPerson = new Person(oldProviderName, oldProviderPhone, oldProviderEmail, oldProviderID, oldProviderMoney, oldProviderDay, oldProviderMonth, oldProviderYear, oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                                Date oldProviderDate = new Date(oldProviderDay, oldProviderMonth, oldProviderYear);
+                                Address oldProviderAddress = new Address(oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                                Internet oldWaiterInternet = new Internet(oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson, oldWaiterPerson);
+                                Waiter oldWaiter = new Waiter(oldWaiterName, oldWaiterPhone, oldWaiterEmail, oldWaiterID, oldWaiterMoney, oldWaiterDay, oldWaiterMonth, oldWaiterYear, oldWaiterHouse, oldWaiterRoad, oldWaiterBlock, oldWaiterArea, oldWaiterState, oldWaiterRegion, oldWaiterContinent, oldWaiterCountry, oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson);
+                                peopleRecords.add(oldProviderPerson, 2);
+                                dateArrayHashing.add(oldProviderDate);
+                                addressLinkedHashing.add(oldProviderAddress);
+                                internetKWLinkedList.add(oldWaiterInternet, 2);
+                                System.out.print("Enter new waiter name: ");
+                                String nothing57 = scanner.nextLine();
+                                String newWaiterName = scanner.nextLine();
+                                System.out.print("Enter new waiter phone number: ");
+                                String newWaiterPhone = scanner.nextLine();
+                                System.out.print("Enter new waiter email: ");
+                                String newWaiterEmail = scanner.next();
+                                System.out.print("Enter new waiter ID: ");
+                                long newWaiterID = scanner.nextLong();
+                                System.out.println("How much money does the waiter have?");
+                                System.out.print("Answer: ");
+                                float newWaiterMoney = scanner.nextFloat();
+                                System.out.print("Enter new waiter birthDay: ");
+                                int newWaiterDay = scanner.nextInt();
+                                System.out.print("Enter new waiter birthMonth: ");
+                                int newWaiterMonth = scanner.nextInt();
+                                System.out.print("Enter new waiter birthYear: ");
+                                int newWaiterYear = scanner.nextInt();
+                                System.out.print("Enter new waiter house: ");
+                                int newWaiterHouse = scanner.nextInt();
+                                System.out.print("Enter new waiter road: ");
+                                int newWaiterRoad = scanner.nextInt();
+                                System.out.print("Enter new waiter block: ");
+                                int newWaiterBlock = scanner.nextInt();
+                                System.out.print("Enter new waiter area: ");
+                                String nothing58 = scanner.nextLine();
+                                String newWaiterArea = scanner.nextLine();
+                                System.out.print("Enter new waiter state: ");
+                                String newWaiterState = scanner.nextLine();
+                                System.out.print("Enter new waiter region: ");
+                                String newWaiterRegion = scanner.nextLine();
+                                System.out.print("Enter new waiter continent: ");
+                                String newWaiterContinent = scanner.nextLine();
+                                System.out.print("Enter new waiter country: ");
+                                String newWaiterCountry = scanner.nextLine();
+                                Person newWaiterPerson = new Person(newWaiterName, newWaiterPhone, newWaiterEmail, newWaiterID, newWaiterMoney, newWaiterDay, newWaiterMonth, newWaiterYear, newWaiterHouse, newWaiterRoad, newWaiterBlock, newWaiterArea, newWaiterState, newWaiterRegion, newWaiterContinent, newWaiterCountry);
+                                Date newWaiterDate = new Date(newWaiterDay, newWaiterMonth, newWaiterYear);
+                                Address newWaiterAddress = new Address(newWaiterHouse, newWaiterRoad, newWaiterBlock, newWaiterArea, newWaiterState, newWaiterRegion, newWaiterContinent, newWaiterCountry);
+                                peopleRecords.addFirst(newWaiterPerson);
+                                dateArrayHashing.add(newWaiterDate);
+                                addressLinkedHashing.add(newWaiterAddress);
+                                System.out.print("Enter new internet name: ");
+                                String newNetName = scanner.nextLine();
+                                System.out.print("Enter new internet password type: ");
+                                String newNetPassType = scanner.nextLine();
+                                System.out.print("Enter new internet password: ");
+                                String newNetPass = scanner.nextLine();
+                                System.out.print("Enter new internet IP address: ");
+                                String newNetIP = scanner.nextLine();
+                                System.out.print("Enter new internet IP type: ");
+                                String newNetIPType = scanner.nextLine();
+                                System.out.print("Enter new internet provider name: ");
+                                String newProviderName = scanner.nextLine();
+                                System.out.print("Enter new internet provider phone number: ");
+                                String newProviderPhone = scanner.nextLine();
+                                System.out.print("Enter new internet provider email: ");
+                                String newProviderEmail = scanner.nextLine();
+                                System.out.print("Enter new internet provider id: ");
+                                long newProviderID = scanner.nextLong();
+                                System.out.println("How much money does this provider have?");
+                                System.out.print("Answer: ");
+                                float newProviderMoney = scanner.nextFloat();
+                                System.out.print("Enter new internet provider birthDay: ");
+                                int newProviderDay = scanner.nextInt();
+                                System.out.print("Enter new internet provider birthMonth: ");
+                                int newProviderMonth = scanner.nextInt();
+                                System.out.print("Enter new internet provider birthYear: ");
+                                int newProviderYear = scanner.nextInt();
+                                System.out.print("Enter new internet provider house number: ");
+                                int newProviderHouse = scanner.nextInt();
+                                System.out.print("Enter new internet provider road number: ");
+                                int newProviderRoad = scanner.nextInt();
+                                System.out.print("Enter new internet provider block number: ");
+                                int newProviderBlock = scanner.nextInt();
+                                System.out.print("Enter new internet provider area: ");
+                                String nothing59 = scanner.nextLine();
+                                String newProviderArea = scanner.nextLine();
+                                System.out.print("Enter new internet provider state: ");
+                                String newProviderState = scanner.nextLine();
+                                System.out.print("Enter new internet provider region: ");
+                                String newProviderRegion = scanner.nextLine();
+                                System.out.print("Enter new internet provider continent: ");
+                                String newProviderContinent = scanner.nextLine();
+                                System.out.print("Enter new internet provider country: ");
+                                String newProviderCountry = scanner.nextLine();
+                                Person newProviderPerson = new Person(newProviderName, newProviderPhone, newProviderEmail, newProviderID, newProviderMoney, newProviderDay, newProviderMonth, newProviderYear, newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                                Date newProviderDate = new Date(newProviderDay, newProviderMonth, newProviderYear);
+                                Address newProviderAddress = new Address(newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                                Internet newWaiterInternet = new Internet(newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson, newWaiterPerson);
+                                Waiter newWaiter = new Waiter(newWaiterName, newWaiterPhone, newWaiterEmail, newWaiterID, newWaiterMoney, newWaiterDay, newWaiterMonth, newWaiterYear, newWaiterHouse, newWaiterRoad, newWaiterBlock, newWaiterArea, newWaiterState, newWaiterRegion, newWaiterContinent, newWaiterCountry, newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson);
+                                peopleRecords.add(newProviderPerson, 4);
+                                dateArrayHashing.add(newProviderDate);
+                                addressLinkedHashing.add(newProviderAddress);
+                                internetKWLinkedList.add(newWaiterInternet, 4);
+                                waiterSingleLinkedList.replace(oldWaiter, newWaiter);
+                                restaurant.replaceWaiter(oldWaiter, newWaiter);
+                                System.out.println("The old waiter have been replaced by new waiter.");
+                            }
                             case 14 -> {
                                 while (!waiterSingleLinkedList.isEmpty())
                                     waiterSingleLinkedList.removeFirst();
@@ -861,7 +1059,7 @@ public class MyMain {
                                 System.out.print("Enter cleaner internet password: ");
                                 String cleanerNetPass1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet IP address: ");
-                                String cleanerNetIP1 = scanner.next();
+                                String cleanerNetIP1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet IP type: ");
                                 String cleanerNetIPType1 = scanner.nextLine();
                                 System.out.print("Enter internet provider name: ");
@@ -958,7 +1156,7 @@ public class MyMain {
                                 System.out.print("Enter cleaner internet password: ");
                                 String cleanerNetPass1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet IP address: ");
-                                String cleanerNetIP1 = scanner.next();
+                                String cleanerNetIP1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet IP type: ");
                                 String cleanerNetIPType1 = scanner.nextLine();
                                 System.out.print("Enter internet provider name: ");
@@ -1055,11 +1253,11 @@ public class MyMain {
                                 System.out.print("Enter cleaner internet name: ");
                                 String cleanerNetName1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet password type: ");
-                                String cleanerNetPassType1 = scanner.next();
+                                String cleanerNetPassType1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet password: ");
                                 String cleanerNetPass1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet IP address: ");
-                                String cleanerNetIP1 = scanner.next();
+                                String cleanerNetIP1 = scanner.nextLine();
                                 System.out.print("Enter cleaner internet IP type: ");
                                 String cleanerNetIPType1 = scanner.nextLine();
                                 System.out.print("Enter internet provider name: ");
@@ -1121,6 +1319,199 @@ public class MyMain {
                                 int cleanerIndex2 = scanner.nextInt();
                                 System.out.println("Information found in that list: ");
                                 System.out.println(restaurant.getCleaner(cleanerIndex2));
+                            }
+                            case 19 -> {
+                                System.out.print("Enter old cleaner name: ");
+                                String nothing60 = scanner.nextLine();
+                                String oldCleanerName = scanner.nextLine();
+                                System.out.print("Enter old cleaner phone number: ");
+                                String oldCleanerPhone = scanner.nextLine();
+                                System.out.print("Enter old cleaner email: ");
+                                String oldCleanerEmail = scanner.next();
+                                System.out.print("Enter old cleaner ID: ");
+                                long oldCleanerID = scanner.nextLong();
+                                System.out.println("How much money does the waiter have?");
+                                System.out.print("Answer: ");
+                                float oldCleanerMoney = scanner.nextFloat();
+                                System.out.print("Enter old cleaner birthDay: ");
+                                int oldCleanerDay = scanner.nextInt();
+                                System.out.print("Enter old cleaner birthMonth: ");
+                                int oldCleanerMonth = scanner.nextInt();
+                                System.out.print("Enter old cleaner birthYear: ");
+                                int oldCleanerYear = scanner.nextInt();
+                                System.out.print("Enter old cleaner house: ");
+                                int oldCleanerHouse = scanner.nextInt();
+                                System.out.print("Enter old cleaner road: ");
+                                int oldCleanerRoad = scanner.nextInt();
+                                System.out.print("Enter old cleaner block: ");
+                                int oldCleanerBlock = scanner.nextInt();
+                                System.out.print("Enter old cleaner area: ");
+                                String nothing55 = scanner.nextLine();
+                                String oldCleanerArea = scanner.nextLine();
+                                System.out.print("Enter old cleaner state: ");
+                                String oldCleanerState = scanner.nextLine();
+                                System.out.print("Enter old cleaner region: ");
+                                String oldCleanerRegion = scanner.nextLine();
+                                System.out.print("Enter old cleaner continent: ");
+                                String oldCleanerContinent = scanner.nextLine();
+                                System.out.print("Enter old cleaner country: ");
+                                String oldCleanerCountry = scanner.nextLine();
+                                Person oldCleanerPerson = new Person(oldCleanerName, oldCleanerPhone, oldCleanerEmail, oldCleanerID, oldCleanerMoney, oldCleanerDay, oldCleanerMonth, oldCleanerYear, oldCleanerHouse, oldCleanerRoad, oldCleanerBlock, oldCleanerArea, oldCleanerState, oldCleanerRegion, oldCleanerContinent, oldCleanerCountry);
+                                Date oldCleanerDate = new Date(oldCleanerDay, oldCleanerMonth, oldCleanerYear);
+                                Address oldCleanerAddress = new Address(oldCleanerHouse, oldCleanerRoad, oldCleanerBlock, oldCleanerArea, oldCleanerState, oldCleanerRegion, oldCleanerContinent, oldCleanerCountry);
+                                peopleRecords.addFirst(oldCleanerPerson);
+                                dateArrayHashing.add(oldCleanerDate);
+                                addressLinkedHashing.add(oldCleanerAddress);
+                                System.out.print("Enter old internet name: ");
+                                String oldNetName = scanner.nextLine();
+                                System.out.print("Enter old internet password type: ");
+                                String oldNetPassType = scanner.nextLine();
+                                System.out.print("Enter old internet password: ");
+                                String oldNetPass = scanner.nextLine();
+                                System.out.print("Enter old internet IP address: ");
+                                String oldNetIP = scanner.nextLine();
+                                System.out.print("Enter old internet IP type: ");
+                                String oldNetIPType = scanner.nextLine();
+                                System.out.print("Enter old internet provider name: ");
+                                String oldProviderName = scanner.nextLine();
+                                System.out.print("Enter old internet provider phone number: ");
+                                String oldProviderPhone = scanner.nextLine();
+                                System.out.print("Enter old internet provider email: ");
+                                String oldProviderEmail = scanner.nextLine();
+                                System.out.print("Enter old internet provider id: ");
+                                long oldProviderID = scanner.nextLong();
+                                System.out.println("How much money does this provider have?");
+                                System.out.print("Answer: ");
+                                float oldProviderMoney = scanner.nextFloat();
+                                System.out.print("Enter old internet provider birthDay: ");
+                                int oldProviderDay = scanner.nextInt();
+                                System.out.print("Enter old internet provider birthMonth: ");
+                                int oldProviderMonth = scanner.nextInt();
+                                System.out.print("Enter old internet provider birthYear: ");
+                                int oldProviderYear = scanner.nextInt();
+                                System.out.print("Enter old internet provider house number: ");
+                                int oldProviderHouse = scanner.nextInt();
+                                System.out.print("Enter old internet provider road number: ");
+                                int oldProviderRoad = scanner.nextInt();
+                                System.out.print("Enter old internet provider block number: ");
+                                int oldProviderBlock = scanner.nextInt();
+                                System.out.print("Enter old internet provider area: ");
+                                String nothing56 = scanner.nextLine();
+                                String oldProviderArea = scanner.nextLine();
+                                System.out.print("Enter old internet provider state: ");
+                                String oldProviderState = scanner.nextLine();
+                                System.out.print("Enter old internet provider region: ");
+                                String oldProviderRegion = scanner.nextLine();
+                                System.out.print("Enter old internet provider continent: ");
+                                String oldProviderContinent = scanner.nextLine();
+                                System.out.print("Enter old internet provider country: ");
+                                String oldProviderCountry = scanner.nextLine();
+                                Person oldProviderPerson = new Person(oldProviderName, oldProviderPhone, oldProviderEmail, oldProviderID, oldProviderMoney, oldProviderDay, oldProviderMonth, oldProviderYear, oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                                Date oldProviderDate = new Date(oldProviderDay, oldProviderMonth, oldProviderYear);
+                                Address oldProviderAddress = new Address(oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                                Internet oldCleanerInternet = new Internet(oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson, oldCleanerPerson);
+                                Cleaner oldCleaner = new Cleaner(oldCleanerName, oldCleanerPhone, oldCleanerEmail, oldCleanerID, oldCleanerMoney, oldCleanerDay, oldCleanerMonth, oldCleanerYear, oldCleanerHouse, oldCleanerRoad, oldCleanerBlock, oldCleanerArea, oldCleanerState, oldCleanerRegion, oldCleanerContinent, oldCleanerCountry, oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson);
+                                peopleRecords.add(oldProviderPerson, 1);
+                                dateArrayHashing.add(oldProviderDate);
+                                addressLinkedHashing.add(oldProviderAddress);
+                                internetKWLinkedList.add(oldCleanerInternet, 1);
+                                System.out.print("Enter new cleaner name: ");
+                                String nothing61 = scanner.nextLine();
+                                String newCleanerName = scanner.nextLine();
+                                System.out.print("Enter new cleaner phone number: ");
+                                String newCleanerPhone = scanner.nextLine();
+                                System.out.print("Enter new cleaner email: ");
+                                String newCleanerEmail = scanner.next();
+                                System.out.print("Enter new cleaner ID: ");
+                                long newCleanerID = scanner.nextLong();
+                                System.out.println("How much money does the waiter have?");
+                                System.out.print("Answer: ");
+                                float newCleanerMoney = scanner.nextFloat();
+                                System.out.print("Enter new cleaner birthDay: ");
+                                int newCleanerDay = scanner.nextInt();
+                                System.out.print("Enter new cleaner birthMonth: ");
+                                int newCleanerMonth = scanner.nextInt();
+                                System.out.print("Enter new cleaner birthYear: ");
+                                int newCleanerYear = scanner.nextInt();
+                                System.out.print("Enter new cleaner house: ");
+                                int newCleanerHouse = scanner.nextInt();
+                                System.out.print("Enter new cleaner road: ");
+                                int newCleanerRoad = scanner.nextInt();
+                                System.out.print("Enter new cleaner block: ");
+                                int newCleanerBlock = scanner.nextInt();
+                                System.out.print("Enter new cleaner area: ");
+                                String nothing62 = scanner.nextLine();
+                                String newCleanerArea = scanner.nextLine();
+                                System.out.print("Enter new cleaner state: ");
+                                String newCleanerState = scanner.nextLine();
+                                System.out.print("Enter new cleaner region: ");
+                                String newCleanerRegion = scanner.nextLine();
+                                System.out.print("Enter new cleaner continent: ");
+                                String newCleanerContinent = scanner.nextLine();
+                                System.out.print("Enter new cleaner country: ");
+                                String newCleanerCountry = scanner.nextLine();
+                                Person newCleanerPerson = new Person(newCleanerName, newCleanerPhone, newCleanerEmail, newCleanerID, newCleanerMoney, newCleanerDay, newCleanerMonth, newCleanerYear, newCleanerHouse, newCleanerRoad, newCleanerBlock, newCleanerArea, newCleanerState, newCleanerRegion, newCleanerContinent, newCleanerCountry);
+                                Date newWaiterDate = new Date(newCleanerDay, newCleanerMonth, newCleanerYear);
+                                Address newWaiterAddress = new Address(newCleanerHouse, newCleanerRoad, newCleanerBlock, newCleanerArea, newCleanerState, newCleanerRegion, newCleanerContinent, newCleanerCountry);
+                                peopleRecords.addFirst(newCleanerPerson);
+                                dateArrayHashing.add(newWaiterDate);
+                                addressLinkedHashing.add(newWaiterAddress);
+                                System.out.print("Enter new internet name: ");
+                                String newNetName = scanner.nextLine();
+                                System.out.print("Enter new internet password type: ");
+                                String newNetPassType = scanner.nextLine();
+                                System.out.print("Enter new internet password: ");
+                                String newNetPass = scanner.nextLine();
+                                System.out.print("Enter new internet IP address: ");
+                                String newNetIP = scanner.nextLine();
+                                System.out.print("Enter new internet IP type: ");
+                                String newNetIPType = scanner.nextLine();
+                                System.out.print("Enter new internet provider name: ");
+                                String newProviderName = scanner.nextLine();
+                                System.out.print("Enter new internet provider phone number: ");
+                                String newProviderPhone = scanner.nextLine();
+                                System.out.print("Enter new internet provider email: ");
+                                String newProviderEmail = scanner.nextLine();
+                                System.out.print("Enter new internet provider id: ");
+                                long newProviderID = scanner.nextLong();
+                                System.out.println("How much money does this provider have?");
+                                System.out.print("Answer: ");
+                                float newProviderMoney = scanner.nextFloat();
+                                System.out.print("Enter new internet provider birthDay: ");
+                                int newProviderDay = scanner.nextInt();
+                                System.out.print("Enter new internet provider birthMonth: ");
+                                int newProviderMonth = scanner.nextInt();
+                                System.out.print("Enter new internet provider birthYear: ");
+                                int newProviderYear = scanner.nextInt();
+                                System.out.print("Enter new internet provider house number: ");
+                                int newProviderHouse = scanner.nextInt();
+                                System.out.print("Enter new internet provider road number: ");
+                                int newProviderRoad = scanner.nextInt();
+                                System.out.print("Enter new internet provider block number: ");
+                                int newProviderBlock = scanner.nextInt();
+                                System.out.print("Enter new internet provider area: ");
+                                String nothing59 = scanner.nextLine();
+                                String newProviderArea = scanner.nextLine();
+                                System.out.print("Enter new internet provider state: ");
+                                String newProviderState = scanner.nextLine();
+                                System.out.print("Enter new internet provider region: ");
+                                String newProviderRegion = scanner.nextLine();
+                                System.out.print("Enter new internet provider continent: ");
+                                String newProviderContinent = scanner.nextLine();
+                                System.out.print("Enter new internet provider country: ");
+                                String newProviderCountry = scanner.nextLine();
+                                Person newProviderPerson = new Person(newProviderName, newProviderPhone, newProviderEmail, newProviderID, newProviderMoney, newProviderDay, newProviderMonth, newProviderYear, newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                                Date newProviderDate = new Date(newProviderDay, newProviderMonth, newProviderYear);
+                                Address newProviderAddress = new Address(newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                                Internet newWaiterInternet = new Internet(newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson, newCleanerPerson);
+                                Cleaner newCleaner = new Cleaner(newCleanerName, newCleanerPhone, newCleanerEmail, newCleanerID, newCleanerMoney, newCleanerDay, newCleanerMonth, newCleanerYear, newCleanerHouse, newCleanerRoad, newCleanerBlock, newCleanerArea, newCleanerState, newCleanerRegion, newCleanerContinent, newCleanerCountry, newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson);
+                                peopleRecords.add(newProviderPerson, 3);
+                                dateArrayHashing.add(newProviderDate);
+                                addressLinkedHashing.add(newProviderAddress);
+                                internetKWLinkedList.add(newWaiterInternet, 3);
+                                cleanerKWLinkedList.replace(oldCleaner, newCleaner);
+                                restaurant.replaceCleaner(oldCleaner, newCleaner);
+                                System.out.println("The old cleaner have been replaced by new cleaner.");
                             }
                             case 20 -> {
                                 while (!cleanedRooms.isEmpty())
@@ -1457,10 +1848,10 @@ public class MyMain {
                         System.out.print("Enter old customer name: ");
                         String nothing25 = scanner.nextLine();
                         String oldCustomerName = scanner.nextLine();
-                        System.out.print("Enter old customer email: ");
-                        String oldCustomerEmail = scanner.next();
                         System.out.print("Enter old customer phone number: ");
                         String oldCustomerPhone = scanner.nextLine();
+                        System.out.print("Enter old customer email: ");
+                        String oldCustomerEmail = scanner.next();
                         System.out.print("Enter old customer ID: ");
                         long oldCustomerID = scanner.nextLong();
                         System.out.println("How much money does the old customer have?");
@@ -1503,40 +1894,39 @@ public class MyMain {
                         String nothing36 = scanner.nextLine();
                         String oldCustomerDescription = scanner.nextLine();
                         Customer oldCustomer = new Customer(oldCustomerName, oldCustomerPhone, oldCustomerEmail, oldCustomerID, oldCustomerMoney, oldCustomerDay, oldCustomerMonth, oldCustomerYear, oldCustomerHouse, oldCustomerRoad, oldCustomerBlock, oldCustomerArea, oldCustomerState, oldCustomerRegion, oldCustomerContinent, oldCustomerCountry, oldCustomerRoom, oldCustomerFloor, oldCustomerDescription);
-                        System.out.print("Enter old customer name: ");
-                        String nothing34 = scanner.nextLine();
+                        System.out.print("Enter new customer name: ");
                         String newCustomerName = scanner.nextLine();
-                        System.out.print("Enter old customer email: ");
-                        String newCustomerEmail = scanner.next();
-                        System.out.print("Enter old customer phone number: ");
+                        System.out.print("Enter new customer phone number: ");
                         String newCustomerPhone = scanner.nextLine();
-                        System.out.print("Enter old customer ID: ");
+                        System.out.print("Enter new customer email: ");
+                        String newCustomerEmail = scanner.next();
+                        System.out.print("Enter new customer ID: ");
                         long newCustomerID = scanner.nextLong();
                         System.out.println("How much money does the old customer have?");
                         System.out.print("Answer: ");
                         float newCustomerMoney = scanner.nextFloat();
-                        System.out.print("Enter old customer birthDay: ");
+                        System.out.print("Enter new customer birthDay: ");
                         int newCustomerDay = scanner.nextInt();
-                        System.out.print("Enter old customer month: ");
+                        System.out.print("Enter new customer month: ");
                         int newCustomerMonth = scanner.nextInt();
-                        System.out.print("Enter old customer year: ");
+                        System.out.print("Enter new customer year: ");
                         int newCustomerYear = scanner.nextInt();
-                        System.out.print("Enter old customer house number: ");
+                        System.out.print("Enter new customer house number: ");
                         int newCustomerHouse = scanner.nextInt();
-                        System.out.print("Enter old customer road number: ");
+                        System.out.print("Enter new customer road number: ");
                         int newCustomerRoad = scanner.nextInt();
-                        System.out.print("Enter old customer block number: ");
+                        System.out.print("Enter new customer block number: ");
                         int newCustomerBlock = scanner.nextInt();
-                        System.out.print("Enter old customer area: ");
+                        System.out.print("Enter new customer area: ");
                         String nothing35 = scanner.nextLine();
                         String newCustomerArea = scanner.nextLine();
-                        System.out.print("Enter old customer state: ");
+                        System.out.print("Enter new customer state: ");
                         String newCustomerState = scanner.nextLine();
-                        System.out.print("Enter old customer region: ");
+                        System.out.print("Enter new customer region: ");
                         String newCustomerRegion = scanner.nextLine();
-                        System.out.print("Enter old customer continent: ");
+                        System.out.print("Enter new customer continent: ");
                         String newCustomerContinent = scanner.nextLine();
-                        System.out.print("Enter old customer country: ");
+                        System.out.print("Enter new customer country: ");
                         String newCustomerCountry = scanner.nextLine();
                         Date newDate = new Date(newCustomerDay, newCustomerMonth, newCustomerYear);
                         Address newAddress = new Address(newCustomerHouse, newCustomerRoad, newCustomerBlock, newCustomerArea, newCustomerState, newCustomerRegion, newCustomerContinent, newCustomerCountry);
@@ -1577,10 +1967,10 @@ public class MyMain {
                     System.out.print("Enter manager name: ");
                     String nothing26 = scanner.nextLine();
                     String managerName = scanner.nextLine();
-                    System.out.print("Enter manager email: ");
-                    String managerEmail = scanner.next();
                     System.out.print("Enter manager phone number: ");
                     String managerPhone = scanner.nextLine();
+                    System.out.print("Enter manager email: ");
+                    String managerEmail = scanner.next();
                     System.out.print("Enter manager ID: ");
                     long managerID = scanner.nextLong();
                     System.out.println("How much money does the manager have? ");
@@ -1618,7 +2008,7 @@ public class MyMain {
                     System.out.println("Does the manager have internet?");
                     System.out.println("Yes or no?");
                     System.out.print("Answer: ");
-                    String managerAnswer = scanner.next();
+                    String managerAnswer = scanner.nextLine();
                     if (managerAnswer.equalsIgnoreCase("yes") || managerAnswer.equalsIgnoreCase("yeah") || managerAnswer.equalsIgnoreCase("ya")){
                         boolean internetChecker = false;
                         System.out.println("Enter internet name: ");
@@ -1648,13 +2038,13 @@ public class MyMain {
                         System.out.print("Enter internet name: ");
                         String managerInternetName = scanner.nextLine();
                         System.out.print("Enter internet password type: ");
-                        String managerNetPassType = scanner.next();
+                        String managerNetPassType = scanner.nextLine();
                         System.out.print("Enter internet password: ");
-                        String managerNetPass = scanner.next();
+                        String managerNetPass = scanner.nextLine();
                         System.out.print("Enter internet ip address: ");
-                        String managerNetIP = scanner.next();
+                        String managerNetIP = scanner.nextLine();
                         System.out.print("Enter internet ip address type: ");
-                        String managerNetIPType = scanner.next();
+                        String managerNetIPType = scanner.nextLine();
                         System.out.print("Enter internet provider name: ");
                         String providerName5 = scanner.nextLine();
                         System.out.print("Enter internet provider phone number: ");
@@ -1776,17 +2166,18 @@ public class MyMain {
                             manager.setAddress(managerNewHouse, managerNewRoad, managerNewBlock, managerNewArea, managerNewState, managerNewRegion, managerNewContinent, managerNewCountry);
                         }
                         case 8 -> {
-                            System.out.println("Enter internet name: ");
+                            System.out.print("Enter internet name: ");
                             String nothing32 = scanner.nextLine();
                             String newNetName = scanner.nextLine();
-                            System.out.println("Enter internet password type: ");
-                            String newNetPassType = scanner.next();
-                            System.out.println("Enter internet password: ");
-                            String newNetPass = scanner.next();
-                            System.out.println("Enter internet IP address: ");
-                            String newNetIP = scanner.next();
-                            System.out.println("Enter internet IP address type: ");
-                            String newNetIPType = scanner.next();
+                            System.out.print("Enter internet password type: ");
+                            String newNetPassType = scanner.nextLine();
+                            System.out.print("Enter internet password: ");
+                            String newNetPass = scanner.nextLine();
+                            System.out.print("Enter internet IP address: ");
+                            String newNetIP = scanner.nextLine();
+                            System.out.print("Enter internet IP address type: ");
+                            String newNetIPType = scanner.nextLine();
+                            System.out.print("Enter internet provider name: ");
                             String providerName5 = scanner.nextLine();
                             System.out.print("Enter internet provider phone number: ");
                             String providerPhone5 = scanner.nextLine();
@@ -1842,7 +2233,7 @@ public class MyMain {
                     long managerID2 = scanner.nextLong();
                     if (manager.getID() == managerID2){
                         System.out.println("Do you have internet or not?");
-                        String answering = scanner.next();
+                        String answering = scanner.nextLine();
                         if (answering.equalsIgnoreCase("yes") || answering.equalsIgnoreCase("yeah") || answering.equalsIgnoreCase("ya")){
                             boolean founder = false;
                             System.out.print("Enter the name of the internet: ");
@@ -1868,25 +2259,25 @@ public class MyMain {
                                 System.out.println("A room have been added to the list successfully.");
                                 System.out.println("Would you like to edit your network?");
                                 System.out.print("Answer: ");
-                                String answerer = scanner.next();
+                                String answerer = scanner.nextLine();
                                 if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
                                     System.out.print("Enter internet name: ");
                                     String internetName5 = scanner.nextLine();
                                     System.out.print("Enter internet password type: ");
-                                    String internetPassType5 = scanner.next();
+                                    String internetPassType5 = scanner.nextLine();
                                     System.out.print("Enter internet password: ");
                                     String internetPass5 = scanner.nextLine();
                                     System.out.print("Enter internet ip address: ");
-                                    String internetAddress5 = scanner.next();
+                                    String internetAddress5 = scanner.nextLine();
                                     System.out.print("Enter internet ip type: ");
-                                    String internetIPType5 = scanner.next();
+                                    String internetIPType5 = scanner.nextLine();
                                     Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
                                     System.out.print("Enter internet provider name: ");
                                     String providerName5 = scanner.nextLine();
                                     System.out.print("Enter internet provider phone number: ");
                                     String providerPhone5 = scanner.nextLine();
                                     System.out.print("Enter internet provider email: ");
-                                    String providerEmail5 = scanner.next();
+                                    String providerEmail5 = scanner.nextLine();
                                     System.out.print("Enter internet provider ID: ");
                                     long providerID5 = scanner.nextLong();
                                     System.out.println("How much money does the provider have?");
@@ -2006,11 +2397,12 @@ public class MyMain {
                     }
                 }
                 case 14 -> {
-                    System.out.println("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID2 = scanner.nextLong();
                     if (manager.getID() == managerID2){
                         System.out.println("Do you have internet or not?");
-                        String answering = scanner.next();
+                        String nothing48 = scanner.nextLine();
+                        String answering = scanner.nextLine();
                         if (answering.equalsIgnoreCase("yes") || answering.equalsIgnoreCase("yeah") || answering.equalsIgnoreCase("ya")){
                             boolean founder = false;
                             System.out.print("Enter the name of the internet: ");
@@ -2036,18 +2428,18 @@ public class MyMain {
                                     System.out.println("A room have been deleted from the list successfully.");
                                     System.out.println("Would you like to edit your network?");
                                     System.out.print("Answer: ");
-                                    String answerer = scanner.next();
+                                    String answerer = scanner.nextLine();
                                     if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
                                         System.out.print("Enter internet name: ");
                                         String internetName5 = scanner.nextLine();
                                         System.out.print("Enter internet password type: ");
-                                        String internetPassType5 = scanner.next();
+                                        String internetPassType5 = scanner.nextLine();
                                         System.out.print("Enter internet password: ");
                                         String internetPass5 = scanner.nextLine();
                                         System.out.print("Enter internet ip address: ");
-                                        String internetAddress5 = scanner.next();
+                                        String internetAddress5 = scanner.nextLine();
                                         System.out.print("Enter internet ip type: ");
-                                        String internetIPType5 = scanner.next();
+                                        String internetIPType5 = scanner.nextLine();
                                         Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
                                         System.out.print("Enter internet provider name: ");
                                         String providerName5 = scanner.nextLine();
@@ -2112,9 +2504,9 @@ public class MyMain {
                                 System.out.print("Enter internet password: ");
                                 String internetPass5 = scanner.nextLine();
                                 System.out.print("Enter internet ip address: ");
-                                String internetAddress5 = scanner.next();
+                                String internetAddress5 = scanner.nextLine();
                                 System.out.print("Enter internet ip type: ");
-                                String internetIPType5 = scanner.next();
+                                String internetIPType5 = scanner.nextLine();
                                 Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
                                 System.out.print("Enter internet provider name: ");
                                 String providerName5 = scanner.nextLine();
@@ -2212,25 +2604,26 @@ public class MyMain {
                                     System.out.println("The room is found in the list at index " + index3);
                                     System.out.println("Would you like to edit your network?");
                                     System.out.print("Answer: ");
-                                    String answerer = scanner.next();
+                                    String nothing49 = scanner.nextLine();
+                                    String answerer = scanner.nextLine();
                                     if (answerer.equalsIgnoreCase("yes") || answerer.equalsIgnoreCase("yeah") || answerer.equalsIgnoreCase("ya")){
                                         System.out.print("Enter internet name: ");
                                         String internetName5 = scanner.nextLine();
                                         System.out.print("Enter internet password type: ");
-                                        String internetPassType5 = scanner.next();
+                                        String internetPassType5 = scanner.nextLine();
                                         System.out.print("Enter internet password: ");
                                         String internetPass5 = scanner.nextLine();
                                         System.out.print("Enter internet ip address: ");
-                                        String internetAddress5 = scanner.next();
+                                        String internetAddress5 = scanner.nextLine();
                                         System.out.print("Enter internet ip type: ");
-                                        String internetIPType5 = scanner.next();
+                                        String internetIPType5 = scanner.nextLine();
                                         Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
                                         System.out.print("Enter internet provider name: ");
                                         String providerName5 = scanner.nextLine();
                                         System.out.print("Enter internet provider phone number: ");
                                         String providerPhone5 = scanner.nextLine();
                                         System.out.print("Enter internet provider email: ");
-                                        String providerEmail5 = scanner.next();
+                                        String providerEmail5 = scanner.nextLine();
                                         System.out.print("Enter internet provider ID: ");
                                         long providerID5 = scanner.nextLong();
                                         System.out.println("How much money does the provider have?");
@@ -2284,13 +2677,13 @@ public class MyMain {
                                 System.out.print("Enter internet name: ");
                                 String internetName5 = scanner.nextLine();
                                 System.out.print("Enter internet password type: ");
-                                String internetPassType5 = scanner.next();
+                                String internetPassType5 = scanner.nextLine();
                                 System.out.print("Enter internet password: ");
                                 String internetPass5 = scanner.nextLine();
                                 System.out.print("Enter internet ip address: ");
-                                String internetAddress5 = scanner.next();
+                                String internetAddress5 = scanner.nextLine();
                                 System.out.print("Enter internet ip type: ");
-                                String internetIPType5 = scanner.next();
+                                String internetIPType5 = scanner.nextLine();
                                 Person roomHandler = new Person(manager.getName(), manager.getPhone(), manager.getEmail(), managerID2, manager.getMoney(), manager.getBirthDate().getDay(), manager.getBirthDate().getMonth(), manager.getBirthDate().getYear(), manager.getAddress().getHouse(), manager.getAddress().getRoad(), manager.getAddress().getBlock(), manager.getAddress().getArea(), manager.getAddress().getState(), manager.getAddress().getRegion(), manager.getAddress().getContinent(), manager.getAddress().getCountry());
                                 System.out.print("Enter internet provider name: ");
                                 String providerName5 = scanner.nextLine();
@@ -2465,7 +2858,7 @@ public class MyMain {
                     }
                 }
                 case 19 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         while (!roomSingleLinkedList.isEmpty())
@@ -2485,7 +2878,7 @@ public class MyMain {
                     }
                 }
                 case 20 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID2 = scanner.nextLong();
                     if (manager.getID() == managerID2){
                         System.out.print("Enter waiter name: ");
@@ -2536,7 +2929,7 @@ public class MyMain {
                         System.out.print("Enter waiter internet password: ");
                         String waiterNetPass1 = scanner.nextLine();
                         System.out.print("Enter waiter internet IP address: ");
-                        String waiterNetIP1 = scanner.next();
+                        String waiterNetIP1 = scanner.nextLine();
                         System.out.print("Enter waiter internet IP type: ");
                         String waiterNetIPType1 = scanner.nextLine();
                         System.out.print("Enter internet provider name: ");
@@ -2589,7 +2982,7 @@ public class MyMain {
                     }
                 }
                 case 21 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID2 = scanner.nextLong();
                     if (manager.getID() == managerID2){
                         System.out.print("Enter waiter name: ");
@@ -2636,11 +3029,11 @@ public class MyMain {
                         System.out.print("Enter waiter internet name: ");
                         String waiterNetName1 = scanner.nextLine();
                         System.out.print("Enter waiter internet password type: ");
-                        String waiterNetPassType1 = scanner.next();
+                        String waiterNetPassType1 = scanner.nextLine();
                         System.out.print("Enter waiter internet password: ");
                         String waiterNetPass1 = scanner.nextLine();
                         System.out.print("Enter waiter internet IP address: ");
-                        String waiterNetIP1 = scanner.next();
+                        String waiterNetIP1 = scanner.nextLine();
                         System.out.print("Enter waiter internet IP type: ");
                         String waiterNetIPType1 = scanner.nextLine();
                         System.out.print("Enter internet provider name: ");
@@ -2648,7 +3041,7 @@ public class MyMain {
                         System.out.print("Enter internet provider phone number: ");
                         String providerPhone3 = scanner.nextLine();
                         System.out.print("Enter internet provider email: ");
-                        String providerEmail3 = scanner.next();
+                        String providerEmail3 = scanner.nextLine();
                         System.out.print("Enter internet provider ID: ");
                         long providerID3 = scanner.nextLong();
                         System.out.println("How much money does the provider have?");
@@ -2695,7 +3088,7 @@ public class MyMain {
                     }
                 }
                 case 22 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID2 = scanner.nextLong();
                     if (manager.getID() == managerID2){
                         System.out.print("Enter waiter name: ");
@@ -2742,11 +3135,11 @@ public class MyMain {
                         System.out.print("Enter waiter internet name: ");
                         String waiterNetName1 = scanner.nextLine();
                         System.out.print("Enter waiter internet password type: ");
-                        String waiterNetPassType1 = scanner.next();
+                        String waiterNetPassType1 = scanner.nextLine();
                         System.out.print("Enter waiter internet password: ");
                         String waiterNetPass1 = scanner.nextLine();
                         System.out.print("Enter waiter internet IP address: ");
-                        String waiterNetIP1 = scanner.next();
+                        String waiterNetIP1 = scanner.nextLine();
                         System.out.print("Enter waiter internet IP type: ");
                         String waiterNetIPType1 = scanner.nextLine();
                         System.out.print("Enter internet provider name: ");
@@ -2803,7 +3196,7 @@ public class MyMain {
                     }
                 }
                 case 23 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         System.out.print("Enter an index for waiter list: ");
@@ -2816,8 +3209,208 @@ public class MyMain {
                         System.out.println("You need to be a manager to access this feature.");
                     }
                 }
+                case 24 -> {
+                    System.out.print("Enter ID: ");
+                    long managerID = scanner.nextLong();
+                    if (manager.getID() == managerID){
+                        System.out.print("Enter old waiter name: ");
+                        String nothing54 = scanner.nextLine();
+                        String oldWaiterName = scanner.nextLine();
+                        System.out.print("Enter old waiter phone number: ");
+                        String oldWaiterPhone = scanner.nextLine();
+                        System.out.print("Enter old waiter email: ");
+                        String oldWaiterEmail = scanner.next();
+                        System.out.print("Enter old waiter ID: ");
+                        long oldWaiterID = scanner.nextLong();
+                        System.out.println("How much money does the waiter have?");
+                        System.out.print("Answer: ");
+                        float oldWaiterMoney = scanner.nextFloat();
+                        System.out.print("Enter old waiter birthDay: ");
+                        int oldWaiterDay = scanner.nextInt();
+                        System.out.print("Enter old waiter birthMonth: ");
+                        int oldWaiterMonth = scanner.nextInt();
+                        System.out.print("Enter old waiter birthYear: ");
+                        int oldWaiterYear = scanner.nextInt();
+                        System.out.print("Enter old waiter house: ");
+                        int oldWaiterHouse = scanner.nextInt();
+                        System.out.print("Enter old waiter road: ");
+                        int oldWaiterRoad = scanner.nextInt();
+                        System.out.print("Enter old waiter block: ");
+                        int oldWaiterBlock = scanner.nextInt();
+                        System.out.print("Enter old waiter area: ");
+                        String nothing55 = scanner.nextLine();
+                        String oldWaiterArea = scanner.nextLine();
+                        System.out.print("Enter old waiter state: ");
+                        String oldWaiterState = scanner.nextLine();
+                        System.out.print("Enter old waiter region: ");
+                        String oldWaiterRegion = scanner.nextLine();
+                        System.out.print("Enter old waiter continent: ");
+                        String oldWaiterContinent = scanner.nextLine();
+                        System.out.print("Enter old waiter country: ");
+                        String oldWaiterCountry = scanner.nextLine();
+                        Person oldWaiterPerson = new Person(oldWaiterName, oldWaiterPhone, oldWaiterEmail, oldWaiterID, oldWaiterMoney, oldWaiterDay, oldWaiterMonth, oldWaiterYear, oldWaiterHouse, oldWaiterRoad, oldWaiterBlock, oldWaiterArea, oldWaiterState, oldWaiterRegion, oldWaiterContinent, oldWaiterCountry);
+                        Date oldWaiterDate = new Date(oldWaiterDay, oldWaiterMonth, oldWaiterYear);
+                        Address oldWaiterAddress = new Address(oldWaiterHouse, oldWaiterRoad, oldWaiterBlock, oldWaiterArea, oldWaiterState, oldWaiterRegion, oldWaiterContinent, oldWaiterCountry);
+                        peopleRecords.addFirst(oldWaiterPerson);
+                        dateArrayHashing.add(oldWaiterDate);
+                        addressLinkedHashing.add(oldWaiterAddress);
+                        System.out.print("Enter old internet name: ");
+                        String oldNetName = scanner.nextLine();
+                        System.out.print("Enter old internet password type: ");
+                        String oldNetPassType = scanner.nextLine();
+                        System.out.print("Enter old internet password: ");
+                        String oldNetPass = scanner.nextLine();
+                        System.out.print("Enter old internet IP address: ");
+                        String oldNetIP = scanner.nextLine();
+                        System.out.print("Enter old internet IP type: ");
+                        String oldNetIPType = scanner.nextLine();
+                        System.out.print("Enter old internet provider name: ");
+                        String oldProviderName = scanner.nextLine();
+                        System.out.print("Enter old internet provider phone number: ");
+                        String oldProviderPhone = scanner.nextLine();
+                        System.out.print("Enter old internet provider email: ");
+                        String oldProviderEmail = scanner.nextLine();
+                        System.out.print("Enter old internet provider id: ");
+                        long oldProviderID = scanner.nextLong();
+                        System.out.println("How much money does this provider have?");
+                        System.out.print("Answer: ");
+                        float oldProviderMoney = scanner.nextFloat();
+                        System.out.print("Enter old internet provider birthDay: ");
+                        int oldProviderDay = scanner.nextInt();
+                        System.out.print("Enter old internet provider birthMonth: ");
+                        int oldProviderMonth = scanner.nextInt();
+                        System.out.print("Enter old internet provider birthYear: ");
+                        int oldProviderYear = scanner.nextInt();
+                        System.out.print("Enter old internet provider house number: ");
+                        int oldProviderHouse = scanner.nextInt();
+                        System.out.print("Enter old internet provider road number: ");
+                        int oldProviderRoad = scanner.nextInt();
+                        System.out.print("Enter old internet provider block number: ");
+                        int oldProviderBlock = scanner.nextInt();
+                        System.out.print("Enter old internet provider area: ");
+                        String nothing56 = scanner.nextLine();
+                        String oldProviderArea = scanner.nextLine();
+                        System.out.print("Enter old internet provider state: ");
+                        String oldProviderState = scanner.nextLine();
+                        System.out.print("Enter old internet provider region: ");
+                        String oldProviderRegion = scanner.nextLine();
+                        System.out.print("Enter old internet provider continent: ");
+                        String oldProviderContinent = scanner.nextLine();
+                        System.out.print("Enter old internet provider country: ");
+                        String oldProviderCountry = scanner.nextLine();
+                        Person oldProviderPerson = new Person(oldProviderName, oldProviderPhone, oldProviderEmail, oldProviderID, oldProviderMoney, oldProviderDay, oldProviderMonth, oldProviderYear, oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                        Date oldProviderDate = new Date(oldProviderDay, oldProviderMonth, oldProviderYear);
+                        Address oldProviderAddress = new Address(oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                        Internet oldWaiterInternet = new Internet(oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson, oldWaiterPerson);
+                        Waiter oldWaiter = new Waiter(oldWaiterName, oldWaiterPhone, oldWaiterEmail, oldWaiterID, oldWaiterMoney, oldWaiterDay, oldWaiterMonth, oldWaiterYear, oldWaiterHouse, oldWaiterRoad, oldWaiterBlock, oldWaiterArea, oldWaiterState, oldWaiterRegion, oldWaiterContinent, oldWaiterCountry, oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson);
+                        peopleRecords.add(oldProviderPerson, 2);
+                        dateArrayHashing.add(oldProviderDate);
+                        addressLinkedHashing.add(oldProviderAddress);
+                        internetKWLinkedList.add(oldWaiterInternet, 2);
+                        System.out.print("Enter new waiter name: ");
+                        String nothing57 = scanner.nextLine();
+                        String newWaiterName = scanner.nextLine();
+                        System.out.print("Enter new waiter phone number: ");
+                        String newWaiterPhone = scanner.nextLine();
+                        System.out.print("Enter new waiter email: ");
+                        String newWaiterEmail = scanner.next();
+                        System.out.print("Enter new waiter ID: ");
+                        long newWaiterID = scanner.nextLong();
+                        System.out.println("How much money does the waiter have?");
+                        System.out.print("Answer: ");
+                        float newWaiterMoney = scanner.nextFloat();
+                        System.out.print("Enter new waiter birthDay: ");
+                        int newWaiterDay = scanner.nextInt();
+                        System.out.print("Enter new waiter birthMonth: ");
+                        int newWaiterMonth = scanner.nextInt();
+                        System.out.print("Enter new waiter birthYear: ");
+                        int newWaiterYear = scanner.nextInt();
+                        System.out.print("Enter new waiter house: ");
+                        int newWaiterHouse = scanner.nextInt();
+                        System.out.print("Enter new waiter road: ");
+                        int newWaiterRoad = scanner.nextInt();
+                        System.out.print("Enter new waiter block: ");
+                        int newWaiterBlock = scanner.nextInt();
+                        System.out.print("Enter new waiter area: ");
+                        String nothing58 = scanner.nextLine();
+                        String newWaiterArea = scanner.nextLine();
+                        System.out.print("Enter new waiter state: ");
+                        String newWaiterState = scanner.nextLine();
+                        System.out.print("Enter new waiter region: ");
+                        String newWaiterRegion = scanner.nextLine();
+                        System.out.print("Enter new waiter continent: ");
+                        String newWaiterContinent = scanner.nextLine();
+                        System.out.print("Enter new waiter country: ");
+                        String newWaiterCountry = scanner.nextLine();
+                        Person newWaiterPerson = new Person(newWaiterName, newWaiterPhone, newWaiterEmail, newWaiterID, newWaiterMoney, newWaiterDay, newWaiterMonth, newWaiterYear, newWaiterHouse, newWaiterRoad, newWaiterBlock, newWaiterArea, newWaiterState, newWaiterRegion, newWaiterContinent, newWaiterCountry);
+                        Date newWaiterDate = new Date(newWaiterDay, newWaiterMonth, newWaiterYear);
+                        Address newWaiterAddress = new Address(newWaiterHouse, newWaiterRoad, newWaiterBlock, newWaiterArea, newWaiterState, newWaiterRegion, newWaiterContinent, newWaiterCountry);
+                        peopleRecords.addFirst(newWaiterPerson);
+                        dateArrayHashing.add(newWaiterDate);
+                        addressLinkedHashing.add(newWaiterAddress);
+                        System.out.print("Enter new internet name: ");
+                        String newNetName = scanner.nextLine();
+                        System.out.print("Enter new internet password type: ");
+                        String newNetPassType = scanner.nextLine();
+                        System.out.print("Enter new internet password: ");
+                        String newNetPass = scanner.nextLine();
+                        System.out.print("Enter new internet IP address: ");
+                        String newNetIP = scanner.nextLine();
+                        System.out.print("Enter new internet IP type: ");
+                        String newNetIPType = scanner.nextLine();
+                        System.out.print("Enter new internet provider name: ");
+                        String newProviderName = scanner.nextLine();
+                        System.out.print("Enter new internet provider phone number: ");
+                        String newProviderPhone = scanner.nextLine();
+                        System.out.print("Enter new internet provider email: ");
+                        String newProviderEmail = scanner.nextLine();
+                        System.out.print("Enter new internet provider id: ");
+                        long newProviderID = scanner.nextLong();
+                        System.out.println("How much money does this provider have?");
+                        System.out.print("Answer: ");
+                        float newProviderMoney = scanner.nextFloat();
+                        System.out.print("Enter new internet provider birthDay: ");
+                        int newProviderDay = scanner.nextInt();
+                        System.out.print("Enter new internet provider birthMonth: ");
+                        int newProviderMonth = scanner.nextInt();
+                        System.out.print("Enter new internet provider birthYear: ");
+                        int newProviderYear = scanner.nextInt();
+                        System.out.print("Enter new internet provider house number: ");
+                        int newProviderHouse = scanner.nextInt();
+                        System.out.print("Enter new internet provider road number: ");
+                        int newProviderRoad = scanner.nextInt();
+                        System.out.print("Enter new internet provider block number: ");
+                        int newProviderBlock = scanner.nextInt();
+                        System.out.print("Enter new internet provider area: ");
+                        String nothing59 = scanner.nextLine();
+                        String newProviderArea = scanner.nextLine();
+                        System.out.print("Enter new internet provider state: ");
+                        String newProviderState = scanner.nextLine();
+                        System.out.print("Enter new internet provider region: ");
+                        String newProviderRegion = scanner.nextLine();
+                        System.out.print("Enter new internet provider continent: ");
+                        String newProviderContinent = scanner.nextLine();
+                        System.out.print("Enter new internet provider country: ");
+                        String newProviderCountry = scanner.nextLine();
+                        Person newProviderPerson = new Person(newProviderName, newProviderPhone, newProviderEmail, newProviderID, newProviderMoney, newProviderDay, newProviderMonth, newProviderYear, newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                        Date newProviderDate = new Date(newProviderDay, newProviderMonth, newProviderYear);
+                        Address newProviderAddress = new Address(newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                        Internet newWaiterInternet = new Internet(newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson, newWaiterPerson);
+                        Waiter newWaiter = new Waiter(newWaiterName, newWaiterPhone, newWaiterEmail, newWaiterID, newWaiterMoney, newWaiterDay, newWaiterMonth, newWaiterYear, newWaiterHouse, newWaiterRoad, newWaiterBlock, newWaiterArea, newWaiterState, newWaiterRegion, newWaiterContinent, newWaiterCountry, newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson);
+                        peopleRecords.add(newProviderPerson, 4);
+                        dateArrayHashing.add(newProviderDate);
+                        addressLinkedHashing.add(newProviderAddress);
+                        internetKWLinkedList.add(newWaiterInternet, 4);
+                        waiterSingleLinkedList.replace(oldWaiter, newWaiter);
+                        System.out.println("The old waiter have been replaced by new waiter.");
+                    }
+                    else {
+                        System.out.println("Access Denied!");
+                        System.out.println("You need to be a manager to access this feature.");
+                    }
+                }
                 case 25 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         while (!waiterSingleLinkedList.isEmpty())
@@ -2830,7 +3423,7 @@ public class MyMain {
                     }
                 }
                 case 26 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID2 = scanner.nextLong();
                     if (manager.getID() == managerID2){
                         System.out.print("Enter cleaner name: ");
@@ -2871,11 +3464,11 @@ public class MyMain {
                         System.out.print("Enter cleaner internet name: ");
                         String cleanerNetName1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet password type: ");
-                        String cleanerNetPassType1 = scanner.next();
+                        String cleanerNetPassType1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet password: ");
                         String cleanerNetPass1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet IP address: ");
-                        String cleanerNetIP1 = scanner.next();
+                        String cleanerNetIP1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet IP type: ");
                         String cleanerNetIPType1 = scanner.nextLine();
                         System.out.print("Enter internet provider name: ");
@@ -2975,11 +3568,11 @@ public class MyMain {
                         System.out.print("Enter cleaner internet name: ");
                         String cleanerNetName1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet password type: ");
-                        String cleanerNetPassType1 = scanner.next();
+                        String cleanerNetPassType1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet password: ");
                         String cleanerNetPass1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet IP address: ");
-                        String cleanerNetIP1 = scanner.next();
+                        String cleanerNetIP1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet IP type: ");
                         String cleanerNetIPType1 = scanner.nextLine();
                         System.out.print("Enter internet provider name: ");
@@ -3040,7 +3633,7 @@ public class MyMain {
                     }
                 }
                 case 28 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID2 = scanner.nextLong();
                     if (manager.getID() == managerID2){
                         System.out.print("Enter cleaner name: ");
@@ -3081,11 +3674,11 @@ public class MyMain {
                         System.out.print("Enter cleaner internet name: ");
                         String cleanerNetName1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet password type: ");
-                        String cleanerNetPassType1 = scanner.next();
+                        String cleanerNetPassType1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet password: ");
                         String cleanerNetPass1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet IP address: ");
-                        String cleanerNetIP1 = scanner.next();
+                        String cleanerNetIP1 = scanner.nextLine();
                         System.out.print("Enter cleaner internet IP type: ");
                         String cleanerNetIPType1 = scanner.nextLine();
                         System.out.print("Enter internet provider name: ");
@@ -3147,7 +3740,7 @@ public class MyMain {
                     }
                 }
                 case 29 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         System.out.print("Enter an index for cleaner list: ");
@@ -3160,8 +3753,208 @@ public class MyMain {
                         System.out.println("You need to be a manager to access this feature!");
                     }
                 }
+                case 30 -> {
+                    System.out.println("Enter ID: ");
+                    long managerID = scanner.nextLong();
+                    if (manager.getID() == managerID){
+                        System.out.print("Enter old cleaner name: ");
+                        String nothing60 = scanner.nextLine();
+                        String oldCleanerName = scanner.nextLine();
+                        System.out.print("Enter old cleaner phone number: ");
+                        String oldCleanerPhone = scanner.nextLine();
+                        System.out.print("Enter old cleaner email: ");
+                        String oldCleanerEmail = scanner.next();
+                        System.out.print("Enter old cleaner ID: ");
+                        long oldCleanerID = scanner.nextLong();
+                        System.out.println("How much money does the waiter have?");
+                        System.out.print("Answer: ");
+                        float oldCleanerMoney = scanner.nextFloat();
+                        System.out.print("Enter old cleaner birthDay: ");
+                        int oldCleanerDay = scanner.nextInt();
+                        System.out.print("Enter old cleaner birthMonth: ");
+                        int oldCleanerMonth = scanner.nextInt();
+                        System.out.print("Enter old cleaner birthYear: ");
+                        int oldCleanerYear = scanner.nextInt();
+                        System.out.print("Enter old cleaner house: ");
+                        int oldCleanerHouse = scanner.nextInt();
+                        System.out.print("Enter old cleaner road: ");
+                        int oldCleanerRoad = scanner.nextInt();
+                        System.out.print("Enter old cleaner block: ");
+                        int oldCleanerBlock = scanner.nextInt();
+                        System.out.print("Enter old cleaner area: ");
+                        String nothing55 = scanner.nextLine();
+                        String oldCleanerArea = scanner.nextLine();
+                        System.out.print("Enter old cleaner state: ");
+                        String oldCleanerState = scanner.nextLine();
+                        System.out.print("Enter old cleaner region: ");
+                        String oldCleanerRegion = scanner.nextLine();
+                        System.out.print("Enter old cleaner continent: ");
+                        String oldCleanerContinent = scanner.nextLine();
+                        System.out.print("Enter old cleaner country: ");
+                        String oldCleanerCountry = scanner.nextLine();
+                        Person oldCleanerPerson = new Person(oldCleanerName, oldCleanerPhone, oldCleanerEmail, oldCleanerID, oldCleanerMoney, oldCleanerDay, oldCleanerMonth, oldCleanerYear, oldCleanerHouse, oldCleanerRoad, oldCleanerBlock, oldCleanerArea, oldCleanerState, oldCleanerRegion, oldCleanerContinent, oldCleanerCountry);
+                        Date oldCleanerDate = new Date(oldCleanerDay, oldCleanerMonth, oldCleanerYear);
+                        Address oldCleanerAddress = new Address(oldCleanerHouse, oldCleanerRoad, oldCleanerBlock, oldCleanerArea, oldCleanerState, oldCleanerRegion, oldCleanerContinent, oldCleanerCountry);
+                        peopleRecords.addFirst(oldCleanerPerson);
+                        dateArrayHashing.add(oldCleanerDate);
+                        addressLinkedHashing.add(oldCleanerAddress);
+                        System.out.print("Enter old internet name: ");
+                        String oldNetName = scanner.nextLine();
+                        System.out.print("Enter old internet password type: ");
+                        String oldNetPassType = scanner.nextLine();
+                        System.out.print("Enter old internet password: ");
+                        String oldNetPass = scanner.nextLine();
+                        System.out.print("Enter old internet IP address: ");
+                        String oldNetIP = scanner.nextLine();
+                        System.out.print("Enter old internet IP type: ");
+                        String oldNetIPType = scanner.nextLine();
+                        System.out.print("Enter old internet provider name: ");
+                        String oldProviderName = scanner.nextLine();
+                        System.out.print("Enter old internet provider phone number: ");
+                        String oldProviderPhone = scanner.nextLine();
+                        System.out.print("Enter old internet provider email: ");
+                        String oldProviderEmail = scanner.nextLine();
+                        System.out.print("Enter old internet provider id: ");
+                        long oldProviderID = scanner.nextLong();
+                        System.out.println("How much money does this provider have?");
+                        System.out.print("Answer: ");
+                        float oldProviderMoney = scanner.nextFloat();
+                        System.out.print("Enter old internet provider birthDay: ");
+                        int oldProviderDay = scanner.nextInt();
+                        System.out.print("Enter old internet provider birthMonth: ");
+                        int oldProviderMonth = scanner.nextInt();
+                        System.out.print("Enter old internet provider birthYear: ");
+                        int oldProviderYear = scanner.nextInt();
+                        System.out.print("Enter old internet provider house number: ");
+                        int oldProviderHouse = scanner.nextInt();
+                        System.out.print("Enter old internet provider road number: ");
+                        int oldProviderRoad = scanner.nextInt();
+                        System.out.print("Enter old internet provider block number: ");
+                        int oldProviderBlock = scanner.nextInt();
+                        System.out.print("Enter old internet provider area: ");
+                        String nothing56 = scanner.nextLine();
+                        String oldProviderArea = scanner.nextLine();
+                        System.out.print("Enter old internet provider state: ");
+                        String oldProviderState = scanner.nextLine();
+                        System.out.print("Enter old internet provider region: ");
+                        String oldProviderRegion = scanner.nextLine();
+                        System.out.print("Enter old internet provider continent: ");
+                        String oldProviderContinent = scanner.nextLine();
+                        System.out.print("Enter old internet provider country: ");
+                        String oldProviderCountry = scanner.nextLine();
+                        Person oldProviderPerson = new Person(oldProviderName, oldProviderPhone, oldProviderEmail, oldProviderID, oldProviderMoney, oldProviderDay, oldProviderMonth, oldProviderYear, oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                        Date oldProviderDate = new Date(oldProviderDay, oldProviderMonth, oldProviderYear);
+                        Address oldProviderAddress = new Address(oldProviderHouse, oldProviderRoad, oldProviderBlock, oldProviderArea, oldProviderState, oldProviderRegion, oldProviderContinent, oldProviderCountry);
+                        Internet oldCleanerInternet = new Internet(oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson, oldCleanerPerson);
+                        Cleaner oldCleaner = new Cleaner(oldCleanerName, oldCleanerPhone, oldCleanerEmail, oldCleanerID, oldCleanerMoney, oldCleanerDay, oldCleanerMonth, oldCleanerYear, oldCleanerHouse, oldCleanerRoad, oldCleanerBlock, oldCleanerArea, oldCleanerState, oldCleanerRegion, oldCleanerContinent, oldCleanerCountry, oldNetName, oldNetPassType, oldNetPass, oldNetIP, oldNetIPType, oldProviderPerson);
+                        peopleRecords.add(oldProviderPerson, 1);
+                        dateArrayHashing.add(oldProviderDate);
+                        addressLinkedHashing.add(oldProviderAddress);
+                        internetKWLinkedList.add(oldCleanerInternet, 1);
+                        System.out.print("Enter new cleaner name: ");
+                        String nothing61 = scanner.nextLine();
+                        String newCleanerName = scanner.nextLine();
+                        System.out.print("Enter new cleaner phone number: ");
+                        String newCleanerPhone = scanner.nextLine();
+                        System.out.print("Enter new cleaner email: ");
+                        String newCleanerEmail = scanner.next();
+                        System.out.print("Enter new cleaner ID: ");
+                        long newCleanerID = scanner.nextLong();
+                        System.out.println("How much money does the waiter have?");
+                        System.out.print("Answer: ");
+                        float newCleanerMoney = scanner.nextFloat();
+                        System.out.print("Enter new cleaner birthDay: ");
+                        int newCleanerDay = scanner.nextInt();
+                        System.out.print("Enter new cleaner birthMonth: ");
+                        int newCleanerMonth = scanner.nextInt();
+                        System.out.print("Enter new cleaner birthYear: ");
+                        int newCleanerYear = scanner.nextInt();
+                        System.out.print("Enter new cleaner house: ");
+                        int newCleanerHouse = scanner.nextInt();
+                        System.out.print("Enter new cleaner road: ");
+                        int newCleanerRoad = scanner.nextInt();
+                        System.out.print("Enter new cleaner block: ");
+                        int newCleanerBlock = scanner.nextInt();
+                        System.out.print("Enter new cleaner area: ");
+                        String nothing62 = scanner.nextLine();
+                        String newCleanerArea = scanner.nextLine();
+                        System.out.print("Enter new cleaner state: ");
+                        String newCleanerState = scanner.nextLine();
+                        System.out.print("Enter new cleaner region: ");
+                        String newCleanerRegion = scanner.nextLine();
+                        System.out.print("Enter new cleaner continent: ");
+                        String newCleanerContinent = scanner.nextLine();
+                        System.out.print("Enter new cleaner country: ");
+                        String newCleanerCountry = scanner.nextLine();
+                        Person newCleanerPerson = new Person(newCleanerName, newCleanerPhone, newCleanerEmail, newCleanerID, newCleanerMoney, newCleanerDay, newCleanerMonth, newCleanerYear, newCleanerHouse, newCleanerRoad, newCleanerBlock, newCleanerArea, newCleanerState, newCleanerRegion, newCleanerContinent, newCleanerCountry);
+                        Date newWaiterDate = new Date(newCleanerDay, newCleanerMonth, newCleanerYear);
+                        Address newWaiterAddress = new Address(newCleanerHouse, newCleanerRoad, newCleanerBlock, newCleanerArea, newCleanerState, newCleanerRegion, newCleanerContinent, newCleanerCountry);
+                        peopleRecords.addFirst(newCleanerPerson);
+                        dateArrayHashing.add(newWaiterDate);
+                        addressLinkedHashing.add(newWaiterAddress);
+                        System.out.print("Enter new internet name: ");
+                        String newNetName = scanner.nextLine();
+                        System.out.print("Enter new internet password type: ");
+                        String newNetPassType = scanner.nextLine();
+                        System.out.print("Enter new internet password: ");
+                        String newNetPass = scanner.nextLine();
+                        System.out.print("Enter new internet IP address: ");
+                        String newNetIP = scanner.nextLine();
+                        System.out.print("Enter new internet IP type: ");
+                        String newNetIPType = scanner.nextLine();
+                        System.out.print("Enter new internet provider name: ");
+                        String newProviderName = scanner.nextLine();
+                        System.out.print("Enter new internet provider phone number: ");
+                        String newProviderPhone = scanner.nextLine();
+                        System.out.print("Enter new internet provider email: ");
+                        String newProviderEmail = scanner.nextLine();
+                        System.out.print("Enter new internet provider id: ");
+                        long newProviderID = scanner.nextLong();
+                        System.out.println("How much money does this provider have?");
+                        System.out.print("Answer: ");
+                        float newProviderMoney = scanner.nextFloat();
+                        System.out.print("Enter new internet provider birthDay: ");
+                        int newProviderDay = scanner.nextInt();
+                        System.out.print("Enter new internet provider birthMonth: ");
+                        int newProviderMonth = scanner.nextInt();
+                        System.out.print("Enter new internet provider birthYear: ");
+                        int newProviderYear = scanner.nextInt();
+                        System.out.print("Enter new internet provider house number: ");
+                        int newProviderHouse = scanner.nextInt();
+                        System.out.print("Enter new internet provider road number: ");
+                        int newProviderRoad = scanner.nextInt();
+                        System.out.print("Enter new internet provider block number: ");
+                        int newProviderBlock = scanner.nextInt();
+                        System.out.print("Enter new internet provider area: ");
+                        String nothing59 = scanner.nextLine();
+                        String newProviderArea = scanner.nextLine();
+                        System.out.print("Enter new internet provider state: ");
+                        String newProviderState = scanner.nextLine();
+                        System.out.print("Enter new internet provider region: ");
+                        String newProviderRegion = scanner.nextLine();
+                        System.out.print("Enter new internet provider continent: ");
+                        String newProviderContinent = scanner.nextLine();
+                        System.out.print("Enter new internet provider country: ");
+                        String newProviderCountry = scanner.nextLine();
+                        Person newProviderPerson = new Person(newProviderName, newProviderPhone, newProviderEmail, newProviderID, newProviderMoney, newProviderDay, newProviderMonth, newProviderYear, newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                        Date newProviderDate = new Date(newProviderDay, newProviderMonth, newProviderYear);
+                        Address newProviderAddress = new Address(newProviderHouse, newProviderRoad, newProviderBlock, newProviderArea, newProviderState, newProviderRegion, newProviderContinent, newProviderCountry);
+                        Internet newWaiterInternet = new Internet(newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson, newCleanerPerson);
+                        Cleaner newCleaner = new Cleaner(newCleanerName, newCleanerPhone, newCleanerEmail, newCleanerID, newCleanerMoney, newCleanerDay, newCleanerMonth, newCleanerYear, newCleanerHouse, newCleanerRoad, newCleanerBlock, newCleanerArea, newCleanerState, newCleanerRegion, newCleanerContinent, newCleanerCountry, newNetName, newNetPassType, newNetPass, newNetIP, newNetIPType, newProviderPerson);
+                        peopleRecords.add(newProviderPerson, 3);
+                        dateArrayHashing.add(newProviderDate);
+                        addressLinkedHashing.add(newProviderAddress);
+                        internetKWLinkedList.add(newWaiterInternet, 3);
+                        cleanerKWLinkedList.replace(oldCleaner, newCleaner);
+                        System.out.println("The old cleaner have been replaced by new cleaner.");
+                    }
+                    else {
+                        System.out.println("Access Denied!");
+                        System.out.println("You need to be a manager to access this feature!");
+                    }
+                }
                 case 31 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         while (!cleanerKWLinkedList.isEmpty())
@@ -3174,20 +3967,20 @@ public class MyMain {
                     }
                 }
                 case 32 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         System.out.print("Enter internet name: ");
                         String nothing6 = scanner.nextLine();
                         String internetName2 = scanner.nextLine();
                         System.out.print("Enter internet password type: ");
-                        String internetPassType2 = scanner.next();
+                        String internetPassType2 = scanner.nextLine();
                         System.out.print("Enter internet password: ");
                         String internetPass2 = scanner.nextLine();
                         System.out.print("Enter internet ip address: ");
-                        String internetAddress2 = scanner.next();
+                        String internetAddress2 = scanner.nextLine();
                         System.out.print("Enter internet ip type: ");
-                        String internetIPType2 = scanner.next();
+                        String internetIPType2 = scanner.nextLine();
                         System.out.print("Enter provider's name: ");
                         String providerName1 = scanner.nextLine();
                         System.out.print("Enter provider's phone number: ");
@@ -3212,7 +4005,8 @@ public class MyMain {
                         System.out.print("Enter provider's block number: ");
                         int providerBlock1 = scanner.nextInt();
                         System.out.print("Enter provider's area: ");
-                        String providerArea1 = scanner.next();
+                        String nothing50 = scanner.nextLine();
+                        String providerArea1 = scanner.nextLine();
                         System.out.print("Enter provider's state: ");
                         String providerState1 = scanner.nextLine();
                         System.out.print("Enter provider's region: ");
@@ -3227,7 +4021,7 @@ public class MyMain {
                         addressLinkedHashing.add(address);
                         date = new Date(providerDay1, providerMonth1, providerYear1);
                         dateArrayHashing.add(date);
-                        System.out.println("Provider have been added to a list");
+                        System.out.println("Provider have been added to a list.");
                         internet = new Internet(internetName2, internetPassType2, internetPass2, internetAddress2, internetIPType2, person1);
                         internetKWLinkedList.add(internet);
                         System.out.println("An internet have been added to the list.");
@@ -3238,20 +4032,20 @@ public class MyMain {
                     }
                 }
                 case 33 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         System.out.print("Enter internet name: ");
                         String nothing6 = scanner.nextLine();
                         String internetName2 = scanner.nextLine();
                         System.out.print("Enter internet password type: ");
-                        String internetPassType2 = scanner.next();
+                        String internetPassType2 = scanner.nextLine();
                         System.out.print("Enter internet password: ");
                         String internetPass2 = scanner.nextLine();
                         System.out.print("Enter internet ip address: ");
-                        String internetAddress2 = scanner.next();
+                        String internetAddress2 = scanner.nextLine();
                         System.out.print("Enter internet ip type: ");
-                        String internetIPType2 = scanner.next();
+                        String internetIPType2 = scanner.nextLine();
                         System.out.print("Enter provider's name: ");
                         String providerName1 = scanner.nextLine();
                         System.out.print("Enter provider's phone number: ");
@@ -3276,7 +4070,8 @@ public class MyMain {
                         System.out.print("Enter provider's block number: ");
                         int providerBlock1 = scanner.nextInt();
                         System.out.print("Enter provider's area: ");
-                        String providerArea1 = scanner.next();
+                        String nothing46 = scanner.nextLine();
+                        String providerArea1 = scanner.nextLine();
                         System.out.print("Enter provider's state: ");
                         String providerState1 = scanner.nextLine();
                         System.out.print("Enter provider's region: ");
@@ -3291,7 +4086,7 @@ public class MyMain {
                         addressLinkedHashing.add(address);
                         date = new Date(providerDay1, providerMonth1, providerYear1);
                         dateArrayHashing.add(date);
-                        System.out.println("Provider have been added to a list");
+                        System.out.println("Provider have been added to a list.");
                         internet = new Internet(internetName2, internetPassType2, internetPass2, internetAddress2, internetIPType2, person1);
                         if (internetKWLinkedList.remove(internet).equals(internet))
                             System.out.println("An internet have been successfully deleted.");
@@ -3324,13 +4119,13 @@ public class MyMain {
                         String nothing6 = scanner.nextLine();
                         String internetName2 = scanner.nextLine();
                         System.out.print("Enter internet password type: ");
-                        String internetPassType2 = scanner.next();
+                        String internetPassType2 = scanner.nextLine();
                         System.out.print("Enter internet password: ");
                         String internetPass2 = scanner.nextLine();
                         System.out.print("Enter internet ip address: ");
-                        String internetAddress2 = scanner.next();
+                        String internetAddress2 = scanner.nextLine();
                         System.out.print("Enter internet ip type: ");
-                        String internetIPType2 = scanner.next();
+                        String internetIPType2 = scanner.nextLine();
                         System.out.print("Enter provider's name: ");
                         String providerName1 = scanner.nextLine();
                         System.out.print("Enter provider's phone number: ");
@@ -3355,7 +4150,8 @@ public class MyMain {
                         System.out.print("Enter provider's block number: ");
                         int providerBlock1 = scanner.nextInt();
                         System.out.print("Enter provider's area: ");
-                        String providerArea1 = scanner.next();
+                        String nothing51 = scanner.nextLine();
+                        String providerArea1 = scanner.nextLine();
                         System.out.print("Enter provider's state: ");
                         String providerState1 = scanner.nextLine();
                         System.out.print("Enter provider's region: ");
@@ -3370,7 +4166,7 @@ public class MyMain {
                         addressLinkedHashing.add(address);
                         date = new Date(providerDay1, providerMonth1, providerYear1);
                         dateArrayHashing.add(date);
-                        System.out.println("Provider have been added to a list");
+                        System.out.println("Provider have been added to a list.");
                         internet = new Internet(internetName2, internetPassType2, internetPass2, internetAddress2, internetIPType2, person1);
                         int internetIndex = internetKWLinkedList.search(internet);
                         if (internetIndex > -1)
@@ -3397,13 +4193,13 @@ public class MyMain {
                         String nothing6 = scanner.nextLine();
                         String internetName2 = scanner.nextLine();
                         System.out.print("Enter internet password type: ");
-                        String internetPassType2 = scanner.next();
+                        String internetPassType2 = scanner.nextLine();
                         System.out.print("Enter internet password: ");
                         String internetPass2 = scanner.nextLine();
                         System.out.print("Enter internet ip address: ");
-                        String internetAddress2 = scanner.next();
+                        String internetAddress2 = scanner.nextLine();
                         System.out.print("Enter internet ip type: ");
-                        String internetIPType2 = scanner.next();
+                        String internetIPType2 = scanner.nextLine();
                         System.out.print("Enter provider's name: ");
                         String providerName1 = scanner.nextLine();
                         System.out.print("Enter provider's phone number: ");
@@ -3428,7 +4224,8 @@ public class MyMain {
                         System.out.print("Enter provider's block number: ");
                         int providerBlock1 = scanner.nextInt();
                         System.out.print("Enter provider's area: ");
-                        String providerArea1 = scanner.next();
+                        String nothing52 = scanner.nextLine();
+                        String providerArea1 = scanner.nextLine();
                         System.out.print("Enter provider's state: ");
                         String providerState1 = scanner.nextLine();
                         System.out.print("Enter provider's region: ");
@@ -3443,18 +4240,18 @@ public class MyMain {
                         addressLinkedHashing.add(address1);
                         Date date1 = new Date(providerDay1, providerMonth1, providerYear1);
                         dateArrayHashing.add(date1);
-                        System.out.println("Provider have been added to a list");
+                        System.out.println("Provider have been added to a list.");
                         Internet internet1 = new Internet(internetName2, internetPassType2, internetPass2, internetAddress2, internetIPType2, person1);
                         System.out.print("Enter new internet name: ");
                         String newInternetName2 = scanner.nextLine();
                         System.out.print("Enter new internet password type: ");
-                        String newPasswordType2 = scanner.next();
+                        String newPasswordType2 = scanner.nextLine();
                         System.out.print("Enter new internet password: ");
                         String newPassword2 = scanner.nextLine();
                         System.out.print("Enter new IP address: ");
-                        String newIPAddress2 = scanner.next();
+                        String newIPAddress2 = scanner.nextLine();
                         System.out.print("Enter new IP type: ");
-                        String newIPType2 = scanner.next();
+                        String newIPType2 = scanner.nextLine();
                         System.out.print("Enter new provider's name: ");
                         String providerName2 = scanner.nextLine();
                         System.out.print("Enter new provider's phone number: ");
@@ -3479,7 +4276,8 @@ public class MyMain {
                         System.out.print("Enter new provider's block number: ");
                         int providerBlock2 = scanner.nextInt();
                         System.out.print("Enter new provider's area: ");
-                        String providerArea2 = scanner.next();
+                        String nothing53 = scanner.nextLine();
+                        String providerArea2 = scanner.nextLine();
                         System.out.print("Enter new provider's state: ");
                         String providerState2 = scanner.nextLine();
                         System.out.print("Enter new provider's region: ");
@@ -3504,7 +4302,7 @@ public class MyMain {
                     }
                 }
                 case 37 -> {
-                    System.out.print("Enter your ID: ");
+                    System.out.print("Enter ID: ");
                     long managerID = scanner.nextLong();
                     if (manager.getID() == managerID){
                         while (!internetKWLinkedList.isEmpty())
@@ -3631,7 +4429,7 @@ public class MyMain {
                 }
                 case 39 -> {
                     boolean founder = false;
-                    System.out.print("Enter your ID:");
+                    System.out.print("Enter ID:");
                     long cleanerID = scanner.nextLong();
                     for (int o = 0; o < cleanerKWLinkedList.size(); o++)
                         if (cleanerKWLinkedList.get(o).getID() == cleanerID){
