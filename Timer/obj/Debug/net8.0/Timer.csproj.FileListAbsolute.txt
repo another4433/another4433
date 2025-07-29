@@ -1,0 +1,14 @@
+E:\College\ITAD299\Timer\bin\Debug\net8.0\Timer.exe
+E:\College\ITAD299\Timer\bin\Debug\net8.0\Timer.deps.json
+E:\College\ITAD299\Timer\bin\Debug\net8.0\Timer.runtimeconfig.json
+E:\College\ITAD299\Timer\bin\Debug\net8.0\Timer.dll
+E:\College\ITAD299\Timer\bin\Debug\net8.0\Timer.pdb
+E:\College\ITAD299\Timer\obj\Debug\net8.0\Timer.GeneratedMSBuildEditorConfig.editorconfig
+E:\College\ITAD299\Timer\obj\Debug\net8.0\Timer.AssemblyInfoInputs.cache
+E:\College\ITAD299\Timer\obj\Debug\net8.0\Timer.AssemblyInfo.cs
+E:\College\ITAD299\Timer\obj\Debug\net8.0\Timer.csproj.CoreCompileInputs.cache
+E:\College\ITAD299\Timer\obj\Debug\net8.0\Timer.dll
+E:\College\ITAD299\Timer\obj\Debug\net8.0\refint\Timer.dll
+E:\College\ITAD299\Timer\obj\Debug\net8.0\Timer.pdb
+E:\College\ITAD299\Timer\obj\Debug\net8.0\Timer.genruntimeconfig.cache
+E:\College\ITAD299\Timer\obj\Debug\net8.0\ref\Timer.dll
