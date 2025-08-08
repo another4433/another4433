@@ -15,25 +15,10 @@ public class Course
     }
 	public Course(string name, string code, string letter)
 	{
-		this._name = name;
-		this._code = code;
-		this._letter = letter;
+		_name = name;
+		_code = code;
+		_letter = letter;
 		_credits = 0.0;
-    }
-	public string Name
-	{
-		get { return _name; }
-		set { _name = value; }
-    }
-	public string Code
-	{
-		get { return _code; }
-		set { _code = value; }
-    }
-	public string Letter
-	{
-		get { return _letter; }
-		set { _letter = value; }
     }
 	public double Credits
 	{

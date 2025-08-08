@@ -1,0 +1,14 @@
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\ConsoleApp1.exe
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\ConsoleApp1.deps.json
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\ConsoleApp1.runtimeconfig.json
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\ConsoleApp1.dll
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\ConsoleApp1.pdb
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ConsoleApp1.AssemblyInfoInputs.cache
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ConsoleApp1.AssemblyInfo.cs
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ConsoleApp1.dll
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\refint\ConsoleApp1.dll
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ConsoleApp1.pdb
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ConsoleApp1.genruntimeconfig.cache
+E:\College\Polytechnic\ConsoleApp1\obj\Release\net9.0\ref\ConsoleApp1.dll

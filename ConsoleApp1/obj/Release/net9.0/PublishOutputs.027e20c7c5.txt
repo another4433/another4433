@@ -1,0 +1,5 @@
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\publish\ConsoleApp1.exe
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\publish\ConsoleApp1.dll
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\publish\ConsoleApp1.deps.json
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\publish\ConsoleApp1.runtimeconfig.json
+E:\College\Polytechnic\ConsoleApp1\bin\Release\net9.0\publish\ConsoleApp1.pdb
