@@ -84,7 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class AddCourse extends StatefulWidget {
   const AddCourse({super.key});
-
   @override
   State<AddCourse> createState() => _AddCourseState();
 }
@@ -99,7 +98,6 @@ class _AddCourseState extends State<AddCourse> {
   double theDefault4 = 3, theDefault5 = 3;
   int counter = 0;
   bool isLab = false, isPractical = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -221,7 +219,10 @@ class _AddCourseState extends State<AddCourse> {
                         context: context,
                         initialTime: TimeOfDay.now(),
                       ).then((value) {
-                        controller3.text = value.toString();
+                        controller3.text = value.toString().substring(
+                          value.toString().indexOf("(") + 1,
+                          value.toString().indexOf(")"),
+                        );
                         setState(() {});
                       });
                     },
@@ -240,7 +241,10 @@ class _AddCourseState extends State<AddCourse> {
                         context: context,
                         initialTime: TimeOfDay.now(),
                       ).then((value) {
-                        controller4.text = value.toString();
+                        controller4.text = value.toString().substring(
+                          value.toString().indexOf("(") + 1,
+                          value.toString().indexOf(")"),
+                        );
                         setState(() {});
                       });
                     },
@@ -328,6 +332,17 @@ class _AddCourseState extends State<AddCourse> {
                       ),
                     );
                     concat = "";
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CourseList()),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          "Tap on the course list tab that is the next tab to reset the course days when tapping the add course tab.",
+                        ),
+                      ),
+                    );
                     setState(() {});
                   },
                   child: Text("Add course"),
@@ -372,7 +387,7 @@ class _CourseListState extends State<CourseList> {
               leading: Text(Course.courseList[index].code),
               title: Text(Course.courseList[index].name),
               subtitle: Text(
-                "${Course.courseList[index].timeStart}-${Course.courseList[index].timeEnd}, ${Course.courseList[index].days}",
+                "${Course.courseList[index].days}, \t ${Course.courseList[index].timeStart} - ${Course.courseList[index].timeEnd}",
               ),
               trailing: Text("$practical\n$lab"),
             ),
