@@ -1,0 +1,9 @@
+{
+  "firestore" : {
+    "apiKey": "AIzaSyDGeen6fUcfp3Fp19bo20n6Iu94S8jrsU8",
+    "authDomain": "aqwe-restaurant.firebaseapp.com",
+    "projectId": "aqwe-restaurant",
+    "messagingSenderId": "824820585467",
+    "appId": "1:824820585467:web:65fd18841e6e4a2859f15e"
+  }
+}

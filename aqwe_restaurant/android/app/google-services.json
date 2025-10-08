@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "824820585467",
+    "project_id": "aqwe-restaurant",
+    "storage_bucket": "aqwe-restaurant.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824820585467:android:ac7d948266f268d259f15e",
+        "android_client_info": {
+          "package_name": "com.example.aqwe_restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824820585467-mhsap5ubrntd3sqc4kr9i48ni8iamlkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsuTpekSZFyQyQB0Pao2090sVqYB4r7Jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824820585467-mhsap5ubrntd3sqc4kr9i48ni8iamlkp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
