@@ -34,5 +34,5 @@ Here are some ideas to get you started:
 </div>
 
 <!-- Credit to Anurag Hazra for the stats service -->
-<!--[![Ali's GitHub stats](https://github-readme-stats.vercel.app/api?username=another4433)](https://github.com/another4433/github-readme-stats)-->
+<!--[![Ali's GitHub stats](https://github-readme-stats.vercel.app/api?username=another4433)](https://github.com/another4433/another4433)-->
 
