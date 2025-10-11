@@ -41,6 +41,7 @@ class Pizza {
 }
 
 class NoSQLDBPizza {
+  static bool check = false;
   static Future<void> addPizza(
     drink,
     theSizer,
@@ -60,6 +61,7 @@ class NoSQLDBPizza {
       "Toppings": toppings,
     };
     await docRef.set(dbItem);
+    check = true;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text("The restaurant has received your order.")),
     );
@@ -78,10 +80,12 @@ class OrderPizza extends StatefulWidget {
 class _OrderPizzaState extends State<OrderPizza> {
   TheSizes? _sizes;
   List<String> theCrusts = [];
-  String crustValue = "", theSizer = "", drink = "";
+  String crustValue = "";
   TextEditingController crustControl = TextEditingController();
   bool isCheesy = false, hasOlives = false, hasPep = false, isSpicy = false;
   bool hasOnion = false, hasTomato = false, hasPepper = false;
+  String theSizer = "";
+  String drink = "";
 
   @override
   Widget build(BuildContext context) {
@@ -378,6 +382,15 @@ class _OrderPizzaState extends State<OrderPizza> {
                     theItem.toppings,
                     context,
                   );
+                  if (!NoSQLDBPizza.check) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          "The restaurant has NOT received your order.",
+                        ),
+                      ),
+                    );
+                  }
                 });
               },
               child: Text("Add to Cart"),
@@ -416,8 +429,7 @@ class PizzaList extends StatefulWidget {
 }
 
 class _PizzaListState extends State<PizzaList> {
-  String theToppings = "";
-  String theSpicy = "";
+  String theToppings = "", theSpicy = "";
 
   @override
   Widget build(BuildContext context) {
@@ -451,9 +463,7 @@ class _PizzaListState extends State<PizzaList> {
                     Pizza.pizzaList.removeAt(index);
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text(
-                          "An item has been deleted or removed from the list, but the restaurant still have your order.",
-                        ),
+                        content: Text("The Item is deleted from your list."),
                       ),
                     );
                   });

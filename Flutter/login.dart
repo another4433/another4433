@@ -56,117 +56,132 @@ class _MyAccountState extends State<MyAccount> {
         title: Text(widget.title),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Column(
-        children: [
-          Center(
-            child: Title(
-              color: Colors.blueGrey,
-              child: Text(
-                "AQWE Restaurant",
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.normal,
-                  fontFamily: 'sans-serif',
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Title(
+                color: Colors.blueGrey,
+                child: Text(
+                  "AQWE Restaurant",
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
+                    fontFamily: 'sans-serif',
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 20),
-          TextField(
-            controller: controllerEmail,
-            decoration: InputDecoration(
-              iconColor: Colors.black,
-              icon: Icon(Icons.email),
-              border: OutlineInputBorder(),
-              labelText: "Email",
-              hintText: "Enter your email",
+            SizedBox(height: 20),
+            TextField(
+              controller: controllerEmail,
+              decoration: InputDecoration(
+                iconColor: Colors.black,
+                icon: Icon(Icons.email),
+                border: OutlineInputBorder(),
+                labelText: "Email",
+                hintText: "Enter your email",
+              ),
             ),
-          ),
-          SizedBox(height: 5),
-          TextField(
-            controller: controllerPassword,
-            decoration: InputDecoration(
-              iconColor: Colors.black,
-              icon: Icon(Icons.password),
-              border: OutlineInputBorder(),
-              labelText: "Password",
-              hintText: "Enter your password",
+            SizedBox(height: 5),
+            TextField(
+              controller: controllerPassword,
+              decoration: InputDecoration(
+                iconColor: Colors.black,
+                icon: Icon(Icons.password),
+                border: OutlineInputBorder(),
+                labelText: "Password",
+                hintText: "Enter your password",
+              ),
             ),
-          ),
-          SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                theServices.createUser(
-                  controllerEmail.text,
-                  controllerPassword.text,
-                  context,
-                );
-                if (theServices.checker) {
-                  Navigator.push(
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  theServices.createUser(
+                    controllerEmail.text,
+                    controllerPassword.text,
                     context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => MyApp(),
-                    ),
                   );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        "Your account might be created. Try signing in to your account!",
+                  if (theServices.checker) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => MyApp(),
                       ),
-                    ),
-                  );
-                }
-              });
-            },
-            child: Text("Register"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                theServices.signInWithGoogle(context);
-                if (theServices._isGoogleSignInInitialized &&
-                    theServices.checker) {
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          "Your account might be created. Try signing in to your account!",
+                        ),
+                      ),
+                    );
+                  }
+                });
+              },
+              child: Text("Register"),
+            ),
+            ElevatedButton(
+              child: Text("Continue as a guest"),
+              onPressed: () {
+                setState(() {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (BuildContext context) => MyApp(),
                     ),
                   );
-                }
-              });
-            },
-            child: Text("Continue with Google"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                theServices.signIn(
-                  controllerEmail.text,
-                  controllerPassword.text,
-                  context,
-                );
-                if (theServices.checker) {
-                  Navigator.push(
+                });
+              },
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  theServices.signInWithGoogle(context);
+                  if (theServices._isGoogleSignInInitialized &&
+                      theServices.checker) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => MyApp(),
+                      ),
+                    );
+                  }
+                });
+              },
+              child: Text("Continue with Google"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  theServices.signIn(
+                    controllerEmail.text,
+                    controllerPassword.text,
                     context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => MyApp(),
-                    ),
                   );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("Try signing in to your account again!"),
-                    ),
-                  );
-                }
-              });
-            },
-            child: Text("Sign-In"),
-          ),
-        ],
+                  if (theServices.checker) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => MyApp(),
+                      ),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Try signing in to your account again!"),
+                      ),
+                    );
+                  }
+                });
+              },
+              child: Text("Sign-In"),
+            ),
+          ],
+        ),
       ),
       bottomSheet: SizedBox(
         height: 120,
@@ -179,7 +194,7 @@ class _MyAccountState extends State<MyAccount> {
                   theServices.launchMail();
                 });
               },
-              child: Text("Contact the Admin"),
+              child: Text("Contact the restaurant"),
             ),
             Text(
               "If you want to confirm deleting your food, click on the button above and specify it including your current email.",

@@ -18,6 +18,7 @@ Future<void> main() async {
 }
 
 class NoSQLDBBurger {
+  static bool check = false;
   static Future<void> addFood(
     isSpicy,
     isCheesy,
@@ -51,6 +52,7 @@ class NoSQLDBBurger {
       "Toppings": toppings,
     };
     await docRef.set(dbItem);
+    check = true;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text("The restaurant has received your order.")),
     );
@@ -719,7 +721,7 @@ class _AddShawarmaState extends State<AddShawarma> {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
-                    "An item has been added to the list and it has been sent to the restaurant.",
+                    "An item has been added to the list and sent to the restaurant.",
                   ),
                 ),
               );
@@ -738,6 +740,15 @@ class _AddShawarmaState extends State<AddShawarma> {
                 meatType,
                 theFood.theToppings,
               );
+              if (!NoSQLDBBurger.check) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      "The restaurant has NOT received your order.",
+                    ),
+                  ),
+                );
+              }
               _shawarmaForm.currentState!.reset();
             });
           },
@@ -781,9 +792,7 @@ class _ShawarmaListState extends State<ShawarmaList> {
                       Shawarma.theList.removeAt(index);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(
-                            "An item has been deleted or removed from the list. The restaurant still has your order.",
-                          ),
+                          content: Text("The Item is deleted from your list."),
                         ),
                       );
                     });
