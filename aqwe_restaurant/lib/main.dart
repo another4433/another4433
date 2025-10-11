@@ -103,27 +103,49 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               IconButton(
                 onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder:
-                        (context) => AlertDialog(
-                          icon: Icon(Icons.account_balance_outlined),
-                          title: Text("Account Information"),
-                          content: Text(
-                            "Email: ${FirebaseAuth.instance.currentUser!.email}\nPassword: \"HIDDEN\"",
+                  if (FirebaseAuth.instance.currentUser == null) {
+                    showDialog(
+                      context: context,
+                      builder:
+                          (context) => AlertDialog(
+                            icon: Icon(Icons.account_balance_outlined),
+                            title: Text("Account Information"),
+                            content: Text("This is a guest user."),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    Navigator.pop(context);
+                                  });
+                                },
+                                child: Text("Ok"),
+                              ),
+                            ],
                           ),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  Navigator.pop(context);
-                                });
-                              },
-                              child: Text("Ok"),
+                    );
+                  } else {
+                    showDialog(
+                      context: context,
+                      builder:
+                          (context) => AlertDialog(
+                            icon: Icon(Icons.account_balance_outlined),
+                            title: Text("Account Information"),
+                            content: Text(
+                              "Email: ${FirebaseAuth.instance.currentUser!.email}\nPassword: \"HIDDEN\"",
                             ),
-                          ],
-                        ),
-                  );
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    Navigator.pop(context);
+                                  });
+                                },
+                                child: Text("Ok"),
+                              ),
+                            ],
+                          ),
+                    );
+                  }
                 },
                 icon: Icon(Icons.person),
               ),

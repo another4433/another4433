@@ -96,6 +96,17 @@ class _MyAccountState extends State<MyAccount> {
           ),
           SizedBox(height: 10),
           ElevatedButton(
+            child: Text("Continue as a guest"),
+            onPressed: () {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (BuildContext context) => MyApp()),
+                );
+              });
+            },
+          ),
+          ElevatedButton(
             onPressed: () {
               setState(() {
                 theServices.createUser(
@@ -126,23 +137,6 @@ class _MyAccountState extends State<MyAccount> {
           ElevatedButton(
             onPressed: () {
               setState(() {
-                theServices.signInWithGoogle(context);
-                if (theServices._isGoogleSignInInitialized &&
-                    theServices.checker) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => MyApp(),
-                    ),
-                  );
-                }
-              });
-            },
-            child: Text("Continue with Google"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
                 theServices.signIn(
                   controllerEmail.text,
                   controllerPassword.text,
@@ -166,6 +160,23 @@ class _MyAccountState extends State<MyAccount> {
             },
             child: Text("Sign-In"),
           ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                theServices.signInWithGoogle(context);
+                if (theServices._isGoogleSignInInitialized &&
+                    theServices.checker) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => MyApp(),
+                    ),
+                  );
+                }
+              });
+            },
+            child: Text("Continue with Google"),
+          ),
         ],
       ),
       bottomSheet: SizedBox(
@@ -179,7 +190,7 @@ class _MyAccountState extends State<MyAccount> {
                   theServices.launchMail();
                 });
               },
-              child: Text("Contact the Admin"),
+              child: Text("Contact the restaurant"),
             ),
             Text(
               "If you want to confirm deleting your food, click on the button above and specify it including your current email.",
