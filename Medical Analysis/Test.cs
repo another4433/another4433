@@ -28,6 +28,7 @@ public class Test
     private bool IsAbnormal, IsCritical;
     private readonly float Delta;
     private Trend ResultTrend;
+    private Patient Patient;
     public Test()
 	{
         TestResult = TestResult.Normal;
@@ -38,8 +39,9 @@ public class Test
         ValueNum = ValueLow = ValueHigh = ValuePrev = 0.0f;
         IsAbnormal = IsCritical = false;
         Delta = 0.01f; // Default delta for trend analysis
+        Patient = new Patient();
     }
-    public Test(string testResult, DateTime discharge, DateTime visitDate, int roomNum, int visitNum, string hospital, string testName, string testCode, string unit, float valueNum, float valueLow, float valueHigh, float valuePrev)
+    public Test(string testResult, DateTime discharge, DateTime visitDate, int roomNum, int visitNum, string hospital, string testName, string testCode, string unit, float valueNum, float valueLow, float valueHigh, float valuePrev, Patient patient)
     {
         TestResult = Enum.Parse<TestResult>(testResult);
         Discharge = discharge;
@@ -58,6 +60,7 @@ public class Test
         IsCritical = valueNum < valueLow * 0.5f || valueNum > valueHigh * 1.5f; // Example critical thresholds
         Delta = ValueNum - ValuePrev;
         ResultTrend = AnalyzeTrend();
+        Patient = patient;
     }
     private Trend AnalyzeTrend()
     {
@@ -83,12 +86,17 @@ public class Test
     public bool IsAbnormalDetail { get => IsAbnormal; set => IsAbnormal = value; }
     public bool IsCriticalDetail { get => IsCritical; set => IsCritical = value; }
     public Trend ResultTrendDetail { get => ResultTrend; }
+    public Patient PatientDetail { get => Patient; set => Patient = value; }
     public int CalculateStayDuration()
     {
         return (DateTime.Now - Discharge).Days;
     }
     public void ShowTest()
     {
+        Console.WriteLine($"Patient ID: {PatientDetail.IDDetail}");
+        Console.WriteLine($"Patient Name: {PatientDetail.NameDetail}");
+        Console.WriteLine($"Patient Age: {PatientDetail.AgeDetail}");
+        Console.WriteLine($"Patient Gender: {PatientDetail.GenderDetail}");
         Console.WriteLine("=== Test Details ===");
         Console.WriteLine($"Test Name: {TestNameDetail}");
         Console.WriteLine($"Test Code: {TestCodeDetail}");

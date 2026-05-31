@@ -8,6 +8,8 @@ public class Patient : Person
     private static Random Random = new Random();
     private double BodyWeight, BodyTemperature, HeartRate; // Added BodyWeight property
     private string[] Units = new string[3];
+    private Doctor PrimaryDoctor;
+    private Test Test = new Test();
     public Patient() : base()
     {
         BloodType = "NA";
@@ -18,8 +20,9 @@ public class Patient : Person
         BodyWeight = 0.0;
         BodyTemperature = 0.0;
         HeartRate = 0.0;
+        PrimaryDoctor = new Doctor();
     }
-    public Patient(string ID, string Name, string ContactType, string ContactDetail, string Currency, string National, double Amount, char Gender, DateTime DOB, string BloodType, string Description, string Medication, DateTime Discharge, int RoomNum, Case ThatCase, double BodyWeight, string[] units, double HeartRate, double BodyTemperature) : base(ID, Name, ContactType, ContactDetail, Currency, National, Amount, Gender, DOB)
+    public Patient(string ID, string Name, string ContactType, string ContactDetail, string Currency, string National, double Amount, char Gender, DateTime DOB, string BloodType, string Description, string Medication, Case ThatCase, double BodyWeight, string[] units, double HeartRate, double BodyTemperature, Doctor PrimaryDoctor) : base(ID, Name, ContactType, ContactDetail, Currency, National, Amount, Gender, DOB)
     {
         this.BloodType = BloodType;
         this.Description = Description;
@@ -30,10 +33,13 @@ public class Patient : Person
         this.BodyWeight = (BodyWeight < 0) ? 0 : BodyWeight;
         this.HeartRate = (HeartRate < 0) ? 0 : HeartRate;
         this.BodyTemperature = BodyTemperature;
+        this.PrimaryDoctor = PrimaryDoctor;
     }
     public string BloodTypeDetail { get => BloodType; set => BloodType = value; }
     public string DescriptionDetail { get => Description; set => Description = value; }
     public string MedicationDetail { get => Medication; set => Medication = value; }
+    public Doctor PrimaryDoctorDetail { get => PrimaryDoctor; set => PrimaryDoctor = value; }
+    public Test TestDetail { get => Test; set => Test = value; }
     public long PIDDetail()
     {
         return PID;
@@ -58,5 +64,7 @@ public class Patient : Person
         Console.WriteLine($"Body Temperature: {BodyTemperatureDetail} {UnitsDetail[1]}");
         Console.WriteLine($"Heart Rate: {HeartRateDetail} {UnitsDetail[2]}");
         TheCaseDetail.ShowCase();
+        PrimaryDoctorDetail.ShowDoctor();
+        TestDetail.ShowTest();
     }
 }
