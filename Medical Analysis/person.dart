@@ -3,6 +3,7 @@ class Person {
   int _age = 0;
   DateTime _birthDate = DateTime.now();
   double _money = 0.0;
+  static final List<Person> _people = List.empty(growable: true);
   Person(
     this._name,
     this._id,
@@ -86,5 +87,9 @@ class Person {
 
   DateTime birthDateToDatetime() {
     return _birthDate;
+  }
+
+  static List<Person> getPeople() {
+    return _people;
   }
 }

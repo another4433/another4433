@@ -6,6 +6,7 @@ class Case {
   double? cid;
   bool _cureavailable = false;
   static Random random = Random();
+  static final List<Case> _cases = List.empty(growable: true);
 
   Case(
     this._allergy,
@@ -58,4 +59,7 @@ class Case {
   String get disgnosis => _diagnosis;
   bool get isCureAvailable => _cureavailable;
   DateTime get discovery => _discover;
+  static List<Case> getCases() {
+    return _cases;
+  }
 }

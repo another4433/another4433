@@ -23,6 +23,7 @@ class Doctor extends Person {
   double _dID = 0;
   static Random random = Random();
   final List<Patient> _patients = [];
+  static final List<Doctor> _doctors = List.empty(growable: true);
 
   Doctor(
     super._name,
@@ -66,4 +67,7 @@ class Doctor extends Person {
   String get workPhone => _workPhone;
   List<Patient> get accessPatients => _patients;
   double get dID => _dID;
+  static List<Doctor> getDoctors() {
+    return _doctors;
+  }
 }

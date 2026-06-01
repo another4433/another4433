@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_app/user.dart';
 
 void main() {
   runApp(const MyApp());
@@ -88,6 +89,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Handle login logic here
                 String username = usernameController.text;
                 String password = passwordController.text;
+                String encryptedPassword = "";
+                for (User user in User.getUsers()) {
+                  if (user.getEmail() == username) {
+                    encryptedPassword = user.getPassword();
+                    break;
+                  }
+                }
+                if (encryptedPassword.isNotEmpty) {
+                  List<String> decrypted = User.decrypt(encryptedPassword);
+                  if (decrypted[1] == password) {
+                    print('Login successful');
+                  } else {
+                    print('Incorrect password');
+                  }
+                } else {
+                  print('User not found');
+                }
                 // For demonstration, just print the values
                 print('Username: $username');
                 print('Password: $password');

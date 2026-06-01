@@ -11,6 +11,7 @@ class Patient extends Person {
   List<String> _units = [];
   Case _case;
   Doctor? _primaryDoctor;
+  static final List<Patient> _patients = List.empty(growable: true);
 
   Patient(
     super._name,
@@ -82,4 +83,7 @@ class Patient extends Person {
   List<String> get unitDetails => _units;
   Case get caseDetail => _case;
   Doctor? get primaryDoctor => _primaryDoctor;
+  static List<Patient> getPatients() {
+    return _patients;
+  }
 }
