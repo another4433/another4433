@@ -28,7 +28,7 @@ public class Test
     private bool IsAbnormal, IsCritical;
     private readonly float Delta;
     private Trend ResultTrend;
-    private Patient Patient;
+    private Patient Patient = new Patient();
     public Test()
 	{
         TestResult = TestResult.Normal;
@@ -39,7 +39,6 @@ public class Test
         ValueNum = ValueLow = ValueHigh = ValuePrev = 0.0f;
         IsAbnormal = IsCritical = false;
         Delta = 0.01f; // Default delta for trend analysis
-        Patient = new Patient();
     }
     public Test(string testResult, DateTime discharge, DateTime visitDate, int roomNum, int visitNum, string hospital, string testName, string testCode, string unit, float valueNum, float valueLow, float valueHigh, float valuePrev, Patient patient)
     {

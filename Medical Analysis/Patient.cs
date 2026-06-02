@@ -9,7 +9,7 @@ public class Patient : Person
     private double BodyWeight, BodyTemperature, HeartRate; // Added BodyWeight property
     private string[] Units = new string[3];
     private Doctor PrimaryDoctor;
-    private Test Test = new Test();
+    private Test theTest;
     public Patient() : base()
     {
         BloodType = "NA";
@@ -39,7 +39,7 @@ public class Patient : Person
     public string DescriptionDetail { get => Description; set => Description = value; }
     public string MedicationDetail { get => Medication; set => Medication = value; }
     public Doctor PrimaryDoctorDetail { get => PrimaryDoctor; set => PrimaryDoctor = value; }
-    public Test TestDetail { get => Test; set => Test = value; }
+    public Test TheTestDetail { get => theTest; set => theTest = value; }
     public long PIDDetail()
     {
         return PID;
@@ -65,6 +65,5 @@ public class Patient : Person
         Console.WriteLine($"Heart Rate: {HeartRateDetail} {UnitsDetail[2]}");
         TheCaseDetail.ShowCase();
         PrimaryDoctorDetail.ShowDoctor();
-        TestDetail.ShowTest();
     }
 }

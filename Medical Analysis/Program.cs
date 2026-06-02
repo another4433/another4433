@@ -2,6 +2,12 @@
 {
     internal class Program
     {
+        static String encrypt(String username, String password, String theType)
+        {
+            String combined = username + ":" + password + ":" + theType;
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(combined);
+            return Convert.ToBase64String(bytes);
+        }
         static void Main(string[] args)
         {
             Management management = new Management();
@@ -21,6 +27,15 @@
             Console.WriteLine("(2) Login");
             Console.WriteLine("Enter the number: ");
             int choice = int.Parse(Console.ReadLine()!);
+            if (choice == 3)
+            {
+                string encrypted = encrypt("alimohamedhassan9@gmail.com", "ALI123ha!", "Email");
+                Console.WriteLine("Encrypted string: " + encrypted);
+                byte[] data = Convert.FromBase64String(encrypted);
+                string decrypted = System.Text.Encoding.UTF8.GetString(data);
+                Console.WriteLine("Decrypted string: " + decrypted);
+                Environment.Exit(0);
+            }
             if (choice == 1)
             {
                 Console.WriteLine("Enter your ID: ");
@@ -74,7 +89,8 @@
                     person = new Person(id, name, contactType, contactDetail, currency, nationality, amount, gender, dob);
                     Console.WriteLine("Enter your Password: ");
                     string password = Console.ReadLine()!;
-                    user = new User(id, name, contactType, contactDetail, currency, nationality, amount, gender, dob, password);
+                    string encryptedPassword = encrypt(contactDetail, password, contactType);
+                    user = new User(id, name, contactType, contactDetail, currency, nationality, amount, gender, dob, encryptedPassword);
                     management.AddPerson(person);
                     management.AddUser(user);
                     Console.WriteLine("Registration successful! You can now log in.");
@@ -87,9 +103,10 @@
                     string contactDetail = Console.ReadLine()!;
                     Console.WriteLine("Enter password: ");
                     string password = Console.ReadLine()!;
+                    string encryptedPassword = encrypt(contactDetail, password, contactType);
                     for (int i = 0; i < management.Users.Count; i++)
                     {
-                        if (management.Users[i].ContactTypeDetail == contactType && management.Users[i].ContactTheDetail == contactDetail && management.Users[i].UserPassword == password)
+                        if (management.Users[i].ContactTypeDetail == contactType && management.Users[i].ContactTheDetail == contactDetail && management.Users[i].UserPassword == encryptedPassword)
                         {
                             user = management.Users[i];
                             Console.WriteLine("Login successful! Welcome back, " + management.Users[i].NameDetail + "!");
@@ -348,7 +365,7 @@
                                 Console.WriteLine("Enter the test code for the patient: ");
                                 string assignTestCode = Console.ReadLine()!;
                                 test = management.FindTestByCode(assignTestCode);
-                                newpatient.TestDetail = test;
+                                newpatient.TheTestDetail = test;
                                 Patient otherPatient = management.ReplacePatient(indexPatient, newpatient);
                                 if (otherPatient != management.GetPatient(indexPatient) && otherPatient == management.FindPatientByID(newpatient.PIDDetail().ToString()))
                                 {
