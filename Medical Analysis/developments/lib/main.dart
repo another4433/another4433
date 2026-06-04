@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medical_app/home.dart';
 import 'package:medical_app/user.dart';
 import 'package:medical_app/person.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -286,6 +287,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                     'Home page is under construction, navigating soon...',
                                   ),
                                   backgroundColor: Colors.grey,
+                                ),
+                              );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder:
+                                      (context) => TheTabs(
+                                        retrievedUser:
+                                            authService.getCurrentUser()!,
+                                      ),
                                 ),
                               );
                               print('Password: $encryptedPassword');

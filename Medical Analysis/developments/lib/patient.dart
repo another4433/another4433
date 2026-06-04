@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:medical_app/person.dart';
 import 'package:medical_app/case.dart';
-import 'package:medical_app/Doctor.dart';
 
 class Patient extends Person {
   String _bloodType = "", _description = "", _medication = "";
@@ -10,7 +9,6 @@ class Patient extends Person {
   double _bodyWeight = 0, _bodyTemperature = 0, _heartRate = 0;
   List<String> _units = [];
   Case _case;
-  Doctor? _primaryDoctor;
   static final List<Patient> _patients = List.empty(growable: true);
 
   Patient(
@@ -69,10 +67,6 @@ class Patient extends Person {
     _case = theCase;
   }
 
-  void setDoctor(Doctor doctor) {
-    _primaryDoctor = doctor;
-  }
-
   String get bloodTypeDetail => _bloodType;
   String get descriptionDetail => _description;
   String get medicationDetail => _medication;
@@ -82,7 +76,6 @@ class Patient extends Person {
   double get heartRateDetail => _heartRate;
   List<String> get unitDetails => _units;
   Case get caseDetail => _case;
-  Doctor? get primaryDoctor => _primaryDoctor;
   static List<Patient> getPatients() {
     return _patients;
   }
