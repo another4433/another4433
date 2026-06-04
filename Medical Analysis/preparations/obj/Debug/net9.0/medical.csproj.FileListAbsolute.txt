@@ -1,0 +1,14 @@
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\bin\Debug\net9.0\medical.exe
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\bin\Debug\net9.0\medical.deps.json
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\bin\Debug\net9.0\medical.runtimeconfig.json
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\bin\Debug\net9.0\medical.dll
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\bin\Debug\net9.0\medical.pdb
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\medical.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\medical.AssemblyInfoInputs.cache
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\medical.AssemblyInfo.cs
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\medical.csproj.CoreCompileInputs.cache
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\medical.dll
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\refint\medical.dll
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\medical.pdb
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\medical.genruntimeconfig.cache
+C:\Users\Alimo\Documents\hackathon\coding\system\medical\obj\Debug\net9.0\ref\medical.dll

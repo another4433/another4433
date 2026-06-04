@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\management.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:management.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|c:\\users\\alimo\\documents\\hackathon\\coding\\system\\medical\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E164990D-CE77-4A74-8A85-89D585F76A4A}|medical.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T20:39:43.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Test.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Test.cs",
+              "RelativeDocumentMoniker": "Test.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Test.cs",
+              "RelativeToolTip": "Test.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAWwB4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T19:56:33.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Appointment.cs",
+              "RelativeDocumentMoniker": "Appointment.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Appointment.cs",
+              "RelativeToolTip": "Appointment.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T19:36:24.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Management.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Management.cs",
+              "RelativeDocumentMoniker": "Management.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Management.cs",
+              "RelativeToolTip": "Management.cs",
+              "ViewState": "AgIAAE4BAAAAAAAAAAAcwAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T19:36:14.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\User.cs",
+              "RelativeToolTip": "User.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T12:35:52.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Person.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Person.cs",
+              "RelativeDocumentMoniker": "Person.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Person.cs",
+              "RelativeToolTip": "Person.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAACkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T12:35:45.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Patient.cs",
+              "RelativeDocumentMoniker": "Patient.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Patient.cs",
+              "RelativeToolTip": "Patient.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCkAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T12:35:44.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Doctor.cs",
+              "RelativeDocumentMoniker": "Doctor.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Doctor.cs",
+              "RelativeToolTip": "Doctor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T12:35:43.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Case.cs",
+              "DocumentMoniker": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Case.cs",
+              "RelativeDocumentMoniker": "Case.cs",
+              "ToolTip": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\Case.cs",
+              "RelativeToolTip": "Case.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T12:35:42.265Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
