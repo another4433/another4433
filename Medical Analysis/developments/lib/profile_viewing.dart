@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medical_app/user.dart';
+import 'package:medical_app/main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileViewing extends StatefulWidget {
-  const ProfileViewing({super.key, required this.retrievedUser});
+  const ProfileViewing({super.key, required this.theService});
 
-  final User retrievedUser;
+  final AuthService theService;
 
   @override
   State<ProfileViewing> createState() => _ProfileViewingState();
@@ -17,7 +18,7 @@ class _ProfileViewingState extends State<ProfileViewing> {
   Widget build(BuildContext context) {
     if (TheUser.getUsers().isNotEmpty) {
       for (TheUser usering in TheUser.getUsers()) {
-        if (usering.getEmail() == widget.retrievedUser.email) {
+        if (usering.getEmail() == widget.theService.getCurrentUser()!.email) {
           selectedUser = usering;
         }
       }
@@ -91,6 +92,35 @@ class _ProfileViewingState extends State<ProfileViewing> {
             ),
           ],
         ),
+      ),
+      bottomSheet: ElevatedButton(
+        onPressed: () {
+          setState(() {
+            widget.theService.signOut();
+            widget.theService.theAuth.authStateChanges().listen((User? user) {
+              if (user == null) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("User successfully signed out!"),
+                    backgroundColor: Colors.green,
+                  ),
+                );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (BuildContext context) => MyApp()),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("User Failed to sign out! Try Again."),
+                    backgroundColor: Colors.red,
+                  ),
+                );
+              }
+            });
+          });
+        },
+        child: Text("Sign Out"),
       ),
     );
   }

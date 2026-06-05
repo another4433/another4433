@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:medical_app/doctor.dart';
 import 'package:medical_app/patient.dart';
+import 'package:flutter/material.dart';
 
 enum AppointmentReason {
   consultation,
@@ -95,4 +96,18 @@ class Appointment {
   AppointmentTitle get title => _title;
   AppointmentStatus get status => _status;
   double get identification => _aID;
+}
+
+class AppointmentList extends StatefulWidget {
+  const AppointmentList({super.key});
+
+  @override
+  State<AppointmentList> createState() => _AppointmentListState();
+}
+
+class _AppointmentListState extends State<AppointmentList> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
 }

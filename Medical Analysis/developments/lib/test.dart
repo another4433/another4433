@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum TestResult { positive, negative, inconclusive }
 
 enum TheTrend { increasing, decreasing, stable, firstObservation }
@@ -146,4 +148,18 @@ class Test {
   int get visitNum => _visitNum;
   TestResult get theResults => _result;
   TheTrend get theTrend => _trend;
+}
+
+class TestList extends StatefulWidget {
+  const TestList({super.key});
+
+  @override
+  State<TestList> createState() => _TestListState();
+}
+
+class _TestListState extends State<TestList> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
 }

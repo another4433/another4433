@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:medical_app/person.dart';
 import 'package:medical_app/case.dart';
+import 'package:flutter/material.dart';
 
 class Patient extends Person {
   String _bloodType = "", _description = "", _medication = "";
@@ -78,5 +79,19 @@ class Patient extends Person {
   Case get caseDetail => _case;
   static List<Patient> getPatients() {
     return _patients;
+  }
+}
+
+class PatientList extends StatefulWidget {
+  const PatientList({super.key});
+
+  @override
+  State<PatientList> createState() => _PatientListState();
+}
+
+class _PatientListState extends State<PatientList> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
   }
 }

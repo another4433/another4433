@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:flutter/material.dart';
 
 class Case {
   String _allergy, _symptom, _condition, _hospital, _diagnosis;
@@ -61,5 +62,19 @@ class Case {
   DateTime get discovery => _discover;
   static List<Case> getCases() {
     return _cases;
+  }
+}
+
+class CaseList extends StatefulWidget {
+  const CaseList({super.key});
+
+  @override
+  State<CaseList> createState() => _CaseListState();
+}
+
+class _CaseListState extends State<CaseList> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
   }
 }

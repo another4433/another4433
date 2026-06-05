@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medical_app/user.dart';
-import 'package:medical_app/person.dart';
+import 'package:medical_app/appointment.dart';
+import 'package:medical_app/people_relation.dart';
+import 'package:medical_app/testRelation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:medical_app/doctor.dart';
 import 'package:medical_app/patient.dart';
@@ -10,6 +10,7 @@ import 'package:medical_app/case.dart';
 import 'package:medical_app/test.dart';
 import 'package:medical_app/the_stack.dart';
 import 'package:medical_app/profile_viewing.dart';
+import 'package:medical_app/main.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,9 +43,9 @@ class MyApp extends StatelessWidget {
 }
 
 class TheTabs extends StatelessWidget {
-  const TheTabs({super.key, required this.retrievedUser});
+  const TheTabs({super.key, required this.theService});
 
-  final User retrievedUser;
+  final AuthService theService;
 
   @override
   Widget build(BuildContext context) {
@@ -62,8 +63,7 @@ class TheTabs extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder:
-                          (context) =>
-                              ProfileViewing(retrievedUser: retrievedUser),
+                          (context) => ProfileViewing(theService: theService),
                     ),
                   );
                 },
@@ -212,6 +212,117 @@ class OptionSelector extends StatefulWidget {
 class _OptionSelectorState extends State<OptionSelector> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Selections for Management")));
+    return Scaffold(
+      appBar: AppBar(title: Text("Selections for Management")),
+      body: Column(
+        children: [
+          Text("Click on one of the buttons below: "),
+          SizedBox(height: 30),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => PatientList(),
+                      ),
+                    );
+                  });
+                },
+                child: Text("Patients"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => DoctorList(),
+                      ),
+                    );
+                  });
+                },
+                child: Text("Doctors"),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => CaseList(),
+                      ),
+                    );
+                  });
+                },
+                child: Text("Cases"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => TestList(),
+                      ),
+                    );
+                  });
+                },
+                child: Text("Tests"),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => TestRelationList(),
+                      ),
+                    );
+                  });
+                },
+                child: Text("Lab Relations"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => PeopleRelationList(),
+                      ),
+                    );
+                  });
+                },
+                child: Text("People Relations"),
+              ),
+            ],
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => AppointmentList(),
+                  ),
+                );
+              });
+            },
+            child: Text("Appointments"),
+          ),
+        ],
+      ),
+    );
   }
 }

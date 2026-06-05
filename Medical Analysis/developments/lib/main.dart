@@ -26,6 +26,8 @@ class AuthService {
     return _auth.currentUser;
   }
 
+  FirebaseAuth get theAuth => _auth;
+
   Future<User?> signIn(String email, String password) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
@@ -111,6 +113,25 @@ class _MyHomePageState extends State<MyHomePage> {
         print('User is signed in!');
         setState(() {
           firebaseUser = user;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Login successful!'),
+              backgroundColor: Colors.green,
+            ),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Welcome, ${authService.getCurrentUser()?.email}'),
+              backgroundColor: Colors.green,
+            ),
+          );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder:
+                  (BuildContext context) => TheTabs(theService: authService),
+            ),
+          );
         });
       }
     });
@@ -193,12 +214,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               backgroundColor: Colors.green,
                             ),
                           );
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Home page is under construction, navigating soon...',
-                              ),
-                              backgroundColor: Colors.grey,
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (BuildContext context) =>
+                                      TheTabs(theService: authService),
                             ),
                           );
                         } else {
@@ -281,22 +302,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                   backgroundColor: Colors.green,
                                 ),
                               );
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'Home page is under construction, navigating soon...',
-                                  ),
-                                  backgroundColor: Colors.grey,
-                                ),
-                              );
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder:
-                                      (context) => TheTabs(
-                                        retrievedUser:
-                                            authService.getCurrentUser()!,
-                                      ),
+                                      (context) =>
+                                          TheTabs(theService: authService),
                                 ),
                               );
                               print('Password: $encryptedPassword');
@@ -573,19 +584,21 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     ),
                     onChanged: (value) {
                       // Handle birth date input change
-                      showDatePicker(
-                        context: context,
-                        firstDate: DateTime(1000),
-                        lastDate: DateTime(3000),
-                        initialDate: DateTime.now(),
-                      ).then((pickedDate) {
-                        if (pickedDate != null) {
-                          setState(() {
-                            selectedBirthDate = pickedDate;
-                            birthController.text =
-                                pickedDate.toIso8601String().split('T')[0];
-                          });
-                        }
+                      setState(() {
+                        showDatePicker(
+                          context: context,
+                          firstDate: DateTime(1000),
+                          lastDate: DateTime(3000),
+                          initialDate: DateTime.now(),
+                        ).then((pickedDate) {
+                          if (pickedDate != null) {
+                            setState(() {
+                              selectedBirthDate = pickedDate;
+                              birthController.text =
+                                  pickedDate.toIso8601String().split('T')[0];
+                            });
+                          }
+                        });
                       });
                     },
                   ),
@@ -597,73 +610,109 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     onPressed: () {
                       // Handle register button press
                       setState(() {
-                        thePerson = Person(
-                          nameController.text,
-                          idController.text,
-                          selectedBirthDate ?? DateTime(2000, 1, 1),
-                          (double.tryParse(moneyController.text)! < 0)
-                              ? 0.0
-                              : double.tryParse(moneyController.text) ?? 0.0,
-                          currencyController.text,
-                          nationalityController.text,
-                          genderController.text,
-                        );
-                        theUser = TheUser(
-                          nameController.text,
-                          idController.text,
-                          selectedBirthDate ?? DateTime(2000, 1, 1),
-                          (double.tryParse(moneyController.text)! < 0)
-                              ? 0.0
-                              : double.tryParse(moneyController.text) ?? 0.0,
-                          currencyController.text,
-                          nationalityController.text,
-                          genderController.text,
-                          emailController.text,
-                          TheUser.encrypt(
+                        if (emailController.text.isEmpty &&
+                            passwordController.text.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                "Email and password field is empty. Please enter them!",
+                              ),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        } else {
+                          thePerson = Person(
+                            nameController.text,
+                            idController.text,
+                            selectedBirthDate ?? DateTime(2000, 1, 1),
+                            (double.tryParse(moneyController.text)! < 0)
+                                ? 0.0
+                                : double.tryParse(moneyController.text) ?? 0.0,
+                            currencyController.text,
+                            nationalityController.text,
+                            genderController.text,
+                          );
+                          theUser = TheUser(
+                            nameController.text,
+                            idController.text,
+                            selectedBirthDate ?? DateTime(2000, 1, 1),
+                            (double.tryParse(moneyController.text)! < 0)
+                                ? 0.0
+                                : double.tryParse(moneyController.text) ?? 0.0,
+                            currencyController.text,
+                            nationalityController.text,
+                            genderController.text,
                             emailController.text,
-                            passwordController.text,
-                          ),
-                        );
-                        Person.getPeople().add(thePerson!);
-                        TheUser.getUsers().add(theUser!);
-                        if (authService.getCurrentUser() == null) {
-                          authService
-                              .register(
-                                emailController.text,
-                                TheUser.encrypt(
+                            TheUser.encrypt(
+                              emailController.text,
+                              passwordController.text,
+                            ),
+                          );
+                          Person.getPeople().add(thePerson!);
+                          TheUser.getUsers().add(theUser!);
+                          if (authService.getCurrentUser() == null) {
+                            authService
+                                .register(
                                   emailController.text,
-                                  passwordController.text,
-                                ),
-                              )
-                              .then((user) {
-                                if (user != null) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text('Registration successful!'),
-                                      backgroundColor: Colors.green,
-                                    ),
-                                  );
-                                  print(
-                                    'Firebase user registered: ${authService.getCurrentUser()?.email}',
-                                  );
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder:
-                                          (context) => const MyHomePage(
-                                            title: 'Medical App',
+                                  TheUser.encrypt(
+                                    emailController.text,
+                                    passwordController.text,
+                                  ),
+                                )
+                                .then((user) {
+                                  if (user != null) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Registration successful!',
+                                        ),
+                                        backgroundColor: Colors.green,
+                                      ),
+                                    );
+                                    print(
+                                      'Firebase user registered: ${authService.getCurrentUser()?.email}',
+                                    );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => const MyHomePage(
+                                              title: 'Medical App',
+                                            ),
+                                      ),
+                                    );
+                                  } else {
+                                    print('Problem with Firebase Registration');
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: Text('Regisetration Failed'),
+                                          content: Text(
+                                            'Failed to register user. Please check your details and try again.',
                                           ),
-                                    ),
-                                  );
-                                } else {
-                                  print('Problem with Firebase Registration');
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: Text('OK'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }
+                                })
+                                .catchError((error) {
+                                  print('Error during registration: $error');
                                   showDialog(
                                     context: context,
                                     builder: (context) {
                                       return AlertDialog(
-                                        title: Text('Regisetration Failed'),
+                                        title: Text('Registration Error'),
                                         content: Text(
-                                          'Failed to register user. Please check your details and try again.',
+                                          'An error occured during registeration. Error details: ${error.message}',
                                         ),
                                         actions: [
                                           TextButton(
@@ -676,30 +725,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       );
                                     },
                                   );
-                                }
-                              })
-                              .catchError((error) {
-                                print('Error during registration: $error');
-                                showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      title: Text('Registration Error'),
-                                      content: Text(
-                                        'An error occured during registeration. Error details: ${error.message}',
-                                      ),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text('OK'),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              });
+                                });
+                          }
                         }
                       });
                     },
