@@ -592,11 +592,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           initialDate: DateTime.now(),
                         ).then((pickedDate) {
                           if (pickedDate != null) {
-                            setState(() {
-                              selectedBirthDate = pickedDate;
-                              birthController.text =
-                                  pickedDate.toIso8601String().split('T')[0];
-                            });
+                            selectedBirthDate = pickedDate;
+                            birthController.text =
+                                pickedDate.toIso8601String().split('T')[0];
                           }
                         });
                       });

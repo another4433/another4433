@@ -111,6 +111,7 @@ class _DoctorListState extends State<DoctorList> {
                         builder:
                             (BuildContext context) => DoctorEdit(
                               receivedDoctor: Doctor.getDoctors()[index],
+                              theIndex: index,
                             ),
                       ),
                     );
@@ -379,6 +380,7 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                   ),
                   TextFormField(
+                    controller: birthController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the birthdate as (yyyy-mm-dd)",
@@ -394,11 +396,9 @@ class _DoctorDataState extends State<DoctorData> {
                           initialDate: DateTime.now(),
                         ).then((pickedDate) {
                           if (pickedDate != null) {
-                            setState(() {
-                              birthDate = pickedDate;
-                              birthController.text =
-                                  pickedDate.toIso8601String().split('T')[0];
-                            });
+                            birthDate = pickedDate;
+                            birthController.text =
+                                pickedDate.toIso8601String().split('T')[0];
                           }
                         });
                       });
