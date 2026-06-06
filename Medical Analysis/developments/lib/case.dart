@@ -78,3 +78,17 @@ class _CaseListState extends State<CaseList> {
     return Scaffold();
   }
 }
+
+class CaseData extends StatefulWidget {
+  const CaseData({super.key});
+
+  @override
+  State<CaseData> createState() => _CaseDataState();
+}
+
+class _CaseDataState extends State<CaseData> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}

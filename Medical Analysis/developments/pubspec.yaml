@@ -37,6 +37,11 @@ dependencies:
   firebase_auth: ^6.5.2
   cloud_firestore: ^6.5.0
   firebase_core: ^4.10.0
+  file_picker: ^8.0.0        # lets user pick any file
+  path_provider: ^2.1.0    # get app documents directory
+  mime: ^1.0.4              # detect MIME type
+  open_filex: ^4.3.4        # open file with device app
+  path: ^1.9.1
 
 dev_dependencies:
   flutter_test:

@@ -161,7 +161,7 @@ class _DoctorDataState extends State<DoctorData> {
   Patient? selectedPatient;
 
   void submitForm() {
-    if (_formKey.currentState!.validate()) {
+    if (!_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -169,6 +169,26 @@ class _DoctorDataState extends State<DoctorData> {
           ),
           backgroundColor: Colors.red,
         ),
+      );
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Form Submission Failed"),
+            content: Text(
+              "Empty field were found that prevents this form to be submitted.",
+            ),
+            icon: Icon(Icons.event_busy),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        },
       );
     } else {
       _formKey.currentState!.save();
@@ -211,10 +231,7 @@ class _DoctorDataState extends State<DoctorData> {
           backgroundColor: Colors.green,
         ),
       );
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (BuildContext context) => DoctorList()),
-      );
+      Navigator.pop(context);
     }
     _formKey.currentState!.reset();
   }
@@ -252,9 +269,7 @@ class _DoctorDataState extends State<DoctorData> {
                         id = value;
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the id.";
-                    },
+                    validator: (value) => "Field is empty! Please enter the id",
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -268,9 +283,7 @@ class _DoctorDataState extends State<DoctorData> {
                         name = value;
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the name.";
-                    },
+                    validator: (value) => "Field is empty! Please enter name.",
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -284,9 +297,9 @@ class _DoctorDataState extends State<DoctorData> {
                         nationality = value;
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the nationality.";
-                    },
+                    validator:
+                        (value) =>
+                            "Field is empty! Please enter the nationality.",
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -300,9 +313,7 @@ class _DoctorDataState extends State<DoctorData> {
                         gender = value;
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the gender.";
-                    },
+                    validator: (value) => "Field is empty! Please enter gender",
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -317,9 +328,7 @@ class _DoctorDataState extends State<DoctorData> {
                         branch = value;
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the branch.";
-                    },
+                    validator: (value) => "Field is empty! Please enter branch",
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -333,9 +342,9 @@ class _DoctorDataState extends State<DoctorData> {
                         workPhone = value;
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the phone number.";
-                    },
+                    validator:
+                        (value) =>
+                            "Field is empty! Please enter the phone number of the doctor.",
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -349,9 +358,7 @@ class _DoctorDataState extends State<DoctorData> {
                         workEmail = value;
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the work email.";
-                    },
+                    validator: (value) => "Field is empty! Please enter email.",
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -403,9 +410,9 @@ class _DoctorDataState extends State<DoctorData> {
                         });
                       });
                     },
-                    validator: (value) {
-                      return "Field is empty! Please enter the birthdate.";
-                    },
+                    validator:
+                        (value) =>
+                            "Field is empty! Please enter the birthdate of the doctor.",
                   ),
                   Card(
                     child: Column(

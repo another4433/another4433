@@ -45,6 +45,54 @@ class _DoctorEditState extends State<DoctorEdit> {
       appBar: AppBar(
         title: Text("Doctor Data Edit Page"),
         backgroundColor: Colors.purpleAccent,
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text("Confirmation"),
+                      content: Text(
+                        "Are you sure you want to make these changes?",
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Doctor.getDoctors().remove(widget.receivedDoctor);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  "That doctor has been deleted successfully!",
+                                ),
+                                backgroundColor: Colors.green,
+                              ),
+                            );
+                            Navigator.pop(context);
+                          },
+                          child: Text("Yes"),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text("Failed to delete that doctor!"),
+                              ),
+                            );
+                            Navigator.pop(context);
+                          },
+                          child: Text("No"),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              });
+            },
+            icon: Icon(Icons.delete),
+          ),
+        ],
       ),
       body: Scrollbar(
         thumbVisibility: true,
@@ -197,6 +245,364 @@ class _DoctorEditState extends State<DoctorEdit> {
                     });
                   });
                 },
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      "Select the specialization of the doctor below: ",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.cardiologist.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.cardiologist,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.dermatologist.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.dermatologist,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        DoctorSpecialty.generalPractitioner.toString(),
+                      ),
+                      leading: Radio(
+                        value: DoctorSpecialty.generalPractitioner,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.gynecologist.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.gynecologist,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.neurologist.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.neurologist,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.oncologist.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.oncologist,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.orthopedicSurgeon.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.orthopedicSurgeon,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.pediatrician.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.pediatrician,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.psychiatrist.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.psychiatrist,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.assistant.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.assistant,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.ordinary.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.ordinary,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.urologist.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.urologist,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(DoctorSpecialty.none.toString()),
+                      leading: Radio(
+                        value: DoctorSpecialty.none,
+                        groupValue: specialiazation,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value != null) {
+                              specialiazation = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ToggleButtons(
+                isSelected: selections,
+                onPressed: (index) {
+                  setState(() {
+                    selections[index] = !selections[index];
+                    if (selectedIndex > -1) {
+                      selections[selectedIndex] = !selections[selectedIndex];
+                    }
+                    if (index == 0) {
+                      selecting = "Yes";
+                    } else if (index == 1) {
+                      selecting = "No";
+                    } else if (index == 2) {
+                      selecting = "Maybe";
+                    }
+                    selectedIndex = index;
+                  });
+                },
+                children: [Text("Yes"), Text("No"), Text("Maybe")],
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text("Patient List Starter"),
+                      subtitle: Text(
+                        "Choose from the followings to add a patient (If you selected \"Yes\"): ",
+                      ),
+                      trailing: DropdownMenu(
+                        dropdownMenuEntries:
+                            Patient.getPatients().map((item) {
+                              return DropdownMenuEntry(
+                                value: item.pIdentity,
+                                label: item.pIdentity.toString(),
+                              );
+                            }).toList(),
+                        onSelected: (value) {
+                          setState(() {
+                            if (value != null) {
+                              patientID = value;
+                            }
+                          });
+                        },
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          bool found = false;
+                          for (Patient thePatient
+                              in widget.receivedDoctor.accessPatients) {
+                            if (thePatient.pIdentity == patientID) {
+                              selectedPatient = thePatient;
+                              found = true;
+                              break;
+                            }
+                            if (found) {
+                              widget.receivedDoctor.accessPatients.add(
+                                selectedPatient!,
+                              );
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    "A patient has been assigned to the doctor.",
+                                  ),
+                                ),
+                              );
+                            } else {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: Text("Adding Patient Failed"),
+                                    content: Text(
+                                      "An error occured preventing the patient to be assigned to the doctor.",
+                                    ),
+                                    icon: Icon(Icons.event_busy),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+                          }
+                        });
+                      },
+                      child: Text("Add Patient"),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text("Confirmation"),
+                          content: Text(
+                            "Are you sure you want to make these changes?",
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                newDoctor = Doctor(
+                                  name!,
+                                  id!,
+                                  birthDate!,
+                                  money,
+                                  currency!,
+                                  nationality!,
+                                  gender!,
+                                  specialiazation,
+                                  branch!,
+                                  workEmail!,
+                                  workPhone!,
+                                );
+                                for (Patient thePatient
+                                    in widget.receivedDoctor.accessPatients) {
+                                  newDoctor!.accessPatients.add(thePatient);
+                                }
+                                Doctor.getDoctors()[widget.theIndex] =
+                                    newDoctor!;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      "The data of the selected doctor has been edited as per your request.",
+                                    ),
+                                    backgroundColor: Colors.green,
+                                  ),
+                                );
+                                Navigator.pop(context);
+                              },
+                              child: Text("Yes"),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      "Changes were not applied to that doctor because they were aborted by your request.",
+                                    ),
+                                  ),
+                                );
+                                Navigator.pop(context);
+                              },
+                              child: Text("No"),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  });
+                },
+                child: Text("Confirm"),
               ),
             ],
           ),
