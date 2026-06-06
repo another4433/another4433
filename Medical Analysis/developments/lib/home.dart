@@ -14,7 +14,7 @@ import 'package:medical_app/main.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:medical_app/file_item.dart';
 import 'package:medical_app/file_service.dart';
-//import 'package:medical_app/text_detailing.dart';
+import 'package:medical_app/text_detailing.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -170,7 +170,32 @@ class HomeManipulation extends StatefulWidget {
 class _HomeManipulationState extends State<HomeManipulation> {
   TheStack<String> chatSession = TheStack();
   List<String>
-  questions = [],
+  questions = [
+    "What is the purpose of this system?",
+    "What is this system aiming for?",
+    "What is the goal of this system?",
+    "Give me an overview of this system.",
+    "What is the main feature of this system?",
+    "What features are included in this system?",
+    "How does this system work?",
+    "What are the inputs that this system accepts?",
+    "What are your recommendations?",
+    "Give me a recommendation.",
+    "What do you recommend?",
+    "Recommend me something.",
+    "How secure is this system?",
+    "Explain to me about the system design.",
+    "Provide me reasons for this system design.",
+    "How do I navigate through this system?",
+    "Explain to me about the first tab.",
+    "Explain to me about the second tab.",
+    "Explain to me about the third tab.",
+    "Explain to me about the fourth tab.",
+    "What are the expected outputs from this system?",
+    "What is the disclaimer of this system?",
+    "Tell me about a disclaimer of this system.",
+    "When will the fourth tab be available?",
+  ],
   answers = [
     "Project Overview: LabLens AI is an AI-powered clinical decision-support system that helps users and healthcare professionals understand lab results more clearly.",
     "System Goal: The goal is to support early risk awareness, detect important lab trends, and improve healthcare decision-making without replacing doctors.",
@@ -187,10 +212,273 @@ class _HomeManipulationState extends State<HomeManipulation> {
     "Fourth tab explanation: This tab is currently unavailable due to construction in progress. However, this tab is meant to show the simplified results that you were looking for. Explanation of this tab is coming soon.",
     "System Output: Risk level, trend analysis, key findings, explanations, follow-up recommendations, list of a specific data group, and data overview.",
     "Disclaimer: This system does not diagnose diseases or replace professional medical advice. It is designed only to support decision-making and early awareness. It also supports viewing and using data per selections.",
+    "The fourth tab or dashboard tab will be available as soon as possible.",
   ];
   TextEditingController prompt = TextEditingController();
   List<Widget> theList = [];
   String prevPrompt = "";
+
+  Widget widgetSelect(int num) {
+    switch (num) {
+      case 0:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          OverviewExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 1:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          GoalExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 2:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          FeaturesExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 3:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          MainExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 4:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          WorkingExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 5:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          InputExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 6:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          RecommendationExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 7:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          SecurityExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 8:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          DesignExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 9:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          ChatTabExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 10:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          DataTabExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 11:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          FileTabExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 12:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          UnavailableTabExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 13:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          SystemOutputExplanation(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+      case 14:
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (BuildContext context) =>
+                          TheDisclaimer(details: answers[num]),
+                ),
+              );
+            });
+          },
+          icon: Icon(Icons.arrow_forward_ios),
+          color: Colors.purple,
+        );
+    }
+    return Placeholder();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -227,17 +515,325 @@ class _HomeManipulationState extends State<HomeManipulation> {
                   ),
                 );
                 questions.add(prompt.text);
-                int selector = Random().nextInt(answers.length);
-                chatSession.push(answers.elementAt(selector));
-                theList.add(
-                  Card(
-                    child: ListTile(
-                      title: Text("Server"),
-                      subtitle: Text(answers.elementAt(selector)),
+                if (chatSession.peek().toLowerCase() == "hi" ||
+                    chatSession.peek().toLowerCase() == "hello" ||
+                    chatSession.peek().toLowerCase() == "hey" ||
+                    chatSession.peek().toLowerCase() == "yo" ||
+                    chatSession.peek().toLowerCase().contains("h")) {
+                  chatSession.push(
+                    "Hello there, nice to meet you! How may I help you?",
+                  );
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                      ),
                     ),
-                  ),
-                );
-                prevPrompt = prompt.text;
+                  );
+                } else if (RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("overview") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("purpose")) {
+                  chatSession.push("${answers[0].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(0),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("goal") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("aim")) {
+                  chatSession.push("${answers[1].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(1),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(
+                  chatSession.peek(),
+                  caseSensitive: false,
+                ).hasMatch("included")) {
+                  chatSession.push("${answers[2].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(2),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("feature") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("main")) {
+                  chatSession.push("${answers[3].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(3),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("work") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("system")) {
+                  chatSession.push("${answers[4].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(4),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("input") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("user")) {
+                  chatSession.push("${answers[5].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(5),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("recommend")) {
+                  chatSession.push("${answers[6].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(6),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("secur")) {
+                  chatSession.push("${answers[7].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(7),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("explain") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("design") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("navigat")) {
+                  chatSession.push("${answers[8].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(8),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("chat") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("bot") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("assist") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("ai") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("first") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("1st")) {
+                  chatSession.push("${answers[9].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(9),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("data") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("app") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("second") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("2nd")) {
+                  chatSession.push("${answers[10].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(10),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("file") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("report") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("lab") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("load") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("third") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("3rd")) {
+                  chatSession.push("${answers[11].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(11),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("example")) {
+                  chatSession.push(
+                    "${questions[0]}, ${questions[1].substring(0, 5)}....",
+                  );
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder:
+                                      (BuildContext context) => ETheQuestions(
+                                        receivedQuestions: questions,
+                                      ),
+                                ),
+                              );
+                            });
+                          },
+                          icon: Icon(Icons.arrow_forward_ios),
+                          color: Colors.purple,
+                        ),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("output") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("program")) {
+                  chatSession.push("${answers[13].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(13),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("disclaimer")) {
+                  chatSession.push("${answers[14].substring(0, 16)}....");
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(14),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("yes") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("no")) {
+                  chatSession.push(
+                    "Thank you for your answer! How may I help you?",
+                  );
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.pop()),
+                      ),
+                    ),
+                  );
+                } else if (RegExp(chatSession.peek(), caseSensitive: false).hasMatch("availabl") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("dashboard") ||
+                    RegExp(
+                      chatSession.peek(),
+                      caseSensitive: false,
+                    ).hasMatch("fourth") ||
+                    RegExp(chatSession.peek(), caseSensitive: false).hasMatch("4th")) {
+                  chatSession.push(answers[15]);
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                      ),
+                    ),
+                  );
+                } else {
+                  int selector = Random().nextInt(answers.length);
+                  chatSession.push(
+                    "${answers.elementAt(selector).substring(0, 16)}....",
+                  );
+                  theList.add(
+                    Card(
+                      child: ListTile(
+                        title: Text("Server"),
+                        subtitle: Text(chatSession.peek()),
+                        trailing: widgetSelect(selector),
+                      ),
+                    ),
+                  );
+                  prevPrompt = prompt.text;
+                }
               }
             },
             child: Text("Send"),

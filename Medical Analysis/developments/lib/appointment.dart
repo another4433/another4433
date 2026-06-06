@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:medical_app/doctor.dart';
 import 'package:medical_app/patient.dart';
 import 'package:flutter/material.dart';
+import 'package:medical_app/appointment_edit.dart';
 
 enum AppointmentReason {
   consultation,
@@ -129,6 +130,24 @@ class _AppointmentListState extends State<AppointmentList> {
               subtitle: Text(
                 "Doctor: ${Appointment.appointments[index].theDoctor}",
               ),
+              trailing: IconButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (BuildContext context) => AppointmentEdit(
+                              receivedAppointment:
+                                  Appointment.appointments[index],
+                              receivedIndex: index,
+                            ),
+                      ),
+                    );
+                  });
+                },
+                icon: Icon(Icons.edit),
+              ),
             ),
           );
         },
@@ -239,251 +258,275 @@ class _AppointmentDataState extends State<AppointmentData> {
             key: _formKey,
             child: Column(
               children: [
-                TextFormField(
-                  controller: _dateController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    label: Text("Date Scheduled"),
-                    hintText: "Enter the date scheduled for the appointment",
-                    icon: Icon(Icons.date_range_outlined),
-                  ),
-                  onChanged: (value) {
-                    setState(() {
-                      showDatePicker(
-                        context: context,
-                        firstDate: DateTime(1000),
-                        lastDate: DateTime(3000),
-                        initialDate: DateTime.now(),
-                      ).then((pickedDate) {
-                        date = pickedDate;
-                        _dateController.text =
-                            pickedDate!.toIso8601String().split('T')[0];
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
+                    controller: _dateController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      label: Text("Date Scheduled"),
+                      hintText: "Enter the date scheduled for the appointment",
+                      icon: Icon(Icons.date_range_outlined),
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        showDatePicker(
+                          context: context,
+                          firstDate: DateTime(1000),
+                          lastDate: DateTime(3000),
+                          initialDate: DateTime.now(),
+                        ).then((pickedDate) {
+                          date = pickedDate;
+                          _dateController.text =
+                              pickedDate!.toIso8601String().split('T')[0];
+                        });
                       });
-                    });
-                  },
-                  validator: (value) => "Field is empty! Please enter the date",
+                    },
+                    validator:
+                        (value) => "Field is empty! Please enter the date",
+                  ),
                 ),
-                Card(
-                  child: ListTile(
-                    title: Text("Patient Selector"),
-                    subtitle: Text("Select from the following patients: "),
-                    trailing: DropdownMenu(
-                      dropdownMenuEntries:
-                          Patient.getPatients().map((item) {
-                            return DropdownMenuEntry(
-                              value: item,
-                              label: item.pIdentity.toString(),
-                            );
-                          }).toList(),
-                      onSelected: (value) {
-                        setState(() {
-                          if (value != null) {
-                            thePatient = value;
-                          }
-                        });
-                      },
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("Patient Selector"),
+                      subtitle: Text("Select from the following patients: "),
+                      trailing: DropdownMenu(
+                        dropdownMenuEntries:
+                            Patient.getPatients().map((item) {
+                              return DropdownMenuEntry(
+                                value: item,
+                                label: item.pIdentity.toString(),
+                              );
+                            }).toList(),
+                        onSelected: (value) {
+                          setState(() {
+                            if (value != null) {
+                              thePatient = value;
+                            }
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),
-                Card(
-                  child: ListTile(
-                    title: Text("Doctor Selector"),
-                    subtitle: Text("Select from the following doctors: "),
-                    trailing: DropdownMenu(
-                      dropdownMenuEntries:
-                          Doctor.getDoctors().map((item) {
-                            return DropdownMenuEntry(
-                              value: item,
-                              label: item.dID.toString(),
-                            );
-                          }).toList(),
-                      onSelected: (value) {
-                        setState(() {
-                          if (value != null) {
-                            theDoctor = value;
-                          }
-                        });
-                      },
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("Doctor Selector"),
+                      subtitle: Text("Select from the following doctors: "),
+                      trailing: DropdownMenu(
+                        dropdownMenuEntries:
+                            Doctor.getDoctors().map((item) {
+                              return DropdownMenuEntry(
+                                value: item,
+                                label: item.dID.toString(),
+                              );
+                            }).toList(),
+                        onSelected: (value) {
+                          setState(() {
+                            if (value != null) {
+                              theDoctor = value;
+                            }
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),
-                Card(
-                  child: ListTile(
-                    title: Text("Appointment Reason Selection"),
-                    subtitle: Text("Select from the following reasons:"),
-                    trailing: DropdownMenu(
-                      dropdownMenuEntries: [
-                        DropdownMenuEntry(
-                          value: AppointmentReason.consultation,
-                          label: AppointmentReason.consultation.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.followUp,
-                          label: AppointmentReason.followUp.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.surgery,
-                          label: AppointmentReason.surgery.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.therapy,
-                          label: AppointmentReason.therapy.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.diagnosticTest,
-                          label: AppointmentReason.diagnosticTest.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.vaccination,
-                          label: AppointmentReason.vaccination.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.emergency,
-                          label: AppointmentReason.emergency.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.teleMedicine,
-                          label: AppointmentReason.teleMedicine.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.checkUp,
-                          label: AppointmentReason.checkUp.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentReason.none,
-                          label: AppointmentReason.none.toString(),
-                        ),
-                      ],
-                      onSelected: (value) {
-                        setState(() {
-                          if (value != null) {
-                            reason = value;
-                          }
-                        });
-                      },
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("Appointment Reason Selection"),
+                      subtitle: Text("Select from the following reasons:"),
+                      trailing: DropdownMenu(
+                        dropdownMenuEntries: [
+                          DropdownMenuEntry(
+                            value: AppointmentReason.consultation,
+                            label: AppointmentReason.consultation.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.followUp,
+                            label: AppointmentReason.followUp.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.surgery,
+                            label: AppointmentReason.surgery.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.therapy,
+                            label: AppointmentReason.therapy.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.diagnosticTest,
+                            label: AppointmentReason.diagnosticTest.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.vaccination,
+                            label: AppointmentReason.vaccination.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.emergency,
+                            label: AppointmentReason.emergency.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.teleMedicine,
+                            label: AppointmentReason.teleMedicine.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.checkUp,
+                            label: AppointmentReason.checkUp.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentReason.none,
+                            label: AppointmentReason.none.toString(),
+                          ),
+                        ],
+                        onSelected: (value) {
+                          setState(() {
+                            if (value != null) {
+                              reason = value;
+                            }
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),
-                Card(
-                  child: ListTile(
-                    title: Text("Appointment Reason Selection"),
-                    subtitle: Text("Select from the following reasons:"),
-                    trailing: DropdownMenu(
-                      dropdownMenuEntries: [
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.generalCheckup,
-                          label: AppointmentTitle.generalCheckup.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.specialVisit,
-                          label: AppointmentTitle.specialVisit.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.preSurgeryConsultation,
-                          label:
-                              AppointmentTitle.preSurgeryConsultation
-                                  .toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.postSurgeryFollowUp,
-                          label:
-                              AppointmentTitle.postSurgeryFollowUp.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.therapySession,
-                          label: AppointmentTitle.therapySession.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.diagnosticImaging,
-                          label: AppointmentTitle.diagnosticImaging.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.vaccinationAppointment,
-                          label:
-                              AppointmentTitle.vaccinationAppointment
-                                  .toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.emergencyVisit,
-                          label: AppointmentTitle.emergencyVisit.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.telemedicineConsultation,
-                          label:
-                              AppointmentTitle.telemedicineConsultation
-                                  .toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentTitle.somethingElse,
-                          label: AppointmentTitle.somethingElse.toString(),
-                        ),
-                      ],
-                      onSelected: (value) {
-                        setState(() {
-                          if (value != null) {
-                            title = value;
-                          }
-                        });
-                      },
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("Appointment Reason Selection"),
+                      subtitle: Text("Select from the following reasons:"),
+                      trailing: DropdownMenu(
+                        dropdownMenuEntries: [
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.generalCheckup,
+                            label: AppointmentTitle.generalCheckup.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.specialVisit,
+                            label: AppointmentTitle.specialVisit.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.preSurgeryConsultation,
+                            label:
+                                AppointmentTitle.preSurgeryConsultation
+                                    .toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.postSurgeryFollowUp,
+                            label:
+                                AppointmentTitle.postSurgeryFollowUp.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.therapySession,
+                            label: AppointmentTitle.therapySession.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.diagnosticImaging,
+                            label:
+                                AppointmentTitle.diagnosticImaging.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.vaccinationAppointment,
+                            label:
+                                AppointmentTitle.vaccinationAppointment
+                                    .toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.emergencyVisit,
+                            label: AppointmentTitle.emergencyVisit.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.telemedicineConsultation,
+                            label:
+                                AppointmentTitle.telemedicineConsultation
+                                    .toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentTitle.somethingElse,
+                            label: AppointmentTitle.somethingElse.toString(),
+                          ),
+                        ],
+                        onSelected: (value) {
+                          setState(() {
+                            if (value != null) {
+                              title = value;
+                            }
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),
-                Card(
-                  child: ListTile(
-                    title: Text("Appointment Reason Selection"),
-                    subtitle: Text("Select from the following reasons:"),
-                    trailing: DropdownMenu(
-                      dropdownMenuEntries: [
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.scheduled,
-                          label: AppointmentStatus.scheduled.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.completed,
-                          label: AppointmentStatus.completed.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.canceled,
-                          label: AppointmentStatus.canceled.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.noShow,
-                          label: AppointmentStatus.noShow.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.rescheduled,
-                          label: AppointmentStatus.rescheduled.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.busy,
-                          label: AppointmentStatus.busy.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.unavailable,
-                          label: AppointmentStatus.unavailable.toString(),
-                        ),
-                        DropdownMenuEntry(
-                          value: AppointmentStatus.none,
-                          label: AppointmentStatus.none.toString(),
-                        ),
-                      ],
-                      onSelected: (value) {
-                        setState(() {
-                          if (value != null) {
-                            status = value;
-                          }
-                        });
-                      },
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("Appointment Reason Selection"),
+                      subtitle: Text("Select from the following reasons:"),
+                      trailing: DropdownMenu(
+                        dropdownMenuEntries: [
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.scheduled,
+                            label: AppointmentStatus.scheduled.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.completed,
+                            label: AppointmentStatus.completed.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.canceled,
+                            label: AppointmentStatus.canceled.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.noShow,
+                            label: AppointmentStatus.noShow.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.rescheduled,
+                            label: AppointmentStatus.rescheduled.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.busy,
+                            label: AppointmentStatus.busy.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.unavailable,
+                            label: AppointmentStatus.unavailable.toString(),
+                          ),
+                          DropdownMenuEntry(
+                            value: AppointmentStatus.none,
+                            label: AppointmentStatus.none.toString(),
+                          ),
+                        ],
+                        onSelected: (value) {
+                          setState(() {
+                            if (value != null) {
+                              status = value;
+                            }
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _submitForm();
-                    });
-                  },
-                  child: Text("Add"),
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _submitForm();
+                      });
+                    },
+                    child: Text("Add"),
+                  ),
                 ),
               ],
             ),

@@ -148,14 +148,7 @@ class DataTabExplanation extends StatelessWidget {
         title: Text("Second Tab/Data Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          Text("Overview of the System"),
-          SizedBox(height: 20),
-          Text(details),
-        ],
-      ),
+      body: Column(children: [SizedBox(height: 30), Text(details)]),
     );
   }
 }
@@ -172,14 +165,7 @@ class SecurityExplanation extends StatelessWidget {
         title: Text("System Security Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          Text("Overview of the System"),
-          SizedBox(height: 20),
-          Text(details),
-        ],
-      ),
+      body: Column(children: [SizedBox(height: 30), Text(details)]),
     );
   }
 }
@@ -196,14 +182,7 @@ class DesignExplanation extends StatelessWidget {
         title: Text("System Design Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          Text("Overview of the System"),
-          SizedBox(height: 20),
-          Text(details),
-        ],
-      ),
+      body: Column(children: [SizedBox(height: 30), Text(details)]),
     );
   }
 }
@@ -220,14 +199,7 @@ class FileTabExplanation extends StatelessWidget {
         title: Text("Third Tab/File Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          Text("Overview of the System"),
-          SizedBox(height: 20),
-          Text(details),
-        ],
-      ),
+      body: Column(children: [SizedBox(height: 30), Text(details)]),
     );
   }
 }
@@ -244,13 +216,59 @@ class UnavailableTabExplanation extends StatelessWidget {
         title: Text("Fourth Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
+      body: Column(children: [SizedBox(height: 30), Text(details)]),
+    );
+  }
+}
+
+class SystemOutputExplanation extends StatelessWidget {
+  const SystemOutputExplanation({super.key, required this.details});
+
+  final String details;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Fourth Tab Explanation"),
+        backgroundColor: Colors.purpleAccent,
+      ),
+      body: Column(children: [SizedBox(height: 30), Text(details)]),
+    );
+  }
+}
+
+class TheDisclaimer extends StatelessWidget {
+  const TheDisclaimer({super.key, required this.details});
+
+  final String details;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Fourth Tab Explanation"),
+        backgroundColor: Colors.purpleAccent,
+      ),
+      body: Column(children: [SizedBox(height: 30), Text(details)]),
+    );
+  }
+}
+
+class ETheQuestions extends StatelessWidget {
+  const ETheQuestions({super.key, required this.receivedQuestions});
+
+  final List<String> receivedQuestions;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Questions as Examples"),
+        backgroundColor: Colors.purpleAccent,
+      ),
       body: Column(
-        children: [
-          SizedBox(height: 30),
-          Text("Overview of the System"),
-          SizedBox(height: 20),
-          Text(details),
-        ],
+        children: [SizedBox(height: 30), Text(receivedQuestions.toString())],
       ),
     );
   }
