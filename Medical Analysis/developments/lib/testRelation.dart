@@ -1,6 +1,8 @@
+// ignore_for_file: file_names
+
 import 'dart:math';
-import 'package:medical_app/patient.dart';
-import 'package:medical_app/test.dart';
+import 'patient.dart';
+import 'test.dart';
 import 'package:flutter/material.dart';
 
 class TestRelations {

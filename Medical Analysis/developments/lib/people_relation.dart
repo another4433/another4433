@@ -1,6 +1,6 @@
 import 'dart:math';
-import 'package:medical_app/patient.dart';
-import 'package:medical_app/doctor.dart';
+import 'patient.dart';
+import 'doctor.dart';
 import 'package:flutter/material.dart';
 
 class PeopleRelation {

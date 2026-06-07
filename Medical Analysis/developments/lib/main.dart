@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medical_app/home.dart';
-import 'package:medical_app/user.dart';
-import 'package:medical_app/person.dart';
+import 'home.dart';
+import 'user.dart';
+import 'person.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/doctor_edit.dart';
-import 'package:medical_app/person.dart';
-import 'package:medical_app/patient.dart';
+import 'doctor_edit.dart';
+import 'person.dart';
+import 'patient.dart';
 import 'dart:math';
 
 enum DoctorSpecialty {

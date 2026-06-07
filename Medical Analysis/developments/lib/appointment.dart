@@ -1,8 +1,8 @@
 import 'dart:math';
-import 'package:medical_app/doctor.dart';
-import 'package:medical_app/patient.dart';
+import 'doctor.dart';
+import 'patient.dart';
 import 'package:flutter/material.dart';
-import 'package:medical_app/appointment_edit.dart';
+import 'appointment_edit.dart';
 
 enum AppointmentReason {
   consultation,

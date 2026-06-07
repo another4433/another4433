@@ -1,6 +1,6 @@
 import 'dart:math';
-import 'package:medical_app/person.dart';
-import 'package:medical_app/case.dart';
+import 'person.dart';
+import 'case.dart';
 import 'package:flutter/material.dart';
 
 class Patient extends Person {

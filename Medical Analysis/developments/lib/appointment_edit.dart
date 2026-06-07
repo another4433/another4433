@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/appointment.dart';
-import 'package:medical_app/doctor.dart';
-import 'package:medical_app/patient.dart';
+import 'appointment.dart';
+import 'doctor.dart';
+import 'patient.dart';
 
 class AppointmentEdit extends StatefulWidget {
   const AppointmentEdit({

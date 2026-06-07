@@ -12,7 +12,12 @@ class OverviewExplanation extends StatelessWidget {
         title: Text("Overview of the System"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -29,7 +34,12 @@ class GoalExplanation extends StatelessWidget {
         title: Text("Goal Explanation of the System"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -46,7 +56,12 @@ class FeaturesExplanation extends StatelessWidget {
         title: Text("Features Included in the System"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -63,7 +78,12 @@ class MainExplanation extends StatelessWidget {
         title: Text("Main feature of the System"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -80,7 +100,12 @@ class WorkingExplanation extends StatelessWidget {
         title: Text("How does the system work?"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -97,7 +122,12 @@ class InputExplanation extends StatelessWidget {
         title: Text("Inputs used in the System"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -114,7 +144,12 @@ class RecommendationExplanation extends StatelessWidget {
         title: Text("Recommendation of this system to users"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -131,7 +166,12 @@ class ChatTabExplanation extends StatelessWidget {
         title: Text("First Tab/Chat Assistant Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -148,7 +188,12 @@ class DataTabExplanation extends StatelessWidget {
         title: Text("Second Tab/Data Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -165,7 +210,12 @@ class SecurityExplanation extends StatelessWidget {
         title: Text("System Security Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -182,7 +232,12 @@ class DesignExplanation extends StatelessWidget {
         title: Text("System Design Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -199,7 +254,12 @@ class FileTabExplanation extends StatelessWidget {
         title: Text("Third Tab/File Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -216,7 +276,12 @@ class UnavailableTabExplanation extends StatelessWidget {
         title: Text("Fourth Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -233,7 +298,12 @@ class SystemOutputExplanation extends StatelessWidget {
         title: Text("Fourth Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -250,7 +320,12 @@ class TheDisclaimer extends StatelessWidget {
         title: Text("Fourth Tab Explanation"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(children: [SizedBox(height: 30), Text(details)]),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+          Text(details, style: TextStyle(fontSize: 18)),
+        ],
+      ),
     );
   }
 }
@@ -268,7 +343,10 @@ class ETheQuestions extends StatelessWidget {
         backgroundColor: Colors.purpleAccent,
       ),
       body: Column(
-        children: [SizedBox(height: 30), Text(receivedQuestions.toString())],
+        children: [
+          SizedBox(height: 30),
+          Text(receivedQuestions.toString(), style: TextStyle(fontSize: 18)),
+        ],
       ),
     );
   }

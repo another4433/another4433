@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/doctor.dart';
-import 'package:medical_app/patient.dart';
+import 'doctor.dart';
+import 'patient.dart';
 
 class DoctorEdit extends StatefulWidget {
   const DoctorEdit({
