@@ -21,6 +21,7 @@ dependencies:
   open_filex: ^4.3.4         # open file with device app
   path: ^1.9.1
   http: ^1.2.0               # GitHub REST API calls
+  image_picker: ^1.1.2       # camera & gallery capture
  
 dev_dependencies:
   flutter_test:
