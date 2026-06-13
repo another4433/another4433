@@ -383,7 +383,14 @@ class _AppointmentEditState extends State<AppointmentEdit> {
                                         backgroundColor: Colors.green,
                                       ),
                                     );
-                                    Navigator.pop(context);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (BuildContext context) =>
+                                                AppointmentList(),
+                                      ),
+                                    );
                                   });
                                 },
                                 child: Text("Yes"),

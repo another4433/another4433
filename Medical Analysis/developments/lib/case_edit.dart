@@ -235,6 +235,13 @@ class _CaseEditState extends State<CaseEdit> {
                                       backgroundColor: Colors.green,
                                     ),
                                   );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:
+                                          (BuildContext context) => CaseList(),
+                                    ),
+                                  );
                                 });
                               },
                               child: Text("Yes"),
@@ -249,6 +256,7 @@ class _CaseEditState extends State<CaseEdit> {
                                       ),
                                     ),
                                   );
+                                  Navigator.pop(context);
                                 });
                               },
                               child: Text("No"),
