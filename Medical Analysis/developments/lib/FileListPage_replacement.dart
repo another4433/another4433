@@ -68,6 +68,111 @@ class _FileListPageState extends State<FileListPageReplaced> {
     }
   }
 
+  // ── Capture photo from camera & upload ────────────────────────────────────
+
+  Future<void> _takePhoto() async {
+    setState(() => _isLoading = true);
+
+    try {
+      final fileItem = await _service.pickFromCamera(
+        onGitHubStatus: (status) {
+          _showSnackbar(status);
+        },
+      );
+
+      if (fileItem != null) {
+        setState(() => _files.add(fileItem));
+        _showSnackbar('✅ ${fileItem.name} saved locally & queued to GitHub!');
+      }
+    } catch (e) {
+      _showSnackbar('❌ Camera error: $e');
+    } finally {
+      setState(() => _isLoading = false);
+    }
+  }
+
+  // ── Bottom sheet — choose upload source ───────────────────────────────────
+
+  void _showUploadOptions() {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder:
+          (ctx) => SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Title
+                  const Padding(
+                    padding: EdgeInsets.only(left: 4, bottom: 16),
+                    child: Text(
+                      'Upload via',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+
+                  // Option 1 — File picker
+                  ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.indigo.shade50,
+                      child: const Icon(
+                        Icons.folder_open,
+                        color: Colors.indigo,
+                      ),
+                    ),
+                    title: const Text('Choose from Files'),
+                    subtitle: const Text(
+                      'Pick any file from your device storage',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onTap: () {
+                      Navigator.pop(ctx);
+                      _pickFile();
+                    },
+                  ),
+
+                  const SizedBox(height: 8),
+
+                  // Option 2 — Camera
+                  ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.teal.shade50,
+                      child: const Icon(Icons.camera_alt, color: Colors.teal),
+                    ),
+                    title: const Text('Take a Photo'),
+                    subtitle: const Text(
+                      'Capture an image using your camera',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onTap: () {
+                      Navigator.pop(ctx);
+                      _takePhoto();
+                    },
+                  ),
+
+                  const SizedBox(height: 8),
+                ],
+              ),
+            ),
+          ),
+    );
+  }
+
   // ── Delete local file ─────────────────────────────────────────────────────
 
   Future<void> _deleteFile(int index) async {
@@ -237,8 +342,10 @@ class _FileListPageState extends State<FileListPageReplaced> {
         ],
       ),
 
+      // FAB now opens the upload source bottom sheet instead of directly
+      // picking a file — the only change to the original FAB behaviour.
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: _isLoading ? null : _pickFile,
+        onPressed: _isLoading ? null : _showUploadOptions,
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
         icon:
@@ -272,7 +379,7 @@ class _FileListPageState extends State<FileListPageReplaced> {
           ),
           const SizedBox(height: 8),
           const Text(
-            'Tap Upload File to pick a file.\nIt will be saved locally and\nuploaded to the GitHub repository.',
+            'Tap Upload File to pick a file or take a photo.\nIt will be saved locally and\nuploaded to the GitHub repository.',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.grey, fontSize: 13),
           ),

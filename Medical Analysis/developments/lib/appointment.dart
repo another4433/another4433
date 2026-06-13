@@ -50,7 +50,7 @@ class Appointment {
   AppointmentTitle _title;
   AppointmentStatus _status;
   double _aID = 0;
-  static final List<Appointment> _theList = [];
+  static final List<Appointment> _theList = List.empty(growable: true);
 
   Appointment(
     this._patient,
@@ -113,42 +113,58 @@ class _AppointmentListState extends State<AppointmentList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List of appointments"),
+        title: Text("List of Appointments"),
         backgroundColor: Colors.purpleAccent,
       ),
       body: ListView.builder(
         itemCount: Appointment.appointments.length,
         itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              leading: Text(
-                "${Appointment.appointments[index].identification}",
+          if (Appointment.appointments.isNotEmpty) {
+            return Card(
+              child: ListTile(
+                leading: Text(
+                  "${Appointment.appointments[index].identification}",
+                ),
+                title: Text(
+                  "Patient: ${Appointment.appointments[index].thePatient}",
+                ),
+                subtitle: Text(
+                  "Doctor: ${Appointment.appointments[index].theDoctor}",
+                ),
+                trailing: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (BuildContext context) => AppointmentEdit(
+                                receivedAppointment:
+                                    Appointment.appointments[index],
+                                receivedIndex: index,
+                              ),
+                        ),
+                      );
+                    });
+                  },
+                  icon: Icon(Icons.edit),
+                ),
               ),
-              title: Text(
-                "Patient: ${Appointment.appointments[index].thePatient}",
-              ),
-              subtitle: Text(
-                "Doctor: ${Appointment.appointments[index].theDoctor}",
-              ),
-              trailing: IconButton(
+            );
+          }
+          return AlertDialog(
+            title: Text("Empty List"),
+            content: Text("There are no data found in the appointments list."),
+            actions: [
+              TextButton(
                 onPressed: () {
                   setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder:
-                            (BuildContext context) => AppointmentEdit(
-                              receivedAppointment:
-                                  Appointment.appointments[index],
-                              receivedIndex: index,
-                            ),
-                      ),
-                    );
+                    Navigator.pop(context);
                   });
                 },
-                icon: Icon(Icons.edit),
+                child: Text("OK"),
               ),
-            ),
+            ],
           );
         },
       ),
@@ -259,7 +275,7 @@ class _AppointmentDataState extends State<AppointmentData> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     controller: _dateController,
                     decoration: InputDecoration(
@@ -287,7 +303,7 @@ class _AppointmentDataState extends State<AppointmentData> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: ListTile(
                       title: Text("Patient Selector"),
@@ -312,7 +328,7 @@ class _AppointmentDataState extends State<AppointmentData> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: ListTile(
                       title: Text("Doctor Selector"),
@@ -337,7 +353,7 @@ class _AppointmentDataState extends State<AppointmentData> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: ListTile(
                       title: Text("Appointment Reason Selection"),
@@ -397,7 +413,7 @@ class _AppointmentDataState extends State<AppointmentData> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: ListTile(
                       title: Text("Appointment Reason Selection"),
@@ -465,7 +481,7 @@ class _AppointmentDataState extends State<AppointmentData> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: ListTile(
                       title: Text("Appointment Reason Selection"),
@@ -518,7 +534,7 @@ class _AppointmentDataState extends State<AppointmentData> {
                 ),
                 SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {

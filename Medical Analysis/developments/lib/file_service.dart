@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mime/mime.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
@@ -8,6 +9,7 @@ import 'github_service.dart';
 
 class FileService {
   final GitHubService _github = GitHubService();
+  final ImagePicker _imagePicker = ImagePicker();
 
   /// Pick a file, copy it to app documents directory, and upload it to GitHub.
   /// Returns a [FileItem] on success, null if the user cancelled.
@@ -19,7 +21,7 @@ class FileService {
   }) async {
     // 1. Open the system file picker
     final result = await FilePicker.platform.pickFiles(
-      type    : FileType.any,
+      type: FileType.any,
       withData: false,
     );
 
@@ -28,31 +30,84 @@ class FileService {
     final picked = result.files.single;
     if (picked.path == null) return null;
 
-    // 2. Get app documents directory (persistent local storage)
-    final docsDir  = await getApplicationDocumentsDirectory();
-    final destPath = p.join(docsDir.path, 'uploads', picked.name);
+    return _saveAndUpload(
+      sourcePath: picked.path!,
+      fileName: picked.name,
+      fileSize: picked.size,
+      onGitHubStatus: onGitHubStatus,
+    );
+  }
 
-    // 3. Create local uploads folder if it does not exist
+  /// Capture a photo using the device camera, save it locally, and upload
+  /// it to GitHub.
+  /// Returns a [FileItem] on success, null if the user cancelled.
+  ///
+  /// The [onGitHubStatus] callback receives a status message string so the UI
+  /// can display upload progress feedback to the user.
+  Future<FileItem?> pickFromCamera({
+    void Function(String status)? onGitHubStatus,
+  }) async {
+    // Open the device camera
+    final XFile? photo = await _imagePicker.pickImage(
+      source: ImageSource.camera,
+      imageQuality: 90, // slight compression to keep file size reasonable
+    );
+
+    if (photo == null) return null; // user cancelled
+
+    final sourceFile = File(photo.path);
+    final fileSize = await sourceFile.length();
+
+    // Generate a timestamped filename so photos don't overwrite each other
+    final timestamp = DateTime.now()
+        .toIso8601String()
+        .replaceAll(':', '-')
+        .replaceAll('.', '-');
+    final fileName = 'photo_$timestamp.jpg';
+
+    return _saveAndUpload(
+      sourcePath: photo.path,
+      fileName: fileName,
+      fileSize: fileSize,
+      onGitHubStatus: onGitHubStatus,
+    );
+  }
+
+  // ── Shared save + upload logic ─────────────────────────────────────────────
+
+  /// Copies the file at [sourcePath] into the local uploads directory,
+  /// detects its MIME type, uploads it to GitHub, and returns a [FileItem].
+  Future<FileItem?> _saveAndUpload({
+    required String sourcePath,
+    required String fileName,
+    required int fileSize,
+    void Function(String status)? onGitHubStatus,
+  }) async {
+    // Get app documents directory (persistent local storage)
+    final docsDir = await getApplicationDocumentsDirectory();
+    final destPath = p.join(docsDir.path, 'uploads', fileName);
+
+    // Create local uploads folder if it does not exist
     final uploadsDir = Directory(p.join(docsDir.path, 'uploads'));
     if (!await uploadsDir.exists()) {
       await uploadsDir.create(recursive: true);
     }
 
-    // 4. Copy file to app documents directory
-    final sourceFile = File(picked.path!);
-    final savedFile  = await sourceFile.copy(destPath);
+    // Copy file to app documents directory
+    final sourceFile = File(sourcePath);
+    final savedFile = await sourceFile.copy(destPath);
 
-    // 5. Detect MIME type
-    final mimeType = lookupMimeType(picked.name) ?? 'application/octet-stream';
+    // Detect MIME type
+    final mimeType = lookupMimeType(fileName) ?? 'application/octet-stream';
 
-    // 6. Upload to GitHub repository
+    // Upload to GitHub repository
     try {
-      onGitHubStatus?.call('⏳ Uploading ${picked.name} to GitHub...');
+      onGitHubStatus?.call('⏳ Uploading $fileName to GitHub...');
 
       final downloadUrl = await _github.uploadFile(
-        file         : savedFile,
-        fileName     : picked.name,
-        commitMessage: 'Upload ${picked.name} via LabLens AI Flutter app',
+        file: savedFile,
+        fileName: fileName,
+        commitMessage: 'Upload $fileName via LabLens AI Flutter app',
       );
 
       onGitHubStatus?.call('✅ Uploaded to GitHub!\n$downloadUrl');
@@ -61,14 +116,14 @@ class FileService {
       onGitHubStatus?.call('⚠️ Saved locally, but GitHub upload failed:\n$e');
     }
 
-    // 7. Build and return FileItem (local reference)
+    // Build and return FileItem (local reference)
     return FileItem(
-      name      : picked.name,
-      path      : savedFile.path,
-      size      : picked.size,
-      mimeType  : mimeType,
+      name: fileName,
+      path: savedFile.path,
+      size: fileSize,
+      mimeType: mimeType,
       uploadedAt: DateTime.now(),
-      file      : savedFile,
+      file: savedFile,
     );
   }
 

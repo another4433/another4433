@@ -227,21 +227,36 @@ class _HomeManipulationState extends State<HomeManipulation> {
   bool theContains(String long, String short) {
     int count = 0;
     bool found = false, exact = false;
-    for (int i = 0; i < long.length; i++) {
-      if (long[i] == short[count]) {
-        count++;
-        if (count == short.length) {
-          exact = true;
-          break;
-        }
-        if (count > 1) {
-          found = true;
-        } else {
-          found = false;
-        }
+    String created = "";
+    List<String> theSplitted = long.split(" ");
+    for (String selectedMan in theSplitted) {
+      if (selectedMan == short) {
+        exact = true;
+        break;
       }
     }
-    return count == short.length - 1 || found || exact;
+    if (exact == false) {
+      for (int i = 0; i < long.length; i++) {
+        if (long[i] == short[count]) {
+          created += short[count];
+          count++;
+          if (count == short.length) {
+            exact = true;
+            break;
+          } else if (created == short) {
+            found = true;
+            break;
+          }
+          if (count > 2) {
+            found = true;
+          } else {
+            found = false;
+          }
+        }
+      }
+      return exact || found || count == short.length - 1;
+    }
+    return exact;
   }
 
   Widget widgetSelect(int num) {
@@ -543,7 +558,7 @@ class _HomeManipulationState extends State<HomeManipulation> {
               ),
               SizedBox(width: 15),
               SizedBox(
-                width: 400,
+                width: 300,
                 child: TextField(
                   controller: prompt,
                   decoration: InputDecoration(
@@ -965,110 +980,156 @@ class _OptionSelectorState extends State<OptionSelector> {
       appBar: AppBar(title: Text("Selections for Management")),
       body: Column(
         children: [
+          SizedBox(height: 10),
           Text("Click on one of the buttons below: "),
-          SizedBox(height: 30),
-          Row(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => PatientList(),
-                      ),
-                    );
-                  });
-                },
-                child: Text("Patients"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => DoctorList(),
-                      ),
-                    );
-                  });
-                },
-                child: Text("Doctors"),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => CaseList(),
-                      ),
-                    );
-                  });
-                },
-                child: Text("Cases"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => TestList(),
-                      ),
-                    );
-                  });
-                },
-                child: Text("Tests"),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => TestRelationList(),
-                      ),
-                    );
-                  });
-                },
-                child: Text("Lab Relations"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => PeopleRelationList(),
-                      ),
-                    );
-                  });
-                },
-                child: Text("People Relations"),
-              ),
-            ],
-          ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => AppointmentList(),
+          SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SizedBox(
+              child: Row(
+                children: [
+                  SizedBox(width: 100),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => PatientList(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Text("Patients"),
+                    ),
                   ),
-                );
-              });
-            },
-            child: Text("Appointments"),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => DoctorList(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Text("Doctors"),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SizedBox(
+              child: Row(
+                children: [
+                  SizedBox(width: 100),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => CaseList(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Text("Cases"),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => TestList(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Text("Tests"),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SizedBox(
+              child: Row(
+                children: [
+                  SizedBox(width: 100),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (BuildContext context) => TestRelationList(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Text("Lab Relations"),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (BuildContext context) =>
+                                      PeopleRelationList(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Text("People Relations"),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => AppointmentList(),
+                    ),
+                  );
+                });
+              },
+              child: Text("Appointments"),
+            ),
           ),
         ],
       ),

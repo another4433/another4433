@@ -91,35 +91,50 @@ class _DoctorListState extends State<DoctorList> {
         backgroundColor: Colors.purpleAccent,
       ),
       body: ListView.builder(
-        shrinkWrap: true,
         itemCount: Doctor.getDoctors().length,
         itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              leading: Text(Doctor.getDoctors()[index].dID.toString()),
-              title: Text(
-                "${Doctor.getDoctors()[index].getName()} is ${Doctor.getDoctors()[index].getNationality()}",
+          if (Doctor.getDoctors().isNotEmpty) {
+            return Card(
+              child: ListTile(
+                leading: Text(Doctor.getDoctors()[index].dID.toString()),
+                title: Text(
+                  "${Doctor.getDoctors()[index].getName()} is ${Doctor.getDoctors()[index].getNationality()}",
+                ),
+                subtitle: Text(
+                  "Aged ${Doctor.getDoctors()[index].getAge()} that is known for ${Doctor.getDoctors()[index].specialization}",
+                ),
+                trailing: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder:
+                              (BuildContext context) => DoctorEdit(
+                                receivedDoctor: Doctor.getDoctors()[index],
+                                theIndex: index,
+                              ),
+                        ),
+                      );
+                    });
+                  },
+                  icon: Icon(Icons.edit),
+                ),
               ),
-              subtitle: Text(
-                "Aged ${Doctor.getDoctors()[index].getAge()} that is known for ${Doctor.getDoctors()[index].specialization}",
-              ),
-              trailing: IconButton(
+            );
+          }
+          return AlertDialog(
+            title: Text("Empty List"),
+            content: Text("There are no data found in the appointments list."),
+            actions: [
+              TextButton(
                 onPressed: () {
                   setState(() {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder:
-                            (BuildContext context) => DoctorEdit(
-                              receivedDoctor: Doctor.getDoctors()[index],
-                              theIndex: index,
-                            ),
-                      ),
-                    );
+                    Navigator.pop(context);
                   });
                 },
-                icon: Icon(Icons.edit),
+                child: Text("OK"),
               ),
-            ),
+            ],
           );
         },
       ),
@@ -253,11 +268,11 @@ class _DoctorDataState extends State<DoctorData> {
           controller: _scrollController,
           child: Form(
             key: _formKey,
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  TextFormField(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the ID of the doctor",
@@ -271,7 +286,10 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                     validator: (value) => "Field is empty! Please enter the id",
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the Name of the doctor",
@@ -285,7 +303,10 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                     validator: (value) => "Field is empty! Please enter name.",
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the Nationality of the doctor",
@@ -301,7 +322,10 @@ class _DoctorDataState extends State<DoctorData> {
                         (value) =>
                             "Field is empty! Please enter the nationality.",
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the Gender of the doctor",
@@ -315,7 +339,10 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                     validator: (value) => "Field is empty! Please enter gender",
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText:
@@ -330,7 +357,10 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                     validator: (value) => "Field is empty! Please enter branch",
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the work phone number of the doctor",
@@ -346,7 +376,10 @@ class _DoctorDataState extends State<DoctorData> {
                         (value) =>
                             "Field is empty! Please enter the phone number of the doctor.",
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the work Email of the doctor",
@@ -360,7 +393,10 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                     validator: (value) => "Field is empty! Please enter email.",
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the currency of money the doctor use",
@@ -373,7 +409,10 @@ class _DoctorDataState extends State<DoctorData> {
                       });
                     },
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter the amount of money the doctor have",
@@ -386,7 +425,10 @@ class _DoctorDataState extends State<DoctorData> {
                       });
                     },
                   ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     controller: birthController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -414,7 +456,10 @@ class _DoctorDataState extends State<DoctorData> {
                         (value) =>
                             "Field is empty! Please enter the birthdate of the doctor.",
                   ),
-                  Card(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
                     child: Column(
                       children: [
                         Text(
@@ -610,7 +655,10 @@ class _DoctorDataState extends State<DoctorData> {
                       ],
                     ),
                   ),
-                  ToggleButtons(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: ToggleButtons(
                     isSelected: selections,
                     onPressed: (index) {
                       setState(() {
@@ -631,7 +679,10 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                     children: [Text("Yes"), Text("No"), Text("Maybe")],
                   ),
-                  Card(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
                     child: ListTile(
                       title: Text("Patient List Starter"),
                       subtitle: Text(
@@ -655,7 +706,10 @@ class _DoctorDataState extends State<DoctorData> {
                       ),
                     ),
                   ),
-                  ElevatedButton(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: ElevatedButton(
                     onPressed: () {
                       setState(() {
                         submitForm();
@@ -663,8 +717,8 @@ class _DoctorDataState extends State<DoctorData> {
                     },
                     child: Text("Submit"),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
