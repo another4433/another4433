@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'user.dart';
-import 'main.dart';
+import 'package:medical_app/user.dart';
+import 'package:medical_app/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileViewing extends StatefulWidget {

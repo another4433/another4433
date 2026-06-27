@@ -1,4 +1,4 @@
-import "person.dart";
+import "package:medical_app/person.dart";
 
 class TheUser extends Person {
   String _email = "", _password = "";

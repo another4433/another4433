@@ -76,6 +76,11 @@ class _CaseEditState extends State<CaseEdit> {
                         TextButton(
                           onPressed: () {
                             setState(() {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text("Failed to delete the case!"),
+                                ),
+                              );
                               Navigator.pop(context);
                             });
                           },

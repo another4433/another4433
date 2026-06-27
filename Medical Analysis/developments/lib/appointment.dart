@@ -1,8 +1,8 @@
 import 'dart:math';
-import 'doctor.dart';
-import 'patient.dart';
+import 'package:medical_app/doctor.dart';
+import 'package:medical_app/patient.dart';
 import 'package:flutter/material.dart';
-import 'appointment_edit.dart';
+import 'package:medical_app/appointment_edit.dart';
 
 enum AppointmentReason {
   consultation,
@@ -154,7 +154,7 @@ class _AppointmentListState extends State<AppointmentList> {
           }
           return AlertDialog(
             title: Text("Empty List"),
-            content: Text("There are no data found in the appointments list."),
+            content: Text("There are no data found in the appointment list."),
             actions: [
               TextButton(
                 onPressed: () {

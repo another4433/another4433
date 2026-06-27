@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'appointment.dart';
-import 'doctor.dart';
-import 'patient.dart';
+import 'package:medical_app/appointment.dart';
+import 'package:medical_app/doctor.dart';
+import 'package:medical_app/patient.dart';
 
 class AppointmentEdit extends StatefulWidget {
   const AppointmentEdit({
@@ -86,6 +86,7 @@ class _AppointmentEditState extends State<AppointmentEdit> {
                               ),
                             );
                             Navigator.pop(context);
+                            setState(() {});
                           },
                           child: Text("No"),
                         ),
@@ -153,6 +154,7 @@ class _AppointmentEditState extends State<AppointmentEdit> {
                           }
                         });
                       },
+                      initialSelection: thePatient,
                     ),
                   ),
                 ),
@@ -175,6 +177,7 @@ class _AppointmentEditState extends State<AppointmentEdit> {
                           }
                         });
                       },
+                      initialSelection: theDoctor,
                     ),
                   ),
                 ),

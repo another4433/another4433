@@ -4,8 +4,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mime/mime.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
-import 'file_item.dart';
-import 'github_service.dart';
+import 'package:medical_app/file_item.dart';
+import 'package:medical_app/github_service.dart';
 
 class FileService {
   final GitHubService _github = GitHubService();

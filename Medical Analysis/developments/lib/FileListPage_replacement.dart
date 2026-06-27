@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:open_filex/open_filex.dart';
-import 'file_item.dart';
-import 'file_service.dart';
+import 'package:medical_app/file_item.dart';
+import 'package:medical_app/file_service.dart';
+import 'package:medical_app/file_explain.dart';
 
 // ════════════════════════════════════════════════════════════════════════════
 // INSTRUCTIONS: In your home.dart file, replace the entire FileListPage class
@@ -60,6 +61,15 @@ class _FileListPageState extends State<FileListPageReplaced> {
       if (fileItem != null) {
         setState(() => _files.add(fileItem));
         _showSnackbar('✅ ${fileItem.name} saved locally & queued to GitHub!');
+        if (mounted) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder:
+                  (BuildContext context) => FileUploadExplainatory(fileItem),
+            ),
+          );
+        }
       }
     } catch (e) {
       _showSnackbar('❌ Error: $e');
@@ -448,6 +458,19 @@ class _FileListPageState extends State<FileListPageReplaced> {
               icon: const Icon(Icons.delete_outline, color: Colors.red),
               tooltip: 'Delete locally',
               onPressed: () => _deleteFile(index),
+            ),
+            IconButton(
+              icon: const Icon(Icons.aod_outlined, color: Colors.blueGrey),
+              tooltip: 'Get Explanation',
+              onPressed:
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (BuildContext context) =>
+                              FileUploadExplainatory(item),
+                    ),
+                  ),
             ),
           ],
         ),

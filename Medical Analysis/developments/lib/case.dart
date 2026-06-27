@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:medical_app/case_edit.dart';
 
 class Case {
   String _allergy, _symptom, _condition, _hospital, _diagnosis;
@@ -92,6 +93,23 @@ class _CaseListState extends State<CaseList> {
                 ),
                 subtitle: Text(
                   "Cure availability = ${Case.getCases()[index].isCureAvailable} with symptom ${Case.getCases()[index].symptom}",
+                ),
+                trailing: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (BuildContext context) => CaseEdit(
+                                retrievedCase: Case.getCases()[index],
+                                theIndex: index,
+                              ),
+                        ),
+                      );
+                    });
+                  },
+                  icon: Icon(Icons.edit),
                 ),
               ),
             );

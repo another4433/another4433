@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'doctor.dart';
-import 'patient.dart';
+import 'package:medical_app/doctor.dart';
+import 'package:medical_app/patient.dart';
 
 class DoctorEdit extends StatefulWidget {
   const DoctorEdit({
@@ -18,7 +18,14 @@ class DoctorEdit extends StatefulWidget {
 
 class _DoctorEditState extends State<DoctorEdit> {
   final ScrollController _scrollController = ScrollController();
-  String? name, id, nationality, gender, branch, workEmail, workPhone, currency;
+  late String name,
+      id,
+      nationality,
+      gender,
+      branch,
+      workEmail,
+      workPhone,
+      currency;
   double money = 0, patientID = 0;
   DateTime? birthDate;
   DoctorSpecialty specialiazation = DoctorSpecialty.none;
@@ -86,6 +93,7 @@ class _DoctorEditState extends State<DoctorEdit> {
                               ),
                             );
                             Navigator.pop(context);
+                            setState(() {});
                           },
                           child: Text("No"),
                         ),
@@ -604,17 +612,17 @@ class _DoctorEditState extends State<DoctorEdit> {
                                 TextButton(
                                   onPressed: () {
                                     newDoctor = Doctor(
-                                      name!,
-                                      id!,
+                                      name,
+                                      id,
                                       birthDate!,
                                       money,
-                                      currency!,
-                                      nationality!,
-                                      gender!,
+                                      currency,
+                                      nationality,
+                                      gender,
                                       specialiazation,
-                                      branch!,
-                                      workEmail!,
-                                      workPhone!,
+                                      branch,
+                                      workEmail,
+                                      workPhone,
                                     );
                                     for (Patient thePatient
                                         in widget
@@ -632,7 +640,14 @@ class _DoctorEditState extends State<DoctorEdit> {
                                         backgroundColor: Colors.green,
                                       ),
                                     );
-                                    Navigator.pop(context);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (BuildContext context) =>
+                                                DoctorList(),
+                                      ),
+                                    );
                                   },
                                   child: Text("Yes"),
                                 ),

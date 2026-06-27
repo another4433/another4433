@@ -1,18 +1,18 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'appointment.dart';
-import 'people_relation.dart';
-import 'testRelation.dart';
+import 'package:medical_app/appointment.dart';
+import 'package:medical_app/people_relation.dart';
+import 'package:medical_app/testRelation.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'doctor.dart';
-import 'patient.dart';
-import 'case.dart';
-import 'test.dart';
-import 'the_stack.dart';
-import 'profile_viewing.dart';
-import 'main.dart';
-import 'text_detailing.dart';
-import 'FileListPage_replacement.dart';
+import 'package:medical_app/doctor.dart';
+import 'package:medical_app/patient.dart';
+import 'package:medical_app/case.dart';
+import 'package:medical_app/test.dart';
+import 'package:medical_app/the_stack.dart';
+import 'package:medical_app/profile_viewing.dart';
+import 'package:medical_app/main.dart';
+import 'package:medical_app/text_detailing.dart';
+import 'package:medical_app/FileListPage_replacement.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -206,12 +206,14 @@ class _HomeManipulationState extends State<HomeManipulation> {
     "Security: \nThe system is accessible through accounts. \nMeaning that you will need an account to access the system. \nYour account information is guaranteed safe when account is created.",
     "Explanation of the design: \nWhen you enter the system, it will show blank page for a while to load the designs. \nOnce the designs are loaded, you are greeted with the login page including the logo picture. \nOnce you signed in, you will see multiple tabs on top of the screen including the profile icon located at the top right of the screen.",
     "First tab explanation: \nThis tab is the chatbot agent to answer your questions. \nIf you are not satisfied with your answer, send an email to the admin \"alimohamedhassan9@outlook.com\" and ask your question with optional screenshot of your screen and you will receive your reply soon.",
-    "Second tab explanation: \nThis tab will show options to select before you view the list to manage the selected data in the list. \nYou can add, delete, or edit the data you selected it.",
-    "Third tab explanation: \nThis tab allows you to upload a file so that the system receive it to analyze it.",
+    "Second tab explanation: \nThis tab will show options to select before you view the list to manage the selected data in the list. \nYou can add, delete, or edit the data you selected it. \nYou will receive explanation of the specific data you select from the list of a grouped data.",
+    "Third tab explanation: \nThis tab allows you to upload a file so that the system receive it to analyze it. \nYou will receive explanation of the selected file after uploading.",
     "Fourth tab explanation: \nThis tab is currently unavailable due to construction in progress. \nHowever, this tab is meant to show the simplified results that you were looking for. \nExplanation of this tab is coming soon.",
     "System Output: \nRisk level, trend analysis, key findings, explanations, \nfollow-up recommendations, list of a specific data group, and data overview.",
     "Disclaimer: \nThis system does not diagnose diseases or replace professional medical advice. \nIt is designed only to support decision-making and early awareness. \nIt also supports viewing and using data per selections.",
     "The fourth tab or dashboard tab will be available as soon as possible.",
+    "Account deletion is currently unavailable in this system. Send email to \"alimohamedhassan9@outlook.com\" to request delete account.",
+    "Language support: \"English\" only",
   ];
   TextEditingController prompt = TextEditingController();
   List<Widget> theList = [
@@ -775,6 +777,27 @@ class _HomeManipulationState extends State<HomeManipulation> {
                       );
                     } else if (theContains(
                           chatSession.peek().toLowerCase(),
+                          "language",
+                        ) ||
+                        theContains(
+                          chatSession.peek().toLowerCase(),
+                          "support",
+                        ) ||
+                        theContains(
+                          chatSession.peek().toLowerCase(),
+                          "chang",
+                        )) {
+                      chatSession.push(answers[17]);
+                      theList.add(
+                        Card(
+                          child: ListTile(
+                            title: Text("Server"),
+                            subtitle: Text(chatSession.peek()),
+                          ),
+                        ),
+                      );
+                    } else if (theContains(
+                          chatSession.peek().toLowerCase(),
                           "data",
                         ) ||
                         theContains(chatSession.peek().toLowerCase(), "app") ||
@@ -880,6 +903,28 @@ class _HomeManipulationState extends State<HomeManipulation> {
                             title: Text("Server"),
                             subtitle: Text(chatSession.peek()),
                             trailing: widgetSelect(14),
+                          ),
+                        ),
+                      );
+                    } else if (theContains(
+                          chatSession.peek().toLowerCase(),
+                          "account",
+                        ) ||
+                        theContains(chatSession.peek().toLowerCase(), "user") ||
+                        theContains(
+                          chatSession.peek().toLowerCase(),
+                          "profile",
+                        ) ||
+                        theContains(
+                          chatSession.peek().toLowerCase(),
+                          "delet",
+                        )) {
+                      chatSession.push(answers[16]);
+                      theList.add(
+                        Card(
+                          child: ListTile(
+                            title: Text("Server"),
+                            subtitle: Text(chatSession.peek()),
                           ),
                         ),
                       );
@@ -1151,23 +1196,27 @@ class _FileListPageState extends State<FileListPage> {
         title: Text("File Management"),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 40),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => FileListPageReplaced(),
-                  ),
-                );
-              });
-            },
-            child: Text("Click to Proceed"),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: 100),
+            Text("Click on the button below to continue: "),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => FileListPageReplaced(),
+                    ),
+                  );
+                });
+              },
+              child: Text("Click to Proceed"),
+            ),
+          ],
+        ),
       ),
     );
   }

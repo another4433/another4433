@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'doctor_edit.dart';
-import 'person.dart';
-import 'patient.dart';
+import 'package:medical_app/doctor_edit.dart';
+import 'package:medical_app/person.dart';
+import 'package:medical_app/patient.dart';
 import 'dart:math';
 
 enum DoctorSpecialty {
@@ -164,7 +164,14 @@ class DoctorData extends StatefulWidget {
 class _DoctorDataState extends State<DoctorData> {
   final ScrollController _scrollController = ScrollController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String? name, id, nationality, gender, branch, workEmail, workPhone, currency;
+  late String name,
+      id,
+      nationality,
+      gender,
+      branch,
+      workEmail,
+      workPhone,
+      currency;
   double money = 0, patientID = 0;
   DateTime? birthDate;
   DoctorSpecialty specialiazation = DoctorSpecialty.none;
@@ -208,17 +215,17 @@ class _DoctorDataState extends State<DoctorData> {
     } else {
       _formKey.currentState!.save();
       _theDoctor = Doctor(
-        name!,
-        id!,
+        name,
+        id,
         birthDate!,
         money,
-        currency!,
-        nationality!,
-        gender!,
+        currency,
+        nationality,
+        gender,
         specialiazation,
-        branch!,
-        workEmail!,
-        workPhone!,
+        branch,
+        workEmail,
+        workPhone,
       );
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -401,7 +408,7 @@ class _DoctorDataState extends State<DoctorData> {
                       border: OutlineInputBorder(),
                       hintText: "Enter the currency of money the doctor use",
                       labelText: "Money Currency",
-                      icon: Icon(Icons.percent),
+                      icon: Icon(Icons.attach_money),
                     ),
                     onChanged: (value) {
                       setState(() {
@@ -417,7 +424,7 @@ class _DoctorDataState extends State<DoctorData> {
                       border: OutlineInputBorder(),
                       hintText: "Enter the amount of money the doctor have",
                       labelText: "Money Amount",
-                      icon: Icon(Icons.attach_money),
+                      icon: Icon(Icons.money),
                     ),
                     onChanged: (value) {
                       setState(() {
