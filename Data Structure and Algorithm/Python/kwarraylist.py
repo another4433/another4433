@@ -18,5 +18,18 @@ class KWArrayList:
         self.size = self.size + 1
 
     def remove(self, item):
+        theStat = False
         if (self.size == 0):
             return "Empty list! Cannot delete any item"
+        for i in range(self.size):
+            if (self.theList[i] == item):
+                theStat = True
+                for j in range(i, self.size - 1):
+                    self.theList[j] = self.theList[j + 1]
+                self.theList[self.size - 1] = None
+                self.size = self.size - 1
+                break
+        if (theStat == False):
+            return "Item not found in the list"
+        else:
+            return "Item removed successfully"

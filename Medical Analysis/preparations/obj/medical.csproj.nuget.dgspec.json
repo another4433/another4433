@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\medical.csproj": {}
+    "D:\\College\\ITCS214\\DSA\\Python\\Medical Analysis\\preparations\\medical.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\medical.csproj": {
+    "D:\\College\\ITCS214\\DSA\\Python\\Medical Analysis\\preparations\\medical.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\medical.csproj",
+        "projectUniqueName": "D:\\College\\ITCS214\\DSA\\Python\\Medical Analysis\\preparations\\medical.csproj",
         "projectName": "medical",
-        "projectPath": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\medical.csproj",
+        "projectPath": "D:\\College\\ITCS214\\DSA\\Python\\Medical Analysis\\preparations\\medical.csproj",
         "packagesPath": "C:\\Users\\Alimo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alimo\\Documents\\hackathon\\coding\\system\\medical\\obj\\",
+        "outputPath": "D:\\College\\ITCS214\\DSA\\Python\\Medical Analysis\\preparations\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "net9.0": {
+            "framework": "net9.0",
             "targetAlias": "net9.0",
             "projectReferences": {}
           }
@@ -45,10 +46,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net9.0": {
+          "framework": "net9.0",
           "targetAlias": "net9.0",
           "imports": [
             "net461",
@@ -66,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
