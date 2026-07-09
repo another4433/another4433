@@ -80,3 +80,6 @@ class KWArrayList:
 
     def isEmpty(self):
         return self.size == 0
+    
+    def getName(self):
+        return self.name

@@ -5,10 +5,13 @@ class KWLinkedList:
             self.next = None
             self.prev = None
 
-    def __init__(self):
+    name = ""
+
+    def __init__(self, name):
+        self.name = name
         self.head = None
         self.tail = None
-        self.size = 0 
+        self.size = 0
 
     def add(self, data):
         new_node = self.Node(data)
@@ -29,14 +32,17 @@ class KWLinkedList:
         current = self.head
         while current is not None:
             if current.data == data:
-                if current.prev is not None:
-                    current.prev.next = current.next
-                else:
-                    self.head = current.next
                 if current.next is not None:
-                    current.next.prev = current.prev
+                    temp = current.next
+                    current.data = None
+                    current = current.prev
+                    current.next = temp
+                    temp.prev = current
                 else:
-                    self.tail = current.prev
+                    current.data = None
+                    current = current.prev
+                    current.next = None
+                    self.tail = current
                 self.size -= 1
                 return True
             current = current.next
@@ -116,3 +122,9 @@ class KWLinkedList:
             print(current.data, end=" ")
             current = current.next
         print()
+
+    def getName(self):
+        return self.name
+    
+    def setName(self, name):
+        self.name = name
